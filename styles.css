@@ -335,11 +335,14 @@ nav .container {
     .nav-links {
         display: none;
         position: fixed;
-        inset: 70px 0 0 0;
-        background: var(--bg-color);
+        inset: 60px 0 0 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
         padding: 1rem;
         box-shadow: 0 2px 10px var(--shadow-color);
+        height: 100vh;
     }
 
     .nav-links.active {
@@ -349,6 +352,7 @@ nav .container {
     .nav-links a {
         width: 100%;
         justify-content: center;
+        padding: 1rem;
     }
 
     .solution-item,
