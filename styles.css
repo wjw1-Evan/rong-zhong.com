@@ -9,8 +9,10 @@
     --secondary-color: #2563eb;
     --accent-color: #3b82f6;
     --text-color: #1a202c;
-    --bg-color: #e2e8f0;
-    --shadow-color: rgba(0, 0, 0, 0.15);
+    --bg-color: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --gradient-start: #1e40af;
+    --gradient-end: #3b82f6;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -39,8 +41,9 @@ body {
 
 /* 导航栏样式 */
 nav {
-    background-color: var(--bg-color);
-    box-shadow: 0 2px 10px var(--shadow-color);
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px var(--shadow-color);
     position: fixed;
     width: 100%;
     top: 0;
@@ -109,26 +112,32 @@ nav .container {
 .nav-links a {
     text-decoration: none;
     color: var(--text-color);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 16px;
-    padding: 8px 12px;
+    padding: 8px 16px;
     border-radius: 4px;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
     gap: 8px;
+    position: relative;
 }
 
-.nav-links a:hover,
-.nav-links a:focus {
-    color: var(--primary-color);
-    background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
-    outline: none;
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
 }
 
-.nav-links a.active {
-    color: var(--primary-color);
-    background-color: color-mix(in srgb, var(--primary-color) 10%, transparent);
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 80%;
 }
 
 .nav-links a i {
@@ -382,7 +391,7 @@ nav .container {
     position: relative;
     min-height: 100vh;
     padding: 120px 0 60px;
-    background: linear-gradient(135deg, #cbd5e0, #e2e8f0);
+    background: linear-gradient(135deg, rgba(30, 64, 175, 0.95), rgba(59, 130, 246, 0.95));
     color: var(--text-color);
     display: flex;
     align-items: center;
@@ -392,10 +401,13 @@ nav .container {
 .hero::before {
     content: '';
     position: absolute;
-    inset: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect fill="%23fff" fill-opacity="0.1" width="100" height="100"/></svg>') repeat;
-    opacity: 0.1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
     animation: backgroundMove 20s linear infinite;
+    opacity: 0.3;
 }
 
 @keyframes backgroundMove {
@@ -411,24 +423,27 @@ nav .container {
 .hero-content {
     position: relative;
     z-index: 1;
-    max-width: 800px;
-    margin: 0 auto;
+    color: white;
     text-align: center;
     padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 800;
     margin-bottom: 1.5rem;
     line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     animation: fadeInUp 1s ease;
 }
 
 .hero p {
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
     margin-bottom: 2.5rem;
     opacity: 0.9;
+    line-height: 1.6;
     animation: fadeInUp 1s ease 0.2s backwards;
 }
 
@@ -440,53 +455,55 @@ nav .container {
 }
 
 .cta-button {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    padding: 1rem 2rem;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 500;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-button.primary {
-    background: var(--primary-color);
-    color: white;
-    box-shadow: 0 4px 15px rgba(74, 144, 226, 0.3);
+    background: white;
+    color: var(--primary-color);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button.secondary {
-    background: rgba(255, 255, 255, 0.9);
-    color: var(--text-color);
-    backdrop-filter: blur(10px);
+    background: transparent;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.cta-button.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 /* 特色内容区域 */
 .features {
     padding: 100px 0;
-    background-color: #edf2f7;
+    background-color: var(--bg-color);
     position: relative;
-    overflow: hidden;
 }
 
 .features::before {
     content: '';
     position: absolute;
-    top: -50%;
-    right: -50%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.05), rgba(130, 196, 248, 0.05));
-    border-radius: 50%;
-    transform: scale(1.5);
-    z-index: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to bottom right, var(--gradient-start), var(--gradient-end));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 0);
+    opacity: 0.1;
 }
 
 .section-header {
@@ -536,16 +553,13 @@ nav .container {
 }
 
 .feature-card {
-    background: var(--bg-color);
-    padding: 2.5rem;
+    background: white;
     border-radius: 20px;
-    box-shadow: 0 4px 20px var(--shadow-color);
+    padding: 2.5rem;
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .feature-card::before {
@@ -563,7 +577,7 @@ nav .container {
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 8px 30px var(--shadow-color);
+    box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 .feature-card:hover::before {
@@ -571,21 +585,20 @@ nav .container {
 }
 
 .feature-icon {
-    width: 70px;
-    height: 70px;
-    margin-bottom: 2rem;
-    background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(130, 196, 248, 0.1));
-    border-radius: 16px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 1.5rem;
     transition: all 0.3s ease;
 }
 
 .feature-icon i {
     font-size: 2rem;
-    color: var(--primary-color);
-    transition: transform 0.3s ease;
+    color: white;
 }
 
 .feature-card:hover .feature-icon {
@@ -665,40 +678,61 @@ nav .container {
     }
 }
 
-/* 客户案例展示 */
+/* 客户案例优化 */
 .cases {
     padding: 100px 0;
-    background: #e2e8f0;
+    background: linear-gradient(to bottom, var(--bg-color) 0%, rgba(237, 242, 247, 0.5) 100%);
 }
 
 .cases-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    padding: 0 20px;
+    padding: 2rem 0;
 }
 
 .case-card {
-    background: var(--bg-color);
-    border-radius: 12px;
+    background: white;
+    border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 4px 20px var(--shadow-color);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.case-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px var(--shadow-color);
 }
 
 .case-image {
     position: relative;
-    padding-top: 56.25%;
+    height: 240px;
     overflow: hidden;
 }
 
-.case-image img {
+.case-image::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.case-card:hover .case-image::before {
+    opacity: 1;
+}
+
+.case-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.5s ease;
 }
 
 .case-card:hover .case-image img {
@@ -707,112 +741,226 @@ nav .container {
 
 .case-content {
     padding: 2rem;
+    position: relative;
+    z-index: 2;
 }
 
 .case-content h3 {
     font-size: 1.5rem;
-    color: var(--primary-color);
     margin-bottom: 1rem;
+    color: var(--text-color);
+    font-weight: 700;
 }
 
 .case-content p {
-    color: var(--text-color);
-    opacity: 0.8;
+    color: #4a5568;
     margin-bottom: 1.5rem;
+    line-height: 1.6;
 }
 
 .case-tags {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.75rem;
     flex-wrap: wrap;
 }
 
 .case-tag {
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
     padding: 0.5rem 1rem;
-    background: color-mix(in srgb, var(--primary-color) 10%, transparent);
-    color: var(--primary-color);
-    border-radius: 20px;
-    font-size: 0.9rem;
+    border-radius: 50px;
+    font-size: 0.875rem;
+    font-weight: 500;
 }
 
-/* 联系部分 */
+/* 联系部分优化 */
 .contact-section {
     padding: 100px 0;
-    background: linear-gradient(135deg, #cbd5e0, #e2e8f0);
-    color: var(--text-color);
-    text-align: center;
+    background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
+    opacity: 0.1;
 }
 
 .contact-cards {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
-    padding: 0 20px;
     margin-top: 3rem;
 }
 
 .contact-card {
-    padding: 2rem;
-    background: var(--bg-color);
-    border-radius: 12px;
-    box-shadow: 0 4px 20px var(--shadow-color);
-    transition: transform 0.3s ease;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .contact-card:hover {
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 .contact-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.contact-icon i {
     font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 1rem;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.contact-card:hover .contact-icon {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+.contact-card:hover .contact-icon i {
+    transform: scale(1.1);
 }
 
 .contact-card h3 {
-    font-size: 1.3rem;
-    color: var(--primary-color);
+    font-size: 1.25rem;
     margin-bottom: 1rem;
+    font-weight: 600;
 }
 
 .contact-card p {
-    color: var(--text-color);
-    opacity: 0.8;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    .contact-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 0 1rem;
+    }
+
+    .contact-card {
+        padding: 2rem;
+    }
+
+    .contact-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .contact-icon i {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-card {
+        padding: 1.75rem;
+    }
+
+    .contact-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-icon i {
+        font-size: 1.5rem;
+    }
 }
 
 /* 页脚样式 */
 footer {
-    background-color: #cbd5e0;
+    background: linear-gradient(to bottom, #f8fafc, #f1f5f9);
     color: var(--text-color);
-    padding: 4rem 0 2rem;
+    padding: 5rem 0 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+    opacity: 0.2;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 3rem;
+    grid-template-columns: 1.5fr repeat(3, 1fr);
+    gap: 4rem;
     padding: 0 20px;
-    margin-bottom: 3rem;
+    margin-bottom: 4rem;
 }
 
 .footer-column h4 {
-    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-size: 1.25rem;
     margin-bottom: 1.5rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.75rem;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
 }
 
 .footer-links {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
 .footer-links li {
-    margin-bottom: 0.8rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-links li:hover {
+    transform: translateX(5px);
 }
 
 .footer-links a {
     color: var(--text-color);
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
     opacity: 0.8;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .footer-links a:hover {
@@ -820,10 +968,88 @@ footer {
     opacity: 1;
 }
 
+.footer-links a::before {
+    content: '›';
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+    opacity: 1;
+}
+
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.footer-bottom p {
+    color: var(--text-color);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 1024px) {
+    .footer-content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        padding: 3rem 0 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-links li:hover {
+        transform: translateY(-2px);
+    }
+
+    .footer-links a::before {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    footer {
+        padding: 2rem 0 1rem;
+    }
+
+    .footer-content {
+        gap: 1.5rem;
+    }
+
+    .footer-column h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+    }
+
+    .footer-links {
+        gap: 0.5rem;
+    }
+
+    .footer-bottom p {
+        font-size: 0.8rem;
+    }
 }
 
 /* 动画 */
@@ -1739,4 +1965,43 @@ footer p {
         height: 40px;
         font-size: 14px;
     }
+}
+
+.contact-icon {
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
+}
+
+.contact-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: -1;
+}
+
+.contact-icon i {
+    font-size: 2rem;
+    color: white;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.contact-card:hover .contact-icon {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+.contact-card:hover .contact-icon::before {
+    background: rgba(255, 255, 255, 0.25);
 }
