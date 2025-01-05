@@ -1,0 +1,208 @@
+/* 解决方案页面样式 */
+.solution-header {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    color: white;
+    padding: 120px 0 60px;
+    text-align: center;
+}
+
+.solution-header h1 {
+    font-size: 2.4em;
+    margin-bottom: 20px;
+}
+
+.solution-header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* 解决方案展示部分 */
+.solutions {
+    padding: 60px 0;
+}
+
+.solution-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+    gap: 40px;
+}
+
+.solution-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.solution-content {
+    flex: 1;
+}
+
+.solution-content h2 {
+    color: #1e3c72;
+    font-size: 1.8em;
+    margin-bottom: 30px;
+}
+
+.solution-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.feature {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    color: #1e3c72;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.feature p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.solution-image {
+    flex: 1;
+    max-width: 500px;
+}
+
+.solution-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.solution-image img:hover {
+    transform: scale(1.02);
+}
+
+/* 移动端样式 */
+@media (max-width: 768px) {
+    .solution-header {
+        padding: 100px 0 40px;
+    }
+
+    .solution-header h1 {
+        font-size: 2em;
+        margin-bottom: 15px;
+    }
+
+    .solution-header p {
+        font-size: 1.1em;
+    }
+
+    .solutions {
+        padding: 30px 0;
+    }
+
+    .solution-item {
+        flex-direction: column;
+        margin-bottom: 40px;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .solution-item.reverse {
+        flex-direction: column;
+    }
+
+    .solution-content {
+        width: 100%;
+        order: 2;
+    }
+
+    .solution-content h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
+    .solution-features {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .feature {
+        padding: 15px;
+        text-align: left;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .feature h3 {
+        font-size: 1.1em;
+        margin-bottom: 5px;
+        flex: 1;
+    }
+
+    .feature p {
+        font-size: 0.95em;
+        flex: 2;
+    }
+
+    .solution-image {
+        width: 100%;
+        max-width: none;
+        order: 1;
+        padding: 0;
+    }
+
+    .solution-image img {
+        border-radius: 10px;
+        margin-bottom: 10px;
+    }
+}
+
+/* 小屏幕设备优化 */
+@media (max-width: 480px) {
+    .solution-header {
+        padding: 80px 0 30px;
+    }
+
+    .solution-header h1 {
+        font-size: 1.8em;
+    }
+
+    .solution-header p {
+        font-size: 1em;
+    }
+
+    .solutions {
+        padding: 20px 0;
+    }
+
+    .solution-item {
+        margin-bottom: 30px;
+        gap: 15px;
+        padding: 0 12px;
+    }
+
+    .solution-content h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
+    }
+
+    .feature {
+        padding: 12px;
+    }
+
+    .feature h3 {
+        font-size: 1em;
+    }
+
+    .feature p {
+        font-size: 0.9em;
+    }
+}
