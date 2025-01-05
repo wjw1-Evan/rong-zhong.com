@@ -343,16 +343,37 @@ nav .container {
         padding: 1rem;
         box-shadow: 0 2px 10px var(--shadow-color);
         height: 100vh;
+        z-index: 1000;
     }
 
     .nav-links.active {
         display: flex;
     }
 
+    .nav-links li {
+        width: 100%;
+    }
+
     .nav-links a {
         width: 100%;
         justify-content: center;
         padding: 1rem;
+        font-size: 18px;
+        border-radius: 8px;
+        margin: 0.25rem 0;
+        background-color: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:active,
+    .nav-links a.active {
+        background-color: rgba(30, 64, 175, 0.1);
+        color: var(--primary-color);
+    }
+
+    .nav-links a::after {
+        display: none;
     }
 
     .solution-item,

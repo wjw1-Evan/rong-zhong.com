@@ -146,46 +146,12 @@
         </div>
     </section>
 
-    <!-- 联系我们 -->
-    <section class="contact-section">
-        <div class="container">
-            <h2>开启您的AI之旅</h2>
-            <p>立即联系我们，获取专业的AI定制开发服务</p>
-            <a href="contact.html" class="cta-button">联系我们</a>
-        </div>
-    </section>
-
     <footer>
         <div class="container">
             <p>&copy; 2024 天津融众信息技术有限公司 版权所有</p>
         </div>
     </footer>
-
-    <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-
-        menuToggle.addEventListener('click', function () {
-            menuToggle.classList.toggle('active');
-            navLinks.classList.toggle('active');
-        });
-
-        // 点击导航链接时关闭菜单
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            });
-        });
-
-        // 点击页面其他区域时关闭菜单
-        document.addEventListener('click', (e) => {
-            if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-                menuToggle.classList.remove('active');
-                navLinks.classList.remove('active');
-            }
-        });
-    </script>
+    <script src="main.js"></script>
 </body>
 
 </html>
