@@ -52,10 +52,13 @@
                 </a>
             </div>
         </div>
+        <a href="#features" class="scroll-down">
+            <i class="fas fa-chevron-down"></i>
+        </a>
     </section>
 
     <!-- 特色内容 -->
-    <section class="features">
+    <section class="features" id="features">
         <div class="container">
             <div class="section-header">
                 <h2>为什么选择融众</h2>
@@ -113,7 +116,7 @@
                 <div class="case-card">
                     <div class="case-image">
                         <img src="https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=800&h=400"
-                            alt="智能制造案例">
+                            alt="智能制造案例" loading="lazy">
                     </div>
                     <div class="case-content">
                         <h3>智能工厂改造项目</h3>
@@ -127,7 +130,7 @@
                 <div class="case-card">
                     <div class="case-image">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=400"
-                            alt="智慧金融案例">
+                            alt="智慧金融案例" loading="lazy">
                     </div>
                     <div class="case-content">
                         <h3>银行智能风控系统</h3>
@@ -141,7 +144,7 @@
                 <div class="case-card">
                     <div class="case-image">
                         <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&h=400"
-                            alt="智慧医疗案例">
+                            alt="智慧医疗案例" loading="lazy">
                     </div>
                     <div class="case-content">
                         <h3>医院智能诊断系统</h3>
@@ -208,6 +211,8 @@
             document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
+    <!-- 引入自定义滚动脚本 -->
+    <script src="scroll.js"></script>
 </body>
 
 </html>
