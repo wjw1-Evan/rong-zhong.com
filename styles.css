@@ -169,8 +169,8 @@ nav .container {
 
 /* 解决方案头部样式 */
 .solution-header {
-    background: linear-gradient(135deg, #e8f4ff, #f0f7ff);
-    color: var(--text-color);
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    color: white;
     text-align: center;
     padding: 120px 0 60px;
     margin-bottom: 40px;
@@ -886,8 +886,8 @@ footer {
 .contact-header {
     padding: 120px 0 60px;
     text-align: center;
-    background: linear-gradient(135deg, #cbd5e0, #e2e8f0);
-    color: var(--text-color);
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    color: white;
 }
 
 .contact-header h1 {
@@ -989,8 +989,8 @@ footer p {
 
 /* 关于我们头部样式 */
 .about-header {
-    background: linear-gradient(135deg, #cbd5e0, #e2e8f0);
-    color: var(--text-color);
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    color: white;
     padding: 120px 0 60px;
     text-align: center;
     margin-bottom: 60px;
@@ -1200,8 +1200,8 @@ footer p {
 
 /* 服务页面样式 */
 .service-header {
-    background: linear-gradient(135deg, #e8f4ff, #f0f7ff);
-    color: var(--text-color);
+    background: linear-gradient(135deg, #1e3a8a, #1e40af);
+    color: white;
     text-align: center;
     padding: 120px 0 60px;
     margin-bottom: 60px;
