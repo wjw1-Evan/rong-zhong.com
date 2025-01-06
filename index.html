@@ -11,6 +11,34 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .contact-icon i.fa-envelope,
+        .contact-icon i.fa-phone,
+        .contact-icon i.fa-map-marker-alt {
+            color: #FF5722;
+            /* 替换成你的主题色 */
+        }
+
+        @media (max-width: 768px) {
+            .footer-content {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+
+            .footer-column {
+                width: auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .contact-cards {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 16px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -116,7 +144,7 @@
                 <div class="case-card">
                     <div class="case-image">
                         <img src="https://images.unsplash.com/photo-1507646227500-4d389b0012be?auto=format&fit=crop&w=800&h=400"
-                            alt="智能制造案例" loading="lazy">
+                            alt="智能制造案例">
                     </div>
                     <div class="case-content">
                         <h3>智能工厂改造项目</h3>
@@ -130,7 +158,7 @@
                 <div class="case-card">
                     <div class="case-image">
                         <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&h=400"
-                            alt="智慧金融案例" loading="lazy">
+                            alt="智慧金融案例">
                     </div>
                     <div class="case-content">
                         <h3>银行智能风控系统</h3>
@@ -144,7 +172,7 @@
                 <div class="case-card">
                     <div class="case-image">
                         <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=800&h=400"
-                            alt="智慧医疗案例" loading="lazy">
+                            alt="智慧医疗案例">
                     </div>
                     <div class="case-content">
                         <h3>医院智能诊断系统</h3>
@@ -159,7 +187,38 @@
         </div>
     </section>
 
-
+    <!-- 联系部分 -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>联系我们</h2>
+                <p>随时为您提供专业的咨询服务</p>
+            </div>
+            <div class="contact-cards">
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>电话咨询</h3>
+                    <p>15332108886</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3>邮件咨询</h3>
+                    <p>fsy_008@163.com</p>
+                </div>
+                <div class="contact-card">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>公司地址</h3>
+                    <p>天津市南开区</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- 页脚 -->
     <footer>
@@ -168,33 +227,33 @@
                 <div class="footer-column">
                     <h4>关于融众</h4>
                     <ul class="footer-links">
-                        <li><a href="about.html"><i class="fas fa-building"></i> 公司简介</a></li>
-                        <li><a href="about.html#team"><i class="fas fa-users"></i> 团队介绍</a></li>
-                        <li><a href="about.html#culture"><i class="fas fa-heart"></i> 企业文化</a></li>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html#team">团队介绍</a></li>
+                        <li><a href="about.html#culture">企业文化</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>解决方案</h4>
                     <ul class="footer-links">
-                        <li><a href="solutions.html#manufacturing"><i class="fas fa-industry"></i> 智能制造</a></li>
-                        <li><a href="solutions.html#finance"><i class="fas fa-chart-line"></i> 智慧金融</a></li>
-                        <li><a href="solutions.html#medical"><i class="fas fa-hospital"></i> 智慧医疗</a></li>
+                        <li><a href="solutions.html#manufacturing">智能制造</a></li>
+                        <li><a href="solutions.html#finance">智慧金融</a></li>
+                        <li><a href="solutions.html#medical">智慧医疗</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>服务支持</h4>
                     <ul class="footer-links">
-                        <li><a href="services.html#consulting"><i class="fas fa-comments"></i> 技术咨询</a></li>
-                        <li><a href="services.html#implementation"><i class="fas fa-tasks"></i> 项目实施</a></li>
-                        <li><a href="services.html#training"><i class="fas fa-graduation-cap"></i> 技术培训</a></li>
+                        <li><a href="services.html#consulting">技术咨询</a></li>
+                        <li><a href="services.html#implementation">项目实施</a></li>
+                        <li><a href="services.html#training">技术培训</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
                     <h4>联系方式</h4>
                     <ul class="footer-links">
-                        <li><a href="tel:15332108886"><i class="fas fa-phone"></i> 15332108886</a></li>
-                        <li><a href="mailto:fsy_008@163.com"><i class="fas fa-envelope"></i> fsy_008@163.com</a></li>
-                        <li><a href="contact.html"><i class="fas fa-headset"></i> 在线咨询</a></li>
+                        <li><a href="tel:15332108886">15332108886</a></li>
+                        <li><a href="mailto:fsy_008@163.com">fsy_008@163.com</a></li>
+                        <li><a href="contact.html">在线咨询</a></li>
                     </ul>
                 </div>
             </div>
@@ -203,7 +262,14 @@
             </div>
         </div>
     </footer>
-    <script src="main.js"></script>
+
+    <!-- 移动端菜单JavaScript -->
+    <script>
+        document.querySelector('.menu-toggle').addEventListener('click', function () {
+            this.classList.toggle('active');
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
 </body>
 
 </html>
