@@ -855,8 +855,9 @@ nav .container {
 
 .contact-icon i {
     font-size: 2rem;
-    color: white;
+    color: var(--primary-color);
     transition: all 0.3s ease;
+    z-index: 2;
 }
 
 .contact-card:hover .contact-icon {
@@ -864,8 +865,8 @@ nav .container {
     transform: scale(1.1);
 }
 
-.contact-card:hover .contact-icon i {
-    transform: scale(1.1);
+.contact-card:hover .contact-icon::before {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .contact-card h3 {
@@ -2017,7 +2018,7 @@ footer p {
 
 .contact-icon i {
     font-size: 2rem;
-    color: white;
+    color: var(--primary-color);
     transition: all 0.3s ease;
     z-index: 2;
 }
