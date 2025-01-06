@@ -49,4 +49,43 @@ document.addEventListener('DOMContentLoaded', function () {
             link.classList.add('active');
         }
     });
-}); 
+});
+
+// 处理平滑滚动
+document.querySelectorAll('.service-link').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        const navHeight = document.querySelector('nav').offsetHeight;
+        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+
+        window.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
+        });
+    });
+});
+
+// 回到顶端按钮处理
+const backToTop = document.querySelector('.back-to-top');
+
+// 显示/隐藏回到顶端按钮
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTop.classList.add('visible');
+    } else {
+        backToTop.classList.remove('visible');
+    }
+});
+
+// 点击回到顶端按钮
+if (backToTop) {
+    backToTop.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+} 
