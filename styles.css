@@ -2246,13 +2246,13 @@ html {
 
 /* 二维码样式 */
 .qr-code {
-    margin-top: 15px;
+    margin-top: 12px;
     text-align: center;
 }
 
 .qr-image {
-    width: 220px;
-    height: 200px;
+    width: 170px;
+    height: 160px;
     border-radius: 8px;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: transform 0.3s ease;
@@ -2265,7 +2265,38 @@ html {
 /* 移动端适配 */
 @media (max-width: 480px) {
     .qr-image {
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
+    }
+}
+
+/* 微信联系方式样式 */
+.wechat-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.qr-code {
+    margin-top: 12px;
+}
+
+.qr-image {
+    width: 170px;
+    height: 160px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.qr-image:hover {
+    transform: scale(1.05);
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+    .qr-image {
+        width: 150px;
+        height: 140px;
     }
 }
