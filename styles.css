@@ -1136,92 +1136,185 @@ footer::before {
 
 /* 联系页面样式 */
 .contact-header {
-    padding: 120px 0 60px;
-    text-align: center;
     background: linear-gradient(135deg, #1e3a8a, #1e40af);
     color: white;
+    padding: 120px 0 60px;
+    text-align: center;
+    margin-bottom: 60px;
 }
+
 
 .contact-header h1 {
     font-size: clamp(32px, 5vw, 48px);
-    margin-bottom: 1rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 .contact-header p {
     font-size: clamp(16px, 3vw, 20px);
     opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
+/* 联系信息主体样式 */
 .contact-main {
     padding: 60px 0;
     background-color: var(--bg-color);
+    position: relative;
 }
 
 .contact-info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px var(--shadow-color);
     max-width: 800px;
     margin: 0 auto;
-    padding: 2rem;
-    background-color: color-mix(in srgb, var(--bg-color) 98%, var(--primary-color));
-    border-radius: 16px;
-    box-shadow: 0 4px 20px var(--shadow-color);
+    transform: translateY(-40px);
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
 }
 
 .contact-info-card h2 {
     color: var(--primary-color);
     font-size: 28px;
-    margin-bottom: 2rem;
+    margin-bottom: 30px;
     text-align: center;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.contact-info-card h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
+    border-radius: 3px;
 }
 
 .info-item {
     display: flex;
     align-items: flex-start;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    margin-bottom: 1rem;
-    background-color: var(--bg-color);
-    border-radius: 8px;
-    transition: transform 0.3s ease;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 12px;
+    background: color-mix(in srgb, var(--bg-color) 97%, var(--primary-color));
+    transition: all 0.3s ease;
+    border: 1px solid color-mix(in srgb, var(--primary-color) 10%, transparent);
 }
 
 .info-item:hover {
     transform: translateY(-5px);
+    background: color-mix(in srgb, var(--bg-color) 95%, var(--primary-color));
+    box-shadow: 0 5px 15px var(--shadow-color);
+    border-color: color-mix(in srgb, var(--primary-color) 15%, transparent);
 }
 
 .info-item i {
     font-size: 24px;
     color: var(--primary-color);
-    background: color-mix(in srgb, var(--primary-color) 10%, transparent);
-    padding: 12px;
-    border-radius: 50%;
+    background: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    margin-right: 20px;
+    box-shadow: 0 4px 10px var(--shadow-color);
+    transition: all 0.3s ease;
+}
+
+.info-item:hover i {
+    transform: scale(1.1);
+    color: var(--secondary-color);
+    background: color-mix(in srgb, var(--primary-color) 5%, white);
+}
+
+.info-content {
+    flex: 1;
 }
 
 .info-content h3 {
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
     font-size: 18px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+    font-weight: 600;
 }
 
 .info-content p {
-    color: var(--text-color);
     font-size: 16px;
+    color: var(--text-color);
+    opacity: 0.8;
+    margin: 0;
 }
 
 /* 响应式调整 */
 @media (max-width: 768px) {
     .contact-info-card {
-        margin: 0 1rem;
-        padding: 1.5rem;
+        padding: 30px 20px;
+        margin: 0 20px;
+        transform: translateY(-30px);
     }
 
     .info-item {
-        padding: 1rem;
-        gap: 1rem;
+        padding: 15px;
     }
 
     .info-item i {
+        width: 40px;
+        height: 40px;
         font-size: 20px;
-        padding: 10px;
+        margin-right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-header {
+        padding: 100px 0 40px;
+    }
+
+    .contact-info-card {
+        padding: 20px 15px;
+        transform: translateY(-20px);
+    }
+
+    .info-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-item i {
+        margin: 0 0 15px 0;
+    }
+
+    .info-content h3 {
+        font-size: 16px;
+    }
+
+    .info-content p {
+        font-size: 14px;
     }
 }
 
@@ -1252,11 +1345,18 @@ footer p {
     font-size: clamp(32px, 5vw, 48px);
     margin-bottom: 20px;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
 }
 
 .about-header p {
-    font-size: clamp(18px, 3vw, 24px);
+    font-size: clamp(16px, 3vw, 20px);
     opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
 }
 
 /* 公司简介样式 */
@@ -1468,7 +1568,7 @@ footer p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: url('images/pattern.svg') repeat;
+    background: url('data:image/svg+xml,<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><rect width="1" height="1" fill="rgba(255,255,255,0.05)"/></svg>') repeat;
     opacity: 0.1;
     animation: backgroundMove 20s linear infinite;
 }
@@ -2141,5 +2241,31 @@ html {
 
     .back-to-top i {
         font-size: 16px;
+    }
+}
+
+/* 二维码样式 */
+.qr-code {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.qr-image {
+    width: 220px;
+    height: 200px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transition: transform 0.3s ease;
+}
+
+.qr-image:hover {
+    transform: scale(1.05);
+}
+
+/* 移动端适配 */
+@media (max-width: 480px) {
+    .qr-image {
+        width: 160px;
+        height: 160px;
     }
 }
