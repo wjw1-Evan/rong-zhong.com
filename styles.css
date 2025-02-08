@@ -79,11 +79,21 @@
 
     nav {
         background-color: var(--nav-bg-color);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         box-shadow: 0 2px 15px var(--shadow-color);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
     }
 
     .nav-links {
         background-color: var(--nav-bg-color);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 2px 15px var(--shadow-color);
     }
 
     .nav-links a {
@@ -136,10 +146,18 @@
 
     .contact-card {
         background: var(--contact-card-bg);
-        border-color: var(--border-color);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
+        padding: 2.5rem;
+        text-align: center;
+        transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
+        overflow: hidden;
     }
 
     .contact-card:hover {
+        transform: translateY(-5px);
         background: rgba(30, 41, 59, 0.9);
         border-color: var(--primary-color);
     }
@@ -153,8 +171,15 @@
     }
 
     footer {
-        background: var(--footer-bg);
+        background: var(--nav-bg-color);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 -2px 15px var(--shadow-color);
         color: var(--footer-text);
+        padding: 3rem 0;
+        position: relative;
+        overflow: hidden;
+        text-align: center;
     }
 
     footer::before {
@@ -178,7 +203,14 @@
     }
 
     .footer-bottom {
-        border-top-color: var(--footer-border);
+        text-align: center;
+        padding-top: 2rem;
+        margin-top: 2rem;
+        border-top: 1px solid var(--border-color);
+        position: relative;
+        background: var(--nav-bg-color);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
     }
 
     .footer-bottom p {
@@ -228,8 +260,8 @@
     @media (max-width: 768px) {
         .nav-links {
             background-color: var(--nav-bg-color);
-            backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             box-shadow: 0 2px 15px var(--shadow-color);
         }
 
@@ -302,6 +334,8 @@
 
     .contact-card {
         background: var(--contact-card-bg);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         border: 1px solid var(--border-color);
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
@@ -321,8 +355,8 @@
 
     .contact-info-card {
         background: var(--contact-card-bg);
-        backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
         border: 1px solid var(--border-color);
     }
 
@@ -369,8 +403,8 @@ body {
 /* 导航栏样式 */
 nav {
     background-color: var(--nav-bg-color);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 2px 15px var(--shadow-color);
     position: fixed;
     width: 100%;
@@ -1159,8 +1193,8 @@ nav .container {
 .contact-card {
     position: relative;
     background: var(--contact-card-bg);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     border-radius: 20px;
     padding: 2.5rem;
     text-align: center;
@@ -1267,8 +1301,8 @@ nav .container {
 /* 页脚样式 */
 footer {
     background: var(--nav-bg-color);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
     box-shadow: 0 -2px 15px var(--shadow-color);
     color: var(--footer-text);
     padding: 3rem 0;
@@ -1378,8 +1412,8 @@ footer::before {
     border-top: 1px solid var(--border-color);
     position: relative;
     background: var(--nav-bg-color);
-    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
 }
 
 /* 页脚底部文本 */
@@ -2890,10 +2924,6 @@ html {
     flex-direction: column;
 }
 
-.product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px var(--shadow-color);
-}
 
 .product-showcase {
     position: relative;
