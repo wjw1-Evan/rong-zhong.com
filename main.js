@@ -1,91 +1,243 @@
-// 移动端菜单处理
-const menuToggle = document.querySelector('.menu-toggle');
-const navLinks = document.querySelector('.nav-links');
+// 防抖函数
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
 
-if (menuToggle && navLinks) {
-    // 点击菜单按钮时的处理
-    menuToggle.addEventListener('click', function () {
-        menuToggle.classList.toggle('active');
-        navLinks.classList.toggle('active');
-    });
+// DOM 元素缓存
+const DOM = {
+    menuToggle: document.querySelector('.menu-toggle'),
+    navLinks: document.querySelector('.nav-links'),
+    backToTop: document.querySelector('.back-to-top'),
+    nav: document.querySelector('nav'),
+    features: document.querySelector('#features'),
+    images: document.querySelectorAll('img[loading="lazy"]')
+};
 
-    // 点击导航链接时关闭菜单
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
+// 性能监控和错误上报
+const Analytics = {
+    init() {
+        // 监控页面性能
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const perfData = window.performance.timing;
+                const pageLoadTime = perfData.loadEventEnd - perfData.navigationStart;
+                const domReadyTime = perfData.domContentLoadedEventEnd - perfData.navigationStart;
+
+                console.log('页面加载时间:', pageLoadTime + 'ms');
+                console.log('DOM准备时间:', domReadyTime + 'ms');
+
+                // 可以在这里添加性能数据上报逻辑
+                this.sendAnalytics('performance', {
+                    pageLoadTime,
+                    domReadyTime
+                });
+            }, 0);
         });
-    });
 
-    // 点击页面其他区域时关闭菜单
-    document.addEventListener('click', (e) => {
-        if (!menuToggle.contains(e.target) && !navLinks.contains(e.target)) {
-            menuToggle.classList.remove('active');
-            navLinks.classList.remove('active');
-        }
+        // 监控JS错误
+        window.addEventListener('error', (event) => {
+            const errorData = {
+                message: event.message,
+                filename: event.filename,
+                lineno: event.lineno,
+                colno: event.colno,
+                error: event.error?.stack
+            };
+
+            // 错误上报
+            this.sendAnalytics('error', errorData);
+        });
+
+        // 监控资源加载错误
+        window.addEventListener('error', (event) => {
+            if (event.target.tagName) {
+                const resourceData = {
+                    type: event.target.tagName.toLowerCase(),
+                    url: event.target.src || event.target.href,
+                    message: '资源加载失败'
+                };
+
+                // 资源错误上报
+                this.sendAnalytics('resource_error', resourceData);
+            }
+        }, true);
+    },
+
+    sendAnalytics(type, data) {
+        // 这里可以替换为实际的数据上报接口
+        console.log('Analytics:', type, data);
+
+        // 示例：发送到服务器
+        // fetch('/api/analytics', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify({
+        //         type,
+        //         data,
+        //         timestamp: new Date().toISOString()
+        //     })
+        // }).catch(console.error);
+    }
+};
+
+// 错误处理函数
+function handleError(error, context) {
+    console.error(`Error in ${context}:`, error);
+    // 使用Analytics上报错误
+    Analytics.sendAnalytics('error', {
+        context,
+        message: error.message,
+        stack: error.stack
     });
 }
 
-// 滚动到特定区域
-const scrollDown = document.querySelector('.scroll-down');
-if (scrollDown) {
-    scrollDown.addEventListener('click', function (event) {
-        event.preventDefault();
-        const featuresSection = document.querySelector('#features');
-        if (featuresSection) {
-            featuresSection.scrollIntoView({
-                behavior: 'smooth'
+// 移动端菜单处理
+try {
+    if (DOM.menuToggle && DOM.navLinks) {
+        // 点击菜单按钮时的处理
+        DOM.menuToggle.addEventListener('click', () => {
+            DOM.menuToggle.classList.toggle('active');
+            DOM.navLinks.classList.toggle('active');
+        });
+
+        // 点击导航链接时关闭菜单
+        DOM.navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                DOM.menuToggle.classList.remove('active');
+                DOM.navLinks.classList.remove('active');
             });
-        }
-    });
+        });
+
+        // 点击页面其他区域时关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!DOM.menuToggle.contains(e.target) && !DOM.navLinks.contains(e.target)) {
+                DOM.menuToggle.classList.remove('active');
+                DOM.navLinks.classList.remove('active');
+            }
+        });
+    }
+} catch (error) {
+    handleError(error, 'Mobile menu handling');
+}
+
+// 滚动处理
+try {
+    const scrollDown = document.querySelector('.scroll-down');
+    if (scrollDown && DOM.features) {
+        scrollDown.addEventListener('click', (event) => {
+            event.preventDefault();
+            DOM.features.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+} catch (error) {
+    handleError(error, 'Scroll down handling');
+}
+
+// 图片加载处理
+function handleImageLoad() {
+    try {
+        DOM.images.forEach(img => {
+            if (!img.complete) {
+                img.style.opacity = '0';
+                img.addEventListener('load', function () {
+                    this.style.opacity = '0';
+                    this.classList.add('loaded');
+                    requestAnimationFrame(() => {
+                        this.style.opacity = '1';
+                    });
+                });
+
+                img.addEventListener('error', function () {
+                    // 图片加载失败时的处理
+                    Analytics.sendAnalytics('image_error', {
+                        src: this.src,
+                        alt: this.alt
+                    });
+                });
+            } else {
+                img.classList.add('loaded');
+                img.style.opacity = '1';
+            }
+        });
+    } catch (error) {
+        handleError(error, 'Image loading');
+    }
 }
 
 // 页面加载完成后的处理
-document.addEventListener('DOMContentLoaded', function () {
-    // 激活当前页面的导航链接
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', () => {
+    try {
+        // 初始化性能监控
+        Analytics.init();
 
-// 处理平滑滚动
-document.querySelectorAll('.service-link').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        const navHeight = document.querySelector('nav').offsetHeight;
-        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        // 处理图片加载
+        handleImageLoad();
 
-        window.scrollTo({
-            top: targetPosition,
-            behavior: 'smooth'
+        // 激活当前页面的导航链接
+        const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        DOM.navLinks?.querySelectorAll('a').forEach(link => {
+            if (link.getAttribute('href') === currentPage) {
+                link.classList.add('active');
+            }
         });
-    });
-});
-
-// 回到顶端按钮处理
-const backToTop = document.querySelector('.back-to-top');
-
-// 显示/隐藏回到顶端按钮
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTop.classList.add('visible');
-    } else {
-        backToTop.classList.remove('visible');
+    } catch (error) {
+        handleError(error, 'DOMContentLoaded handling');
     }
 });
 
-// 点击回到顶端按钮
-if (backToTop) {
-    backToTop.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+// 处理平滑滚动
+try {
+    document.querySelectorAll('.service-link').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            if (targetElement && DOM.nav) {
+                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - DOM.nav.offsetHeight;
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
         });
     });
+} catch (error) {
+    handleError(error, 'Smooth scroll handling');
+}
+
+// 回到顶端按钮处理 - 使用防抖
+if (DOM.backToTop) {
+    try {
+        // 显示/隐藏回到顶端按钮
+        const handleScroll = debounce(() => {
+            if (window.scrollY > 300) {
+                DOM.backToTop.classList.add('visible');
+            } else {
+                DOM.backToTop.classList.remove('visible');
+            }
+        }, 100);
+
+        window.addEventListener('scroll', handleScroll);
+
+        // 点击回到顶端按钮
+        DOM.backToTop.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    } catch (error) {
+        handleError(error, 'Back to top handling');
+    }
 } 
