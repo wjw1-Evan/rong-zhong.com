@@ -211,12 +211,20 @@
             background-color: var(--nav-bg-color);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px var(--shadow-color);
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            border: 1px solid transparent;
         }
 
         .nav-links a:hover,
         .nav-links a:active,
         .nav-links a.active {
             background-color: rgba(96, 165, 250, 0.15);
+            color: var(--primary-color);
+            border-color: var(--border-color);
         }
     }
 
@@ -639,7 +647,6 @@ nav .container {
         display: none;
         position: fixed;
         inset: 60px 0 0 0;
-        background: rgba(255, 255, 255, 0.95);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
