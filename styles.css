@@ -1153,7 +1153,7 @@ nav .container {
 .contact-icon {
     width: 80px;
     height: 80px;
-    background: rgba(96, 165, 250, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1164,10 +1164,29 @@ nav .container {
     z-index: 1;
 }
 
+.contact-icon::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.15);
+    z-index: -1;
+}
+
 .contact-icon i {
     font-size: 2rem;
+    color: var(--primary-color);
     transition: all 0.3s ease;
     z-index: 2;
+}
+
+.contact-card:hover .contact-icon {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(1.1);
+}
+
+.contact-card:hover .contact-icon::before {
+    background: rgba(255, 255, 255, 0.25);
 }
 
 .contact-card h3 {
@@ -2455,45 +2474,6 @@ footer::before {
     }
 }
 
-.contact-icon {
-    width: 80px;
-    height: 80px;
-    background: rgba(255, 255, 255, 0.15);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 1.5rem;
-    transition: all 0.3s ease;
-    position: relative;
-    z-index: 1;
-}
-
-.contact-icon::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    z-index: -1;
-}
-
-.contact-icon i {
-    font-size: 2rem;
-    color: var(--primary-color);
-    transition: all 0.3s ease;
-    z-index: 2;
-}
-
-.contact-card:hover .contact-icon {
-    background: rgba(255, 255, 255, 0.25);
-    transform: scale(1.1);
-}
-
-.contact-card:hover .contact-icon::before {
-    background: rgba(255, 255, 255, 0.25);
-}
-
 /* 添加向下滚动图标样式 */
 .scroll-down {
     position: absolute;
@@ -2504,10 +2484,13 @@ footer::before {
     font-size: 2rem;
     animation: bounce 2s infinite;
     cursor: pointer;
-    z-index: 1;
+    z-index: 2;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
 }
 
 .scroll-down:hover {
+    opacity: 1;
     color: var(--secondary-color);
 }
 
@@ -2607,27 +2590,24 @@ html {
 }
 
 /* 二维码样式 */
-.qr-code {
-    margin-top: 12px;
-    text-align: center;
-}
-
 .qr-image {
     width: 170px;
     height: 160px;
     border-radius: 8px;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: transform 0.3s ease;
+    filter: brightness(1.1);
+    background-color: white;
+    padding: 8px;
 }
 
 .qr-image:hover {
     transform: scale(1.05);
 }
 
-/* 移动端适配 */
 @media (max-width: 480px) {
     .qr-image {
-        width: 140px;
+        width: 150px;
         height: 140px;
     }
 }
