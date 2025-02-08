@@ -1,15 +1,18 @@
+/* Font Awesome 图标库 */
 @font-face {
     font-family: 'Font Awesome 6 Free';
     font-style: normal;
     font-weight: 900;
-    src: url('../fonts/fa-solid-900.woff2') format('woff2');
+    font-display: block;
+    src: url('../fonts/fontawesome/fa-solid-900.woff2') format('woff2');
 }
 
 @font-face {
     font-family: 'Font Awesome 6 Brands';
     font-style: normal;
     font-weight: 400;
-    src: url('../fonts/fa-brands-400.woff2') format('woff2');
+    font-display: block;
+    src: url('../fonts/fontawesome/fa-brands-400.woff2') format('woff2');
 }
 
 .fas,
@@ -22,6 +25,18 @@
 .fa-brands {
     font-family: 'Font Awesome 6 Brands';
     font-weight: 400;
+}
+
+/* 基础样式 */
+.fas,
+.fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
 }
 
 /* 基础图标 */
@@ -45,24 +60,117 @@
     content: "\f0e0";
 }
 
+.fa-robot:before {
+    content: "\f544";
+}
+
+.fa-database:before {
+    content: "\f1c0";
+}
+
+.fa-project-diagram:before {
+    content: "\f542";
+}
+
+.fa-search:before {
+    content: "\f002";
+}
+
+.fa-comments:before {
+    content: "\f086";
+}
+
+.fa-folder:before {
+    content: "\f07b";
+}
+
+.fa-chart-bar:before {
+    content: "\f080";
+}
+
+.fa-cog:before {
+    content: "\f013";
+}
+
+.fa-upload:before {
+    content: "\f093";
+}
+
+.fa-download:before {
+    content: "\f019";
+}
+
+.fa-chevron-right:before {
+    content: "\f054";
+}
+
+.fa-plus:before {
+    content: "\f067";
+}
+
+.fa-history:before {
+    content: "\f1da";
+}
+
+.fa-paperclip:before {
+    content: "\f0c6";
+}
+
+.fa-microphone:before {
+    content: "\f130";
+}
+
+.fa-paper-plane:before {
+    content: "\f1d8";
+}
+
+.fa-file-alt:before,
+.fa-file-text:before {
+    content: "\f15c";
+}
+
+.fa-file-pdf:before {
+    content: "\f1c1";
+}
+
+.fa-file-word:before {
+    content: "\f1c2";
+}
+
+.fa-file-powerpoint:before {
+    content: "\f1c4";
+}
+
+.fa-tags:before {
+    content: "\f02c";
+}
+
+.fa-check:before {
+    content: "\f00c";
+}
+
 .fa-arrow-up:before {
     content: "\f062";
 }
 
-.fa-brain:before {
-    content: "\f5dc";
+.fa-exclamation-triangle:before {
+    content: "\f071";
+}
+
+.fa-industry:before {
+    content: "\f275";
 }
 
 .fa-chart-line:before {
     content: "\f201";
 }
 
-.fa-rocket:before {
-    content: "\f135";
+.fa-brain:before {
+    content: "\f5dc";
 }
 
-.fa-paper-plane:before {
-    content: "\f1d8";
+.fa-rocket:before {
+    content: "\f135";
 }
 
 .fa-chevron-down:before {
@@ -89,10 +197,6 @@
     content: "\f021";
 }
 
-.fa-robot:before {
-    content: "\f544";
-}
-
 .fa-microchip:before {
     content: "\f2db";
 }
@@ -103,10 +207,6 @@
 
 .fa-shield-alt:before {
     content: "\f3ed";
-}
-
-.fa-database:before {
-    content: "\f1c0";
 }
 
 .fa-server:before {
@@ -150,14 +250,35 @@
     content: "\f1d7";
 }
 
-/* 通用样式 */
-.fas,
-.fab {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    display: inline-block;
-    font-style: normal;
-    font-variant: normal;
-    text-rendering: auto;
-    line-height: 1;
+/* 新增菜单图标 */
+.fa-book:before {
+    content: "\f02d";
+}
+
+.fa-chart-pie:before {
+    content: "\f200";
+}
+
+.fa-tasks:before {
+    content: "\f0ae";
+}
+
+.fa-user-cog:before {
+    content: "\f4fe";
+}
+
+.fa-bell:before {
+    content: "\f0f3";
+}
+
+.fa-layer-group:before {
+    content: "\f5fd";
+}
+
+.fa-analytics:before {
+    content: "\f643";
+}
+
+.fa-tools:before {
+    content: "\f7d9";
 }
