@@ -267,15 +267,16 @@
 
         .nav-links a {
             color: var(--text-color);
-            border: 1px solid transparent;
+            border: 1px solid var(--border-color);
+            background-color: var(--card-bg-color);
         }
 
         .nav-links a:hover,
         .nav-links a:active,
         .nav-links a.active {
-            background-color: rgba(96, 165, 250, 0.15);
-            color: var(--primary-color);
-            border-color: var(--border-color);
+            background-color: var(--primary-color);
+            color: var(--bg-color);
+            border-color: var(--primary-color);
         }
     }
 
@@ -700,6 +701,7 @@ nav .container {
         display: none;
         position: fixed;
         inset: 60px 0 0 0;
+        background-color: var(--nav-bg-color);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         flex-direction: column;
@@ -724,15 +726,17 @@ nav .container {
         font-size: 18px;
         border-radius: 8px;
         margin: 0.25rem 0;
-        background-color: transparent;
+        background-color: var(--card-bg-color);
         transition: all 0.3s ease;
+        border: 1px solid var(--border-color);
     }
 
     .nav-links a:hover,
     .nav-links a:active,
     .nav-links a.active {
-        background-color: rgba(30, 64, 175, 0.1);
-        color: var(--primary-color);
+        background-color: var(--primary-color);
+        color: var(--bg-color);
+        border-color: var(--primary-color);
     }
 
     .nav-links a::after {
