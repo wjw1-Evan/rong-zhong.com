@@ -570,7 +570,7 @@ nav .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 3rem;
-    margin-bottom: 6rem;
+    margin-bottom: 3rem;
     align-items: center;
     background: var(--card-bg-color);
     border-radius: 16px;
