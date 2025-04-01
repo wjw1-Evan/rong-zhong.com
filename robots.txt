@@ -1,4 +1,22 @@
 User-agent: *
-Disallow: /admin/
 Allow: /
-Sitemap: http://www.rong-zhong.com/sitemap.xml
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /solutions.html
+Allow: /contact.html
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cgi-bin/
+Disallow: /*.php$
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.sql$
+Disallow: /*.log$
+
+Sitemap: https://www.rong-zhong.com/sitemap.xml

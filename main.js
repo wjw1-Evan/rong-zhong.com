@@ -240,4 +240,157 @@ if (DOM.backToTop) {
     } catch (error) {
         handleError(error, 'Back to top handling');
     }
-} 
+}
+
+// 性能监控
+const performanceMonitor = {
+    init() {
+        // 创建性能进度条
+        this.createProgressBar();
+        // 监听页面加载事件
+        window.addEventListener('load', () => this.handlePageLoad());
+        // 监听资源加载事件
+        window.addEventListener('DOMContentLoaded', () => this.handleDOMContentLoaded());
+    },
+
+    createProgressBar() {
+        const progressBar = document.createElement('div');
+        progressBar.className = 'progress-bar';
+        document.body.appendChild(progressBar);
+        this.progressBar = progressBar;
+    },
+
+    handlePageLoad() {
+        this.progressBar.classList.add('loading');
+        setTimeout(() => {
+            this.progressBar.classList.remove('loading');
+        }, 500);
+    },
+
+    handleDOMContentLoaded() {
+        // 添加页面加载动画
+        document.querySelectorAll('.feature-card, .service-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.1}s`;
+            card.classList.add('animate-fadeInUp');
+        });
+    }
+};
+
+// 图片懒加载
+const lazyLoadImages = {
+    init() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[data-src]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+};
+
+// 平滑滚动
+const smoothScroll = {
+    init() {
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(anchor.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    }
+};
+
+// 移动端菜单优化
+const mobileMenu = {
+    init() {
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                menuToggle.classList.toggle('active');
+            });
+
+            // 点击导航链接后关闭菜单
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    menuToggle.classList.remove('active');
+                });
+            });
+        }
+    }
+};
+
+// 表单验证和优化
+const formOptimization = {
+    init() {
+        const forms = document.querySelectorAll('form');
+        forms.forEach(form => {
+            form.addEventListener('submit', (e) => this.handleSubmit(e));
+            this.addFormValidation(form);
+        });
+    },
+
+    addFormValidation(form) {
+        const inputs = form.querySelectorAll('input, textarea, select');
+        inputs.forEach(input => {
+            input.addEventListener('blur', () => this.validateInput(input));
+            input.addEventListener('input', () => this.validateInput(input));
+        });
+    },
+
+    validateInput(input) {
+        const value = input.value.trim();
+        const isValid = value.length > 0;
+
+        input.classList.toggle('valid', isValid);
+        input.classList.toggle('invalid', !isValid && value.length > 0);
+
+        return isValid;
+    },
+
+    handleSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const inputs = form.querySelectorAll('input, textarea, select');
+        let isValid = true;
+
+        inputs.forEach(input => {
+            if (!this.validateInput(input)) {
+                isValid = false;
+            }
+        });
+
+        if (isValid) {
+            // 这里添加表单提交逻辑
+            console.log('Form submitted successfully');
+        }
+    }
+};
+
+// 初始化所有功能
+document.addEventListener('DOMContentLoaded', () => {
+    performanceMonitor.init();
+    lazyLoadImages.init();
+    smoothScroll.init();
+    mobileMenu.init();
+    formOptimization.init();
+}); 
