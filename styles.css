@@ -504,14 +504,17 @@ nav .container {
     width: 80%;
 }
 
+/* 确保所有图标颜色统一 */
 .nav-links a i {
     font-size: 18px;
     color: var(--primary-color);
-    transition: transform 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .nav-links a:hover i,
-.nav-links a:focus i {
+.nav-links a:focus i,
+.nav-links a.active i {
+    color: var(--primary-color);
     transform: scale(1.1);
 }
 
@@ -858,6 +861,17 @@ nav .container {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+}
+
+/* 按钮图标样式统一 */
+.cta-button i {
+    color: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cta-button:hover i {
+    transform: scale(1.1);
 }
 
 .cta-button.primary {
@@ -2549,12 +2563,18 @@ footer::before {
     cursor: pointer;
     z-index: 2;
     opacity: 0.8;
-    transition: opacity 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .scroll-down:hover {
     opacity: 1;
-    color: var(--secondary-color);
+    color: rgba(255, 255, 255, 0.9);
+    transform: translateX(-50%) scale(1.1);
+}
+
+.scroll-down i {
+    color: inherit;
 }
 
 /* 弹跳动画 */
@@ -2637,6 +2657,12 @@ html {
 
 .back-to-top i {
     font-size: 20px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.back-to-top:hover i {
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {

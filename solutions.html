@@ -13,19 +13,16 @@
     <meta name="cookie-policy" content="https://www.rong-zhong.com/cookie-policy.html" />
 
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="css/cookie-consent.css">
     <link rel="stylesheet" href="css/icons.css">
     <style>
         .solution-item {
             display: block;
-
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--card-bg-color);
             border-radius: 20px;
             padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px var(--shadow-color);
             transition: transform 0.3s ease;
         }
 
@@ -40,7 +37,7 @@
 
         .solution-content h2 {
             font-size: 2.2rem;
-            color: #2c3e50;
+            color: var(--heading-color);
             margin-bottom: 1.5rem;
             position: relative;
             display: inline-block;
@@ -53,13 +50,13 @@
             left: 0;
             width: 60%;
             height: 3px;
-            background: linear-gradient(90deg, #3498db, transparent);
+            background: linear-gradient(90deg, var(--primary-color), transparent);
         }
 
         .solution-intro {
             font-size: 1.1rem;
             line-height: 1.8;
-            color: #34495e;
+            color: var(--text-color-light);
             margin-bottom: 2rem;
         }
 
@@ -71,19 +68,21 @@
         }
 
         .feature {
-            background: rgba(255, 255, 255, 0.8);
+            background: var(--card-bg-color);
             padding: 1.5rem;
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 4px 15px var(--shadow-color);
             transition: transform 0.3s ease;
+            border: 1px solid var(--border-color);
         }
 
         .feature:hover {
             transform: translateY(-3px);
+            box-shadow: 0 6px 20px var(--card-hover-shadow);
         }
 
         .feature h3 {
-            color: #2c3e50;
+            color: var(--primary-color);
             font-size: 1.3rem;
             margin-bottom: 1rem;
             display: flex;
@@ -94,27 +93,29 @@
             content: '⚡';
             margin-right: 8px;
             font-size: 1.2rem;
+            color: var(--accent-color);
         }
 
         .feature p {
-            color: #34495e;
+            color: var(--text-color);
             line-height: 1.6;
         }
 
         .solution-advantages {
             margin-top: 2rem;
             padding: 1.5rem;
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--card-bg-color);
             border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border: 1px solid var(--border-color);
         }
 
         .solution-advantages h3 {
-            color: #2c3e50;
+            color: var(--primary-color);
             font-size: 1.4rem;
             margin-bottom: 1.2rem;
             padding-bottom: 0.8rem;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 2px solid var(--primary-color);
             display: inline-block;
         }
 
@@ -132,19 +133,19 @@
             padding-left: 2rem;
             font-size: 1.1rem;
             line-height: 1.6;
-            color: #34495e;
+            color: var(--text-color);
         }
 
         .solution-advantages li:before {
             content: "✓";
             position: absolute;
             left: 0;
-            color: #2ecc71;
+            color: var(--primary-color);
             font-weight: bold;
         }
 
         .solution-advantages li strong {
-            color: #e74c3c;
+            color: var(--accent-color);
             font-weight: 600;
         }
 
@@ -185,11 +186,11 @@
         }
 
         .solution-nav h2 {
-            color: #2c3e50;
+            color: var(--primary-color);
             font-size: 1.6rem;
             margin-bottom: 1.5rem;
             padding-bottom: 0.8rem;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 2px solid var(--primary-color);
             display: inline-block;
         }
 
@@ -201,20 +202,22 @@
 
         .solution-nav-item {
             padding: 1rem 1.5rem;
-            background: #f8f9fa;
+            background: var(--bg-color);
+            border: 1px solid var(--border-color);
             border-radius: 10px;
             transition: all 0.3s ease;
             cursor: pointer;
             text-decoration: none;
-            color: #34495e;
+            color: var(--text-color);
             display: flex;
             align-items: center;
         }
 
         .solution-nav-item:hover {
-            background: #3498db;
+            background: var(--primary-color);
             color: white;
             transform: translateY(-2px);
+            border-color: var(--primary-color);
         }
 
         .solution-nav-item i {
