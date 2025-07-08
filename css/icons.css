@@ -287,3 +287,9 @@
 .fa-clock:before {
     content: "\f017";
 }
+
+.fa-hospital:before { content: "\f0f8"; }
+.fa-shopping-cart:before { content: "\f07a"; }
+.fa-bolt:before { content: "\f0e7"; }
+.fa-headset:before { content: "\f590"; }
+.fa-car:before { content: "\f1b9"; }
