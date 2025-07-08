@@ -58,4 +58,4 @@ git clone https://github.com/wjw1-Evan/rong-zhong.com.git
 
 ## 许可
 
-版权所有 © 2025 天津融众信息技术有限公司
+版权所有 © 2019-2025 天津融众信息技术有限公司

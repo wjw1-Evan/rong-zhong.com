@@ -8,10 +8,8 @@ const STATIC_CACHE = [
     '/contact.html',
     '/styles.css',
     '/main.js',
-    '/images/logo.png',
     '/css/icons.css',
-    '/css/knogix.css',
-    '/js/cookie-consent.js'
+    '/css/knogix.css'
 ];
 
 // Service Worker 安装
