@@ -249,6 +249,13 @@
 .fa-weixin:before {
     content: "\f1d7";
 }
+/* APP下载专用品牌图标 */
+.fa-apple:before {
+    content: "\f179";
+}
+.fa-android:before {
+    content: "\f17b";
+}
 
 /* 新增菜单图标 */
 .fa-book:before {
