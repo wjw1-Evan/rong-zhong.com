@@ -2680,8 +2680,7 @@ html {
 
 /* 二维码样式 */
 .qr-image {
-    width: 170px;
-    height: 160px;
+
     border-radius: 8px;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: transform 0.3s ease;
@@ -2696,8 +2695,7 @@ html {
 
 @media (max-width: 480px) {
     .qr-image {
-        width: 150px;
-        height: 140px;
+        width: 200px;
     }
 }
 
@@ -2713,8 +2711,8 @@ html {
 }
 
 .qr-image {
-    width: 170px;
-    height: 160px;
+    width: 200px;
+   
     border-radius: 8px;
     box-shadow: 0 4px 15px var(--shadow-color);
     transition: transform 0.3s ease;
@@ -2727,8 +2725,8 @@ html {
 /* 移动端适配 */
 @media (max-width: 480px) {
     .qr-image {
-        width: 150px;
-        height: 140px;
+        width: 200px;
+       
     }
 }
 
