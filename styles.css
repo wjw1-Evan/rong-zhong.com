@@ -431,7 +431,7 @@ nav .container {
 
 .logo-text {
     font-size: clamp(20px, 5vw, 28px);
-    font-weight: 800;
+    font-weight: bold;
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 50%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     background-clip: text;
