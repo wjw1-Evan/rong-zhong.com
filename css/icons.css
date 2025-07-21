@@ -249,10 +249,12 @@
 .fa-weixin:before {
     content: "\f1d7";
 }
+
 /* APP下载专用品牌图标 */
 .fa-apple:before {
     content: "\f179";
 }
+
 .fa-android:before {
     content: "\f17b";
 }
@@ -295,8 +297,34 @@
     content: "\f017";
 }
 
-.fa-hospital:before { content: "\f0f8"; }
-.fa-shopping-cart:before { content: "\f07a"; }
-.fa-bolt:before { content: "\f0e7"; }
-.fa-headset:before { content: "\f590"; }
-.fa-car:before { content: "\f1b9"; }
+.fa-hospital:before {
+    content: "\f0f8";
+}
+
+.fa-shopping-cart:before {
+    content: "\f07a";
+}
+
+.fa-bolt:before {
+    content: "\f0e7";
+}
+
+.fa-headset:before {
+    content: "\f590";
+}
+
+.fa-car:before {
+    content: "\f1b9";
+}
+
+ .fa-language:before {
+    content: "\f1ab";
+}
+
+.fa-headphones:before {
+    content: "\f025";
+}
+
+.fa-comment-dots:before {
+    content: "\f4ad";
+}

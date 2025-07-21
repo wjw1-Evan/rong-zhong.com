@@ -4,47 +4,271 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科吉（Knogix）APP下载 - 天津融众信息技术有限公司</title>
-    <meta name="description" content="科吉（Knogix）APP下载页面，获取最新智能办公APP，支持iOS与Android平台。">
-    <meta name="keywords" content="Knogix,科吉,APP下载,智能办公,AI应用,融众信息">
+    <title>APP下载 - 科吉（Knogix）& 小科英语 - 天津融众信息技术有限公司</title>
+    <meta name="description" content="下载科吉（Knogix）智能办公APP和小科英语学习APP，支持iOS与Android平台。">
+    <meta name="keywords" content="Knogix,科吉,小科英语,APP下载,智能办公,英语学习,AI应用,融众信息">
     <link rel="canonical" href="https://www.rong-zhong.com/download.html" />
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
-    
     <link rel="stylesheet" href="css/icons.css">
     <style>
-        /* APP下载页专用大气按钮美化 */
-        .knogix-download-btn {
-            width: 100%;
-            margin: 0 0 0 0;
-            padding: 18px 0;
-            font-size: 1.22rem;
+        /* 下载页面整体美化 */
+        .download-container {
+            max-width: 900px;
+            margin: 0 auto;
+            margin-bottom: 80px;
+            padding: 0 20px;
+        }
+
+        .download-intro {
+            text-align: center;
+            margin: 40px 0 60px 0;
+            padding: 40px 30px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            color: white;
+            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .download-intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
             font-weight: 700;
-            border: none;
-            border-radius: 32px;
+        }
+
+        .download-intro p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .app-card {
+            background: #fff;
+            border-radius: 24px;
+            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.12);
+            padding: 40px 35px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .app-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
             background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
-            color: #fff;
-            box-shadow: 0 4px 24px rgba(59,130,246,0.13);
-            transition: background 0.25s, box-shadow 0.25s, transform 0.18s;
+        }
+
+        .app-card.english-app::before {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+        }
+
+        .app-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            margin: 0 auto 25px auto;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            border-radius: 22px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.7em;
+            font-size: 2.8rem;
+            color: white;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.35);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .app-icon:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(59, 130, 246, 0.45);
+        }
+
+        .app-icon.english-icon {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);
+        }
+
+        .app-icon.english-icon:hover {
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.45);
+        }
+
+        .app-icon i {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1em;
+            line-height: 1;
+        }
+
+        .app-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 15px;
+        }
+
+        .app-subtitle {
+            font-size: 0.9rem;
+            color: #6b7280;
+            font-weight: 400;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+
+        .app-description {
+            font-size: 1.1rem;
+            color: #4b5563;
+            margin: 25px 0 35px 0;
+            line-height: 1.6;
+        }
+
+        .app-features {
+            display: flex;
+            justify-content: space-around;
+            margin: 35px 0;
+            padding: 25px 0;
+            border-top: 1px solid #f3f4f6;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .feature-item {
+            text-align: center;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 10px;
+        }
+
+        .feature-icon {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 46px;
+            width: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6 0%, #6366f1 100%);
+            box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-icon:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(59, 130, 246, 0.35);
+        }
+
+        .feature-icon i {
+            line-height: 1;
+        }
+
+        .english-app .feature-icon {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+        }
+
+        .english-app .feature-icon:hover {
+            box-shadow: 0 6px 16px rgba(16, 185, 129, 0.35);
+        }
+
+        .feature-text {
+            font-size: 0.9rem;
+            color: #4b5563;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-top: 2px;
+        }
+
+        .download-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .download-btn {
+            width: 100%;
+            padding: 16px 0;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 16px;
+            background: linear-gradient(90deg, #3b82f6 0%, #6366f1 100%);
+            color: #fff;
+            box-shadow: 0 4px 20px rgba(59, 130, 246, 0.25);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
             letter-spacing: 0.02em;
+            cursor: pointer;
         }
-        .knogix-download-btn i {
-            font-size: 1.7em;
+
+        .download-btn.english-btn {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            box-shadow: 0 4px 20px rgba(16, 185, 129, 0.25);
         }
-        .knogix-download-btn:hover {
-            background: linear-gradient(90deg, #60a5fa 0%, #8b5cf6 100%);
-            box-shadow: 0 8px 32px rgba(59,130,246,0.18);
-            transform: translateY(-2px) scale(1.03);
+
+        .download-btn i {
+            font-size: 1.4em;
         }
-        a .knogix-download-btn, a:visited .knogix-download-btn {
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(59, 130, 246, 0.35);
+        }
+
+        .download-btn.english-btn:hover {
+            box-shadow: 0 8px 30px rgba(16, 185, 129, 0.35);
+        }
+
+        .download-link {
             text-decoration: none !important;
         }
-        a.knogix-download-link {
-            text-decoration: none !important;
+
+        .help-text {
+            margin-top: 25px;
+            color: #9ca3af;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            .apps-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .download-intro h2 {
+                font-size: 2rem;
+            }
+
+            .app-card {
+                padding: 30px 25px;
+            }
+
+            .download-container {
+                padding: 0 15px;
+            }
         }
     </style>
 </head>
@@ -77,34 +301,114 @@
     <!-- 页面标题区 -->
     <section class="service-header">
         <div class="container">
-            <h1>科吉（Knogix）下载</h1>
-            <p>您的AI助手</p>
+            <h1>APP下载中心</h1>
+            <p>科吉（Knogix）& 小科英语</p>
         </div>
     </section>
 
     <!-- 下载内容区 -->
     <main>
-        <div class="container" style="max-width:420px;margin:0 auto; margin-bottom: 80px;">
-            <div style="background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(0,0,0,0.08);padding:36px 28px 32px 28px;text-align:center;margin-top:40px;">
-                <div style="font-size:2.1rem;font-weight:700; color:#222;">科吉 <span style="font-size:1.1rem;font-weight:400;">(Knogix)</span></div>
-                <div style="font-size:1.08rem;color:#3b82f6;margin:22px 0;">欢迎使用Knogix！本应用为您提供智能AI助手服务，助力高效获取信息与解决问题。</div>
-                <div style="display:flex;flex-direction:column;align-items:center;gap:36px;">
-                    <!-- 苹果下载 -->
-                    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;">
-                      
-                        <a href="https://apps.apple.com/cn/app/%E7%A7%91%E5%90%89/id6748595492" target="_blank" rel="noopener" style="width:100%;text-decoration:none;" class="knogix-download-link">
-                            <button class="knogix-download-btn"><i class="fa-brands fa-apple"></i> 通过苹果商店下载</button>
+        <div class="download-container">
+            <!-- 下载页面介绍 -->
+            <div class="download-intro">
+                <h2>我们的智能应用</h2>
+                <p>为您提供高效办公与英语学习的智能解决方案，随时随地，助您提升效率</p>
+            </div>
+
+            <!-- 应用卡片区域 -->
+            <div class="apps-grid">
+                <!-- 科吉APP卡片 -->
+                <div class="app-card">
+                    <div class="app-icon">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="app-title">科吉</h3>
+                    <p class="app-subtitle">Knogix</p>
+                    <p class="app-description">欢迎使用Knogix！本应用为您提供智能AI助手服务，助力高效获取信息与解决问题。</p>
+
+                    <div class="app-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-text">AI智能</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                            <div class="feature-text">高效办公</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">安全可靠</div>
+                        </div>
+                    </div>
+
+                    <div class="download-buttons">
+                        <a href="https://apps.apple.com/cn/app/%E7%A7%91%E5%90%89/id6748595492" target="_blank"
+                            rel="noopener" class="download-link">
+                            <button class="download-btn">
+                                <i class="fab fa-apple"></i> 通过苹果商店下载
+                            </button>
+                        </a>
+                        <a href="knogix.apk" target="_blank" rel="noopener" class="download-link">
+                            <button class="download-btn">
+                                <i class="fab fa-android"></i> 通过安卓商店下载
+                            </button>
                         </a>
                     </div>
-                    <!-- 安卓下载 -->
-                    <div style="display:flex;flex-direction:column;align-items:center;gap:18px;width:100%;">
-                        
-                        <a href="knogix.apk" target="_blank" rel="noopener" style="width:100%;text-decoration:none;" class="knogix-download-link">
-                            <button class="knogix-download-btn"><i class="fa-brands fa-android"></i> 通过安卓商店下载</button>
-                        </a>
-                    </div>
+
+                    <p class="help-text">如遇无法下载，请联系官方客服获取帮助。</p>
                 </div>
-                <div style="margin-top:32px;color:#aaa;font-size:0.98rem;">如遇无法下载，请联系官方客服获取帮助。</div>
+
+                <!-- 小科英语APP卡片 -->
+                <div class="app-card english-app">
+                    <div class="app-icon english-icon">
+                        <i class="fas fa-language"></i>
+                    </div>
+                    <h3 class="app-title">小科英语</h3>
+                    <p class="app-subtitle">English Learning Assistant</p>
+                    <p class="app-description">专业的英语学习助手，让英语学习更轻松高效。掌握英语，开启全球视野。</p>
+
+                    <div class="app-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-headphones"></i>
+                            </div>
+                            <div class="feature-text">听力训练</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-comment-dots"></i>
+                            </div>
+                            <div class="feature-text">口语练习</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="feature-text">词汇学习</div>
+                        </div>
+                    </div>
+
+                    <div class="download-buttons">
+                        <a href="#" target="_blank" rel="noopener" class="download-link">
+                            <button class="download-btn english-btn">
+                                <i class="fab fa-apple"></i> 通过苹果商店下载
+                            </button>
+                        </a>
+                        <a href="#" target="_blank" rel="noopener" class="download-link">
+                            <button class="download-btn english-btn">
+                                <i class="fab fa-android"></i> 通过安卓商店下载
+                            </button>
+                        </a>
+                    </div>
+
+                    <p class="help-text">如遇无法下载，请联系官方客服获取帮助。</p>
+                </div>
             </div>
         </div>
     </main>
@@ -123,4 +427,4 @@
     <!-- <script src="js/cookie-consent.js"></script> -->
 </body>
 
-</html> 
+</html>
