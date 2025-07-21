@@ -4212,7 +4212,6 @@ select:focus {
 /* =====================
    合并完全重复的样式
    ===================== */
-/* 例如：.feature-card:hover, .case-card:hover, .contact-card:hover, .service-card:hover { ... } 合并为一组 */
 .feature-card:hover, .case-card:hover, .contact-card:hover, .service-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 30px var(--shadow-color);
