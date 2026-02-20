@@ -245,6 +245,18 @@
     content: "\f3c5";
 }
 
+.fa-eye:before {
+    content: "\f06e";
+}
+
+.fa-heart:before {
+    content: "\f004";
+}
+
+.fa-handshake:before {
+    content: "\f2b5";
+}
+
 /* 品牌图标 */
 .fa-weixin:before {
     content: "\f1d7";
