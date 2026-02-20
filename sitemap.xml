@@ -58,6 +58,14 @@
         <xhtml:link rel="alternate" hreflang="en" href="https://www.rong-zhong.com/en/contact.html"/>
     </url>
 
+    <!-- APP下载 -->
+    <url>
+        <loc>https://www.rong-zhong.com/download.html</loc>
+        <lastmod>2024-03-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- Cookie政策 -->
     <url>
         <loc>https://www.rong-zhong.com/cookie-policy.html</loc>

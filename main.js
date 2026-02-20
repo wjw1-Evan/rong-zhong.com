@@ -90,14 +90,6 @@ const Analytics = {
     }
 };
 
-// 防抖函数实现
-function debounce(fn, delay) {
-    let timer = null;
-    return function (...args) {
-        clearTimeout(timer);
-        timer = setTimeout(() => fn.apply(this, args), delay);
-    };
-}
 
 // 错误处理函数
 function handleError(error, context) {
@@ -306,25 +298,4 @@ const formOptimization = {
     }
 };
 
-// 初始化所有功能
-document.addEventListener('DOMContentLoaded', () => {
-    // 合并DOMContentLoaded事件监听，移除未定义对象初始化
-    // 并优化图片DOM获取
-
-    // 处理图片加载（每次都重新获取图片）
-    DOM.images = document.querySelectorAll('img[loading="lazy"]');
-    handleImageLoad();
-    // 激活当前页面的导航链接
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    DOM.navLinks?.querySelectorAll('a').forEach(link => {
-        if (link.getAttribute('href') === currentPage) {
-            link.classList.add('active');
-        }
-    });
-    // 注释掉未定义对象初始化
-    // performanceMonitor.init();
-    // lazyLoadImages.init();
-    // smoothScroll.init();
-    // mobileMenu.init();
-    // formOptimization.init(); // 若formOptimization已定义可保留
-}); 
+// 移除冗余的 DOMContentLoaded 监听器，因为 190 行已经有一个了
