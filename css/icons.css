@@ -317,8 +317,24 @@
     content: "\f1b9";
 }
 
- .fa-language:before {
+.fa-language:before {
     content: "\f1ab";
+}
+
+.fa-city:before {
+    content: "\f64f";
+}
+
+.fa-desktop:before {
+    content: "\f108";
+}
+
+.fa-theater-masks:before {
+    content: "\f630";
+}
+
+.fa-film:before {
+    content: "\f008";
 }
 
 .fa-headphones:before {
