@@ -797,10 +797,9 @@ footer {
     backdrop-filter: blur(10px);
     box-shadow: 0 -2px 15px var(--shadow-color);
     color: var(--footer-text);
-    padding: 3rem 0;
+    padding: 4rem 0 2rem;
     position: relative;
     overflow: hidden;
-    text-align: center;
 }
 
 /* 页脚顶部装饰线 */
@@ -821,67 +820,79 @@ footer::before {
 }
 
 /* 页脚内容网格布局 */
-.footer-content {
+.footer-grid {
     display: grid;
-    grid-template-columns: 2fr repeat(3, 1fr);
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
     gap: 3rem;
-    padding: 0 20px;
     margin-bottom: 3rem;
+    text-align: left;
 }
 
 /* 页脚列标题 */
-.footer-column h4 {
-    color: var(--footer-text);
-    font-size: 1.25rem;
+.footer-brand h4,
+.footer-links h4,
+.footer-services h4,
+.footer-contact h4 {
+    color: var(--heading-color);
+    font-size: 1.2rem;
     margin-bottom: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     position: relative;
     padding-bottom: 0.75rem;
 }
 
 /* 页脚列标题装饰线 */
-.footer-column h4::after {
+.footer-brand h4::after,
+.footer-links h4::after,
+.footer-services h4::after,
+.footer-contact h4::after {
     content: '';
     position: absolute;
     left: 0;
     bottom: 0;
-    width: 40px;
+    width: 30px;
     height: 2px;
     background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
     border-radius: 2px;
 }
 
 /* 页脚链接列表 */
-.footer-links {
+.footer-links ul,
+.footer-services ul {
     list-style: none;
+    padding: 0;
+    margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.8rem;
 }
 
 /* 页脚链接项 */
-.footer-links li {
+.footer-links li,
+.footer-services li {
     transition: transform 0.3s ease;
+    list-style: none;
 }
 
-.footer-links li:hover {
+.footer-links li:hover,
+.footer-services li:hover {
     transform: translateX(5px);
 }
 
 /* 页脚链接样式 */
-.footer-links a {
-    color: var(--footer-link);
+.footer-links a,
+.footer-services a {
+    color: var(--footer-text);
     text-decoration: none;
     transition: all 0.3s ease;
-    opacity: 0.8;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    opacity: 0.85;
     font-size: 0.95rem;
+    display: inline-block;
 }
 
-.footer-links a:hover {
-    color: var(--footer-link-hover);
+.footer-links a:hover,
+.footer-services a:hover {
+    color: var(--primary-color);
     opacity: 1;
 }
 
@@ -915,17 +926,26 @@ footer::before {
     font-size: 0.9rem;
 }
 
-/* 页脚公司简介 */
-.footer-about {
-    margin-right: 2rem;
+/* 页脚品牌区 */
+.footer-brand .logo {
+    margin-bottom: 1.5rem;
+    justify-content: flex-start;
 }
 
-.footer-about p {
+.footer-brand p {
     color: var(--footer-text);
-    opacity: 0.8;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+    opacity: 0.85;
+    line-height: 1.8;
     font-size: 0.95rem;
+    max-width: 320px;
+}
+
+/* 页脚联系信息 */
+.footer-contact p {
+    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    color: var(--footer-text);
+    opacity: 0.85;
 }
 
 /* 页脚社交媒体图标 */
@@ -963,43 +983,42 @@ footer::before {
 
 /* 响应式布局 */
 @media (max-width: 1024px) {
-    .footer-content {
+    .footer-grid {
         grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-
-    .footer-about {
-        grid-column: 1 / -1;
-        margin-right: 0;
+        gap: 3rem;
     }
 }
 
 @media (max-width: 768px) {
-    footer {
-        padding: 3rem 0 1.5rem;
-    }
-
-    .footer-content {
+    .footer-grid {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 2.5rem;
         text-align: center;
     }
 
-    .footer-column h4::after {
+    .footer-brand,
+    .footer-links,
+    .footer-services,
+    .footer-contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-brand .logo {
+        justify-content: center;
+    }
+
+    .footer-brand h4::after,
+    .footer-links h4::after,
+    .footer-services h4::after,
+    .footer-contact h4::after {
         left: 50%;
         transform: translateX(-50%);
     }
 
-    .footer-links {
-        align-items: center;
-    }
-
-    .footer-social {
-        justify-content: center;
-    }
-
-    .footer-links li:hover {
-        transform: translateY(-2px);
+    .footer-brand p {
+        max-width: 100%;
     }
 }
 

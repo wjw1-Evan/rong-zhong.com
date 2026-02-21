@@ -6,28 +6,25 @@
     <!-- 首页 -->
     <url>
         <loc>https://www.rong-zhong.com/</loc>
-        <lastmod>2024-03-12</lastmod>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.rong-zhong.com/en/"/>
     </url>
 
     <!-- 关于我们 -->
     <url>
         <loc>https://www.rong-zhong.com/about.html</loc>
-        <lastmod>2024-03-12</lastmod>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.rong-zhong.com/en/about.html"/>
     </url>
 
     <!-- 服务内容 -->
     <url>
         <loc>https://www.rong-zhong.com/services.html</loc>
-        <lastmod>2024-03-12</lastmod>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.rong-zhong.com/en/services.html"/>
         <image:image>
             <image:loc>https://www.rong-zhong.com/images/services.jpg</image:loc>
             <image:title>融众信息服务内容</image:title>
@@ -38,10 +35,9 @@
     <!-- 解决方案 -->
     <url>
         <loc>https://www.rong-zhong.com/solutions.html</loc>
-        <lastmod>2024-03-12</lastmod>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.rong-zhong.com/en/solutions.html"/>
         <image:image>
             <image:loc>https://www.rong-zhong.com/images/solutions.jpg</image:loc>
             <image:title>融众信息解决方案</image:title>
@@ -49,29 +45,27 @@
         </image:image>
     </url>
 
+    <!-- 智慧园区 OS -->
+    <url>
+        <loc>https://www.rong-zhong.com/smart-park-os.html</loc>
+        <lastmod>2026-02-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
     <!-- 联系我们 -->
     <url>
         <loc>https://www.rong-zhong.com/contact.html</loc>
-        <lastmod>2024-03-12</lastmod>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.rong-zhong.com/en/contact.html"/>
     </url>
 
     <!-- APP下载 -->
     <url>
         <loc>https://www.rong-zhong.com/download.html</loc>
-        <lastmod>2024-03-12</lastmod>
+        <lastmod>2026-02-21</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-    </url>
-
-    <!-- Cookie政策 -->
-    <url>
-        <loc>https://www.rong-zhong.com/cookie-policy.html</loc>
-        <lastmod>2024-03-12</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-        <xhtml:link rel="alternate" hreflang="en" href="https://www.rong-zhong.com/en/cookie-policy.html"/>
     </url>
 </urlset>

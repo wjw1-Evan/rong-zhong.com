@@ -1,14 +1,5 @@
 User-agent: *
 Allow: /
-Allow: /index.html
-Allow: /about.html
-Allow: /services.html
-Allow: /solutions.html
-Allow: /contact.html
-Allow: /images/
-Allow: /css/
-Allow: /js/
-
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
