@@ -789,6 +789,7 @@
             position: relative;
             overflow: hidden;
             page-break-after: avoid;
+            min-height: 100vh;
         }
 
         .cta-page::before {
@@ -5493,22 +5494,23 @@
             margin-bottom: 12px;
         }
 
-        /* 驾驶舱容器占满剩余空间 */
+        /* 采用绝对定位左上角，并辅以 JS 动态逆向计算逻辑尺寸，实现等比缩放且 100% 无死角铺满全屏 */
         .cockpit-page-wrap {
-            flex: 1;
-            min-height: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            position: relative !important;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
+            display: block;
         }
 
-        /* 覆盖 cockpit-container 原始视口尺寸，改为填充父容器 (但由JS按比例缩放) */
         .cockpit-page-wrap .cockpit-container {
-            width: 1280px !important;
-            height: 800px !important;
-            transform-origin: center center;
-            transition: transform 0.2s ease-out;
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            margin: 0 !important;
+            transform-origin: left top !important;
+            flex-shrink: 0;
+            transition: none !important;
         }
 
         /* slide 容器本身不需要全屏定位 */
@@ -5526,20 +5528,12 @@
             .cockpit-page-wrap {
                 width: 100%;
                 height: 100%;
-                /* Add perspective and flex logic to wrap the scaled container */
-                display: flex;
-                align-items: center;
-                justify-content: center;
+                display: block;
                 overflow: hidden;
             }
 
             .cockpit-page-wrap .cockpit-container {
-                /* On small screens, force dimensions to base, and rely entirely on JS scale */
-                min-width: 1280px !important;
-                min-height: 800px !important;
-                margin: 0;
-                left: 0;
-                top: 0;
+                margin: 0 !important;
             }
         }
     </style>
@@ -5661,16 +5655,29 @@
                 const dashWrap = document.querySelector('.cockpit-page-wrap');
                 const dashContainer = document.querySelector('.cockpit-container');
                 if (dashWrap && dashContainer) {
-                    const baseWidth = 1280;
-                    const baseHeight = 800;
+                    const baseWidth = 1920;
+                    const baseHeight = 1080;
 
                     const ro = new ResizeObserver(entries => {
                         for (let entry of entries) {
                             const { width, height } = entry.contentRect;
-                            // Calculate scale factors, adding a tiny margin multiplier (0.95) so it doesn't touch the exact edges
+
+                            // 1. Calculate standard scale for width and height
                             const scaleX = width / baseWidth;
                             const scaleY = height / baseHeight;
-                            const scale = Math.min(scaleX, scaleY) * 0.95;
+
+                            // 2. Uniform scale! Maintain precise aspect ratio (NO distortion). User requested 0.8 multiplier.
+                            const scale = Math.min(scaleX, scaleY) * 1;
+
+                            // 3. Inverse calculation: dynamically set logical bounds to perfectly fill the actual screen
+                            // at this specific scale. This avoids all letterboxing while preserving aspect ratios.
+                            const logicalWidth = width / scale;
+                            const logicalHeight = height / scale;
+
+                            dashContainer.style.width = logicalWidth + 'px';
+                            dashContainer.style.height = logicalHeight + 'px';
+
+                            // Transform from the top-left origin (set in CSS)
                             dashContainer.style.transform = `scale(${scale})`;
                         }
                     });
