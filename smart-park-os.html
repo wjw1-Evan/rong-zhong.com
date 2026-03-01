@@ -980,18 +980,25 @@
             }
 
             .cover-tags {
-                gap: 8px;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                width: 100%;
+                align-items: stretch;
                 margin-bottom: 32px;
             }
 
             .cover-tag {
                 padding: 7px 12px;
                 font-size: 12px;
+                text-align: center;
             }
 
             .cover-stats {
-                gap: 16px 28px;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                row-gap: 20px;
+                column-gap: 10px;
                 padding-top: 24px;
                 justify-content: center;
             }
@@ -1115,10 +1122,14 @@
             }
 
             .arch-layer-items {
+                display: flex;
+                flex-direction: column;
                 gap: 8px;
             }
 
             .arch-item {
+                width: 100%;
+                box-sizing: border-box;
                 padding: 7px 12px;
                 font-size: 11px;
             }
@@ -1177,7 +1188,7 @@
             }
 
             .ai-features-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: 1fr;
                 gap: 10px;
             }
 
@@ -1311,35 +1322,41 @@
                 margin-bottom: 14px;
             }
 
-            .cta-desc {
+            .cta-subtitle {
                 font-size: 14px;
                 margin-bottom: 28px;
                 line-height: 1.6;
             }
 
-            .cta-contacts {
+            .contact-info {
                 flex-direction: column;
                 gap: 20px;
                 align-items: center;
                 margin-bottom: 28px;
             }
 
-            .cta-contact-icon {
-                width: 48px;
-                height: 48px;
-                font-size: 20px;
+            .cta-contacts-bottom {
+                flex-direction: column;
+                gap: 15px;
+                align-items: center;
+                margin-bottom: 28px;
             }
 
-            .cta-contact-value {
+            .cta-contact-item {
                 font-size: 13px;
             }
 
-            .cta-bottom {
+            .cta-footer {
+                position: relative;
+                bottom: auto;
                 flex-wrap: wrap;
                 gap: 8px;
                 justify-content: center;
-                padding-top: 20px;
+                margin-top: 40px;
+                padding-top: 0;
                 font-size: 11px;
+                line-height: 1.8;
+                padding-bottom: 20px;
             }
         }
 
@@ -5486,10 +5503,12 @@
             overflow: hidden;
         }
 
-        /* 覆盖 cockpit-container 原始视口尺寸，改为填充父容器 */
+        /* 覆盖 cockpit-container 原始视口尺寸，改为填充父容器 (但由JS按比例缩放) */
         .cockpit-page-wrap .cockpit-container {
-            width: 100% !important;
-            height: 100% !important;
+            width: 1280px !important;
+            height: 800px !important;
+            transform-origin: center center;
+            transition: transform 0.2s ease-out;
         }
 
         /* slide 容器本身不需要全屏定位 */
@@ -5501,6 +5520,26 @@
         @media (max-width: 768px) {
             .dashboard-page {
                 padding: 24px 12px 0;
+                overflow: hidden;
+            }
+
+            .cockpit-page-wrap {
+                width: 100%;
+                height: 100%;
+                /* Add perspective and flex logic to wrap the scaled container */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+            }
+
+            .cockpit-page-wrap .cockpit-container {
+                /* On small screens, force dimensions to base, and rely entirely on JS scale */
+                min-width: 1280px !important;
+                min-height: 800px !important;
+                margin: 0;
+                left: 0;
+                top: 0;
             }
         }
     </style>
@@ -5618,6 +5657,26 @@
                 // Update every 2 seconds
                 setInterval(updateEnergyLabels, 2000);
 
+                // --- Dashboard Responsive Scaling Logic ---
+                const dashWrap = document.querySelector('.cockpit-page-wrap');
+                const dashContainer = document.querySelector('.cockpit-container');
+                if (dashWrap && dashContainer) {
+                    const baseWidth = 1280;
+                    const baseHeight = 800;
+
+                    const ro = new ResizeObserver(entries => {
+                        for (let entry of entries) {
+                            const { width, height } = entry.contentRect;
+                            // Calculate scale factors, adding a tiny margin multiplier (0.95) so it doesn't touch the exact edges
+                            const scaleX = width / baseWidth;
+                            const scaleY = height / baseHeight;
+                            const scale = Math.min(scaleX, scaleY) * 0.95;
+                            dashContainer.style.transform = `scale(${scale})`;
+                        }
+                    });
+                    ro.observe(dashWrap);
+                }
+
                 // --- 3D Scene Interaction ---
                 const mapArea = document.querySelector('.cp-map-area');
                 const scene3d = document.querySelector('.scene-3d');
@@ -5723,14 +5782,6 @@
             <h2 class="cta-title">让智慧园区<br><span>为您的未来赋能</span></h2>
             <p class="cta-subtitle">立刻联系我们，获取专属于您的智慧园区全栈解决方案与技术白皮书。</p>
 
-            <div class="contact-card">
-                <div class="contact-info">
-                    <div class="contact-item" style="text-align: center;">
-                        <span class="contact-label">官方网站</span>
-                        <div class="contact-value">www.rong-zhong.com</div>
-                    </div>
-                </div>
-            </div>
 
             <div class="cta-contacts-bottom">
                 <div class="cta-contact-item">
