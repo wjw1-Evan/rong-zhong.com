@@ -17,6 +17,16 @@
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.08);
             --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+            /* Typography Scale */
+            --fz-huge: 80px;
+            --fz-display: 58px;
+            --fz-h1: 32px;
+            --fz-h2: 22px;
+            --fz-h3: 18px;
+            --fz-title: 16px;
+
+
         }
 
         @import url('https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap');
@@ -100,14 +110,14 @@
             color: #00c8ff;
             padding: 8px 24px;
             border-radius: 30px;
-            font-size: 13px;
+
             letter-spacing: 3px;
             margin-bottom: 40px;
             text-transform: uppercase;
         }
 
         .cover-title {
-            font-size: 58px;
+            font-size: var(--fz-display);
             font-weight: 900;
             color: #fff;
             line-height: 1.2;
@@ -122,7 +132,7 @@
         }
 
         .cover-subtitle {
-            font-size: 22px;
+            font-size: var(--fz-h2);
             color: rgba(255, 255, 255, 0.75);
             margin-bottom: 50px;
             font-weight: 300;
@@ -140,7 +150,7 @@
         .cover-tag {
             padding: 10px 22px;
             border-radius: 8px;
-            font-size: 14px;
+
             font-weight: 500;
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: rgba(255, 255, 255, 0.9);
@@ -162,13 +172,14 @@
 
         .cover-stat-num {
             font-size: 42px;
+            /* Intentionally hardcoded for unique Hero aesthetic balance */
             font-weight: 900;
             color: #00c8ff;
             line-height: 1;
         }
 
         .cover-stat-label {
-            font-size: 13px;
+
             color: rgba(255, 255, 255, 0.6);
             margin-top: 6px;
             letter-spacing: 1px;
@@ -181,7 +192,7 @@
             right: 0;
             text-align: center;
             color: rgba(255, 255, 255, 0.3);
-            font-size: 12px;
+
             z-index: 2;
         }
 
@@ -192,16 +203,17 @@
             padding: 70px 80px;
             page-break-after: always;
             position: relative;
+
         }
 
         .page-header {
             display: flex;
             align-items: center;
-            margin-bottom: 50px;
+            margin-bottom: 20px;
         }
 
         .page-num {
-            font-size: 80px;
+            font-size: var(--fz-huge);
             font-weight: 900;
             color: #f0f4ff;
             line-height: 1;
@@ -212,7 +224,7 @@
         .page-title-block {}
 
         .page-label {
-            font-size: 12px;
+
             color: #1a6fa8;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -221,7 +233,7 @@
         }
 
         .page-title {
-            font-size: 32px;
+            font-size: var(--fz-h1);
             font-weight: 800;
             color: #0d1b4b;
         }
@@ -249,6 +261,9 @@
             background: linear-gradient(135deg, #f8faff 0%, #fff 100%);
             position: relative;
             overflow: hidden;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
         }
 
         .pain-card::before {
@@ -263,19 +278,29 @@
         }
 
         .pain-icon {
-            font-size: 32px;
-            margin-bottom: 14px;
+            font-size: var(--fz-h2);
+            flex-shrink: 0;
         }
 
-        .pain-title {
-            font-size: 16px;
+        .pain-title,
+        .module-name,
+        .ai-feature-name,
+        .security-title,
+        .value-point-title {
+            font-size: var(--fz-title);
+            /* Changed from 16px to --fz-body */
             font-weight: 700;
             color: #0d1b4b;
             margin-bottom: 8px;
         }
 
-        .pain-desc {
-            font-size: 13px;
+        .pain-desc,
+        .module-desc,
+        .ai-feature-desc,
+        .security-desc,
+        .value-point-desc {
+
+            /* Changed from 13px to --fz-meta */
             color: #6b7280;
             line-height: 1.7;
         }
@@ -292,13 +317,12 @@
         }
 
         .solution-text {
-            font-size: 22px;
+
+            /* Changed from 18px to --fz-intro */
             font-weight: 700;
-            line-height: 1.5;
         }
 
         .solution-arrow {
-            font-size: 40px;
             color: #00c8ff;
             flex-shrink: 0;
         }
@@ -360,7 +384,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 24px;
+            font-size: var(--fz-h3);
             margin-bottom: 16px;
         }
 
@@ -388,26 +412,23 @@
             background: rgba(6, 182, 212, 0.1);
         }
 
-        .module-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0d1b4b;
-            margin-bottom: 10px;
-        }
-
-        .module-desc {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.7;
-            margin-bottom: 16px;
-        }
 
         .module-features {
             list-style: none;
         }
 
+        .module-features-title {
+
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
         .module-features li {
-            font-size: 12px;
+
             color: #374151;
             padding: 3px 0;
             display: flex;
@@ -419,7 +440,7 @@
             content: '✓';
             color: #10b981;
             font-weight: 700;
-            font-size: 11px;
+
             flex-shrink: 0;
         }
 
@@ -440,12 +461,11 @@
         }
 
         .arch-layer-title {
-            font-size: 12px;
+
             font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 16px;
-            opacity: 0.7;
+            color: #1a6fa8;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
         }
 
         .arch-layer-items {
@@ -457,7 +477,7 @@
         .arch-item {
             padding: 10px 20px;
             border-radius: 10px;
-            font-size: 13px;
+
             font-weight: 600;
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -523,7 +543,7 @@
         .arch-arrow {
             text-align: center;
             color: #cbd5e1;
-            font-size: 20px;
+            font-size: var(--fz-h3);
             margin: -8px 0;
         }
 
@@ -543,19 +563,19 @@
         }
 
         .tech-icon {
-            font-size: 28px;
+            font-size: var(--fz-h3);
             margin-bottom: 8px;
         }
 
         .tech-name {
-            font-size: 13px;
+
             font-weight: 700;
             color: #0d1b4b;
             margin-bottom: 4px;
         }
 
         .tech-desc {
-            font-size: 11px;
+
             color: #9ca3af;
         }
 
@@ -583,25 +603,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 26px;
+            font-size: var(--fz-h3);
             flex-shrink: 0;
             color: #fff;
         }
 
         .security-content {}
 
-        .security-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0d1b4b;
-            margin-bottom: 8px;
-        }
-
-        .security-desc {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.7;
-        }
 
         /* ===== AI页 ===== */
         .ai-hero {
@@ -622,21 +630,23 @@
             content: '🤖';
             position: absolute;
             right: 48px;
-            font-size: 120px;
+            font-size: var(--fz-huge);
             opacity: 0.05;
         }
 
         .ai-title {
-            font-size: 30px;
-            font-weight: 800;
-            margin-bottom: 14px;
+            font-size: var(--fz-h1);
+            font-weight: 900;
+            margin-bottom: 15px;
+
+
         }
 
         .ai-subtitle {
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.7;
-            max-width: 500px;
+
+
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .ai-badge {
@@ -646,7 +656,7 @@
             color: #3b82f6;
             padding: 5px 14px;
             border-radius: 20px;
-            font-size: 12px;
+
             margin-bottom: 16px;
         }
 
@@ -665,22 +675,10 @@
         }
 
         .ai-feature-icon {
-            font-size: 32px;
+            font-size: var(--fz-h2);
             margin-bottom: 12px;
         }
 
-        .ai-feature-name {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0d1b4b;
-            margin-bottom: 8px;
-        }
-
-        .ai-feature-desc {
-            font-size: 12px;
-            color: #6b7280;
-            line-height: 1.6;
-        }
 
         /* ===== 价值页 ===== */
 
@@ -714,7 +712,7 @@
         }
 
         .metric-num {
-            font-size: 42px;
+            font-size: var(--fz-display);
             font-weight: 900;
             color: #1a6fa8;
             line-height: 1;
@@ -722,11 +720,11 @@
         }
 
         .metric-unit {
-            font-size: 20px;
+            font-size: var(--fz-h3);
         }
 
         .metric-label {
-            font-size: 13px;
+
             color: #6b7280;
             font-weight: 500;
         }
@@ -755,22 +753,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 22px;
+            font-size: var(--fz-h3);
             flex-shrink: 0;
         }
 
-        .value-point-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #0d1b4b;
-            margin-bottom: 6px;
-        }
-
-        .value-point-desc {
-            font-size: 13px;
-            color: #6b7280;
-            line-height: 1.6;
-        }
 
         /* ===== 结尾CTA页 ===== */
         .cta-page {
@@ -824,13 +810,13 @@
             color: #00c8ff;
             padding: 8px 24px;
             border-radius: 30px;
-            font-size: 13px;
+
             letter-spacing: 2px;
             margin-bottom: 30px;
         }
 
         .cta-title {
-            font-size: 46px;
+            font-size: var(--fz-display);
             font-weight: 900;
             line-height: 1.3;
             margin-bottom: 20px;
@@ -843,7 +829,7 @@
         }
 
         .cta-subtitle {
-            font-size: 18px;
+
             color: rgba(255, 255, 255, 0.7);
             margin-bottom: 40px;
             line-height: 1.7;
@@ -861,14 +847,14 @@
         }
 
         .contact-label {
-            font-size: 12px;
+
             color: rgba(255, 255, 255, 0.5);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
         .contact-value {
-            font-size: 20px;
+            font-size: var(--fz-h3);
             font-weight: 700;
             color: #fff;
         }
@@ -884,13 +870,11 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 15px;
+
             color: rgba(255, 255, 255, 0.8);
         }
 
-        .cta-contact-icon {
-            font-size: 18px;
-        }
+        .cta-contact-icon {}
 
         .cta-contact-label {
             color: rgba(255, 255, 255, 0.5);
@@ -910,7 +894,7 @@
             gap: 20px;
             justify-content: center;
             color: rgba(255, 255, 255, 0.3);
-            font-size: 11px;
+
             letter-spacing: 1px;
         }
 
@@ -930,6 +914,12 @@
 
         /* ===== 手机竖屏响应式（≤768px）===== */
         @media (max-width: 768px) {
+            :root {
+                --fz-title: 15px;
+                --fz-body: 13px;
+                --fz-intro: 13px;
+                --fz-meta: 10px;
+            }
 
             /* 封面 */
             .cover-content {
@@ -938,19 +928,19 @@
             }
 
             .cover-badge {
-                font-size: 11px;
+
                 letter-spacing: 2px;
                 padding: 6px 16px;
                 margin-bottom: 28px;
             }
 
             .cover-title {
-                font-size: 34px;
+                font-size: var(--fz-h1);
                 margin-bottom: 14px;
             }
 
             .cover-subtitle {
-                font-size: 14px;
+
                 margin-bottom: 24px;
                 letter-spacing: 0.5px;
             }
@@ -966,7 +956,7 @@
 
             .cover-tag {
                 padding: 7px 12px;
-                font-size: 12px;
+
                 text-align: center;
             }
 
@@ -984,12 +974,10 @@
             }
 
             .cover-stat-num {
-                font-size: 28px;
+                font-size: var(--fz-h3);
             }
 
-            .cover-stat-label {
-                font-size: 11px;
-            }
+            .cover-stat-label {}
 
             /* 通用页面 */
             .page {
@@ -1004,19 +992,17 @@
 
             /* 手机上页码数字太占位，缩小并弱化 */
             .page-num {
-                font-size: 36px;
+                font-size: var(--fz-h1);
                 margin-right: 10px;
                 color: #e8edf5;
                 line-height: 1.1;
                 flex-shrink: 0;
             }
 
-            .page-label {
-                font-size: 10px;
-            }
+            .page-label {}
 
             .page-title {
-                font-size: 20px;
+                font-size: var(--fz-h3);
             }
 
             .section-divider {
@@ -1035,17 +1021,17 @@
             }
 
             .pain-icon {
-                font-size: 26px;
+                font-size: var(--fz-h3);
                 margin-bottom: 10px;
             }
 
-            .pain-title {
-                font-size: 15px;
+            .pain-title,
+            .module-name {
+                font-size: var(--fz-title);
             }
 
-            .pain-desc {
-                font-size: 13px;
-            }
+            .pain-desc,
+            .module-desc {}
 
             .solution-banner {
                 flex-direction: column;
@@ -1055,12 +1041,10 @@
             }
 
             .solution-arrow {
-                font-size: 28px;
+                font-size: var(--fz-h3);
             }
 
-            .solution-text {
-                font-size: 14px;
-            }
+            .solution-text {}
 
             /* 功能模块页 */
             .module-grid {
@@ -1075,17 +1059,10 @@
             .module-icon {
                 width: 44px;
                 height: 44px;
-                font-size: 20px;
+                font-size: var(--fz-h3);
                 margin-bottom: 12px;
             }
 
-            .module-name {
-                font-size: 15px;
-            }
-
-            .module-desc {
-                font-size: 12px;
-            }
 
             /* 架构页 */
             .arch-layer {
@@ -1093,7 +1070,7 @@
             }
 
             .arch-layer-title {
-                font-size: 11px;
+
                 margin-bottom: 12px;
             }
 
@@ -1107,11 +1084,11 @@
                 width: 100%;
                 box-sizing: border-box;
                 padding: 7px 12px;
-                font-size: 11px;
+
             }
 
             .arch-item small {
-                font-size: 10px;
+
                 display: block;
                 opacity: 0.8;
                 margin-top: 2px;
@@ -1124,16 +1101,12 @@
             }
 
             .tech-icon {
-                font-size: 22px;
+                font-size: var(--fz-h3);
             }
 
-            .tech-name {
-                font-size: 12px;
-            }
+            .tech-name {}
 
-            .tech-desc {
-                font-size: 10px;
-            }
+            .tech-desc {}
 
             /* AI页 */
             .ai-hero {
@@ -1149,17 +1122,17 @@
             }
 
             .ai-badge {
-                font-size: 10px;
+
                 padding: 4px 10px;
             }
 
             .ai-title {
-                font-size: 22px;
+                font-size: var(--fz-h3);
                 margin-bottom: 10px;
             }
 
             .ai-subtitle {
-                font-size: 13px;
+
                 max-width: 100%;
             }
 
@@ -1173,18 +1146,16 @@
             }
 
             .ai-feature-icon {
-                font-size: 26px;
+                font-size: var(--fz-h3);
                 margin-bottom: 8px;
             }
 
             .ai-feature-name {
-                font-size: 13px;
+
                 margin-bottom: 6px;
             }
 
-            .ai-feature-desc {
-                font-size: 11px;
-            }
+            .ai-feature-desc {}
 
             /* 安全页 */
             .security-grid {
@@ -1200,18 +1171,18 @@
             .security-icon-wrap {
                 width: 46px;
                 height: 46px;
-                font-size: 22px;
+                font-size: var(--fz-h3);
                 border-radius: 12px;
                 flex-shrink: 0;
             }
 
-            .security-title {
-                font-size: 14px;
+            .security-title,
+            .value-point-title {
+                font-size: var(--fz-title);
             }
 
-            .security-desc {
-                font-size: 12px;
-            }
+            .security-desc,
+            .value-point-desc {}
 
             /* 价值页 */
 
@@ -1228,17 +1199,13 @@
             }
 
             .metric-num {
-                font-size: 28px;
+                font-size: var(--fz-h1);
                 margin-bottom: 6px;
             }
 
-            .metric-unit {
-                font-size: 16px;
-            }
+            .metric-unit {}
 
-            .metric-label {
-                font-size: 11px;
-            }
+            .metric-label {}
 
             .value-points {
                 grid-template-columns: 1fr;
@@ -1253,17 +1220,10 @@
             .value-point-icon {
                 width: 40px;
                 height: 40px;
-                font-size: 18px;
+
                 border-radius: 10px;
             }
 
-            .value-point-title {
-                font-size: 14px;
-            }
-
-            .value-point-desc {
-                font-size: 12px;
-            }
 
             /* CTA结尾页 */
             .cta-page {
@@ -1277,18 +1237,18 @@
             }
 
             .cta-badge {
-                font-size: 11px;
+
                 padding: 6px 16px;
                 margin-bottom: 20px;
             }
 
             .cta-title {
-                font-size: 28px;
+                font-size: var(--fz-h1);
                 margin-bottom: 14px;
             }
 
             .cta-subtitle {
-                font-size: 14px;
+
                 margin-bottom: 28px;
                 line-height: 1.6;
             }
@@ -1301,9 +1261,7 @@
                 margin-bottom: 28px;
             }
 
-            .cta-contact-item {
-                font-size: 13px;
-            }
+            .cta-contact-item {}
 
             .cta-footer {
                 position: relative;
@@ -1313,7 +1271,7 @@
                 justify-content: center;
                 margin-top: 40px;
                 padding-top: 0;
-                font-size: 11px;
+
                 line-height: 1.8;
                 padding-bottom: 20px;
             }
@@ -1321,10 +1279,6 @@
 
         /* ===== 超小屏（≤480px）===== */
         @media (max-width: 480px) {
-            .cover-title {
-                font-size: 28px;
-            }
-
             .cover-stats {
                 /* 4个统计项在极小屏保持2列布局 */
                 display: grid;
@@ -1343,12 +1297,10 @@
             }
 
             .page-num {
-                font-size: 28px;
+                font-size: var(--fz-h2);
             }
 
-            .page-title {
-                font-size: 18px;
-            }
+            .page-title {}
 
             .ai-features-grid {
                 grid-template-columns: 1fr;
@@ -1359,7 +1311,7 @@
             }
 
             .cta-title {
-                font-size: 24px;
+                font-size: var(--fz-h3);
             }
 
             .tech-grid {
@@ -1424,7 +1376,7 @@
         }
 
         .cp-card h4 {
-            font-size: 0.9rem;
+
             color: var(--accent);
             margin-bottom: 0.8rem;
             text-transform: uppercase;
@@ -1438,7 +1390,7 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 0.8rem;
-            font-size: 0.85rem;
+
         }
 
         .stat-value {
@@ -1498,7 +1450,7 @@
         .progress-header {
             display: flex;
             justify-content: space-between;
-            font-size: 0.75rem;
+            color: white;
             margin-bottom: 2px;
         }
 
@@ -1543,7 +1495,7 @@
             position: absolute;
             top: 5px;
             left: 5px;
-            font-size: 8px;
+
             color: rgba(255, 255, 255, 0.7);
             font-family: monospace;
             background: rgba(0, 0, 0, 0.5);
@@ -1600,7 +1552,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 0.6rem 0;
-            font-size: 0.85rem;
+
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
         }
 
@@ -1611,7 +1563,7 @@
         .badge {
             padding: 2px 6px;
             border-radius: 4px;
-            font-size: 0.7rem;
+
             font-weight: 600;
         }
 
@@ -1671,7 +1623,7 @@
 
         .compass-ring span {
             position: absolute;
-            font-size: 12px;
+
             font-weight: 900;
             color: rgba(255, 255, 255, 0.8);
             text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
@@ -1941,7 +1893,7 @@
             padding: 5px 10px;
             border-radius: 4px;
             font-weight: bold;
-            font-size: 16px;
+
             box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
         }
 
@@ -2425,10 +2377,18 @@
         }
 
         .b-hq-tower .f-left,
-        .b-hq-tower .f-right {
+        .b-hq-tower .f-right,
+        .b-off-main .f-left,
+        .b-off-main .f-right {
             width: 60px;
             height: 280px;
             transform: translate(-50%, -50%) translateZ(140px) rotateY(-90deg) rotateZ(-90deg) translateZ(40px);
+        }
+
+        .b-off-main .f-left,
+        .b-off-main .f-right {
+            height: 100px;
+            transform: translate(-50%, -50%) translateZ(50px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
         }
 
         .b-hq-tower .f-right {
@@ -2807,7 +2767,7 @@
             border: 1px solid #3b82f6;
             padding: 4px 8px;
             border-radius: 4px;
-            font-size: 14px;
+
             color: #3b82f6;
             font-weight: bold;
             white-space: nowrap;
@@ -2992,6 +2952,7 @@
             height: 30px;
             transform: translate(-50%, -50%) translateZ(20px);
             background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+            background-color: #94a3b8;
         }
 
         /* R&D A Facade */
@@ -3271,12 +3232,6 @@
             transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(-30px);
         }
 
-        .b-off-main .f-left,
-        .b-off-main .f-right {
-            width: 60px;
-            height: 100px;
-            transform: translate(-50%, -50%) translateZ(50px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
-        }
 
         .b-off-main .f-right {
             transform: translate(-50%, -50%) translateZ(50px) rotateY(90deg) rotateZ(90deg) translateZ(30px);
@@ -3306,7 +3261,7 @@
 
         .b-label {
             color: #ffffff;
-            font-size: 11px;
+
             font-weight: 800;
             white-space: nowrap;
             padding: 2px 10px;
@@ -3336,7 +3291,7 @@
             padding: 2px 8px;
             border-radius: 20px;
             color: #fbbf24;
-            font-size: 9px;
+
             font-weight: bold;
             white-space: nowrap;
             box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
@@ -3374,7 +3329,7 @@
             padding: 2px 8px;
             border-radius: 20px;
             color: #f87171;
-            font-size: 9px;
+
             font-weight: bold;
             white-space: nowrap;
             box-shadow: 0 0 10px rgba(248, 113, 113, 0.4);
@@ -3385,7 +3340,7 @@
 
         .env-tag::before {
             content: '🔊';
-            font-size: 8px;
+
         }
 
         .energy-label {
@@ -3495,7 +3450,7 @@
             --h-pos: 50px;
         }
 
-        /* PV Array 光伏阵列 */
+        /* PV Array 光伏发电阵列 */
         .el-pv {
             --h-pos: 120px;
         }
@@ -4001,39 +3956,51 @@
             </div>
         </div>
         <div class="section-divider"></div>
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">
+        <p style=" color: #6b7280; margin-bottom: 30px; line-height: 1.6;">
             传统园区管理往往面临“信息孤岛”困境，各系统间数据无法互通，导致整体运营效率偏低且维护成本居高不下。本方案通过打造统一的数字底座，针对核心痛点实现从被动管理向主动化、数据化运营的全面转型。</p>
 
         <div class="pain-grid">
             <div class="pain-card">
                 <div class="pain-icon">&#128203;</div>
-                <div class="pain-title">信息孤岛，架构僵化</div>
-                <div class="pain-desc">多业态数据分散在遗留系统中，无法形成统一全景视图。决策高度依赖人工汇总，效率不仅低下且存在严重的数据一致性隐患。</div>
+                <div class="pain-content">
+                    <div class="pain-title">信息孤岛，架构僵化</div>
+                    <div class="pain-desc">多业态数据分散在遗留系统中，无法形成统一全景视图。决策高度依赖人工汇总，效率不仅低下且存在严重的数据一致性隐患。</div>
+                </div>
             </div>
             <div class="pain-card">
                 <div class="pain-icon">&#128225;</div>
-                <div class="pain-title">设备监控“感而不传”</div>
-                <div class="pain-desc">大量底层设备缺乏标准化统一接入，监控盲区多。传感器数据无法实时转化为运营洞察，导致维护成本高、故障响应慢。</div>
+                <div class="pain-content">
+                    <div class="pain-title">设备监控“感而不传”</div>
+                    <div class="pain-desc">大量底层设备缺乏标准化统一接入，监控盲区多。传感器数据无法实时转化为运营洞察，导致维护成本高、故障响应慢。</div>
+                </div>
             </div>
             <div class="pain-card">
                 <div class="pain-icon">&#128260;</div>
-                <div class="pain-title">业务协同链条断裂</div>
-                <div class="pain-desc">审批流程黑盒化，进度不可追溯。部门间协同依然依赖线下沟通，导致招商、服务与资产管理之间存在严重的执行断层。</div>
+                <div class="pain-content">
+                    <div class="pain-title">业务协同链条断裂</div>
+                    <div class="pain-desc">审批流程黑盒化，进度不可追溯。部门间协同依然依赖线下沟通，导致招商、服务与资产管理之间存在严重的执行断层。</div>
+                </div>
             </div>
             <div class="pain-card">
-                <div class="pain-icon">&#128241;</div>
-                <div class="pain-title">移动办公体验脱节</div>
-                <div class="pain-desc">现场走访记录依赖纸面，管理人员在移动中无法即时调度资源，对突发事件的感知滞后，服务品质难以标准化。</div>
+                <div class="pain-icon">&#9881;</div>
+                <div class="pain-content">
+                    <div class="pain-title">运营粗放，效能见顶</div>
+                    <div class="pain-desc">基础设施维护依赖“老师傅”经验，缺乏数字化预警手段。能源浪费、人工巡查频繁等结构性成本限制了园区向高端化服务转型的空间。</div>
+                </div>
             </div>
             <div class="pain-card">
                 <div class="pain-icon">&#127970;</div>
-                <div class="pain-title">招商全过程管控缺失</div>
-                <div class="pain-desc">客户公海池缺乏精细化漏斗分析，线索流失率高。合同条款合规性、租金递增逻辑等核心规则全凭经验，管控风险巨大。</div>
+                <div class="pain-content">
+                    <div class="pain-title">招商全过程管控缺失</div>
+                    <div class="pain-desc">客户公海池缺乏精细化漏斗分析，线索流失率高。合同条款合规性、租金递增逻辑等核心规则全凭经验，管控风险巨大。</div>
+                </div>
             </div>
             <div class="pain-card">
                 <div class="pain-icon">&#128274;</div>
-                <div class="pain-title">合规与安全边界模糊</div>
-                <div class="pain-desc">多租户混合运营下数据隔离标准不一，敏感资产访问缺乏细粒度审计日志。数字化转型的同时面临日益严峻的合规审计压力。</div>
+                <div class="pain-content">
+                    <div class="pain-title">合规与安全边界模糊</div>
+                    <div class="pain-desc">多租户混合运营下数据隔离标准不一，敏感资产访问缺乏细粒度审计日志。数字化转型的同时面临日益严峻的合规审计压力。</div>
+                </div>
             </div>
         </div>
 
@@ -4055,7 +4022,7 @@
             </div>
         </div>
         <div class="section-divider"></div>
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">Smart Park OS
+        <p style=" color: #6b7280; margin-bottom: 30px; line-height: 1.6;">Smart Park OS
             采用“1+N”模块化架构，在拥有强大数据驾驶舱的基础上，深度集成了多项专业化业务功能模块。各模块间深度协同，实现了从 IoT 感知到智慧物业、企业服务的全流程数字化覆盖。</p>
 
         <div class="module-grid">
@@ -4149,9 +4116,11 @@
             </div>
         </div>
         <div class="section-divider"></div>
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">本平台采用 <strong>Clean
+        <p style=" color: #6b7280; margin-bottom: 30px; line-height: 1.6;">本平台采用
+            <strong>Clean
                 Architecture (核心业务逻辑与基础设施完全解耦)</strong> 设计理念，基于最新的 <strong>.NET 10</strong> 开发。通过 <strong>.NET
-                Aspire</strong> 实现云原生分布式编排，确保系统在面对大规模并发与复杂业务逻辑时，依然保持极致的稳定性与响应速度。</p>
+                Aspire</strong> 实现云原生分布式编排，确保系统在面对大规模并发与复杂业务逻辑时，依然保持极致的稳定性与响应速度。
+        </p>
 
         <div class="arch-diagram">
             <div class="arch-layer frontend">
@@ -4231,7 +4200,8 @@
             </div>
         </div>
         <div class="section-divider"></div>
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">“小科”AI 助手是 Smart Park OS
+        <p style=" color: #6b7280; margin-bottom: 30px; line-height: 1.6;">“小科”AI 助手是 Smart
+            Park OS
             的智慧核心，通过业界领先的 <strong>Model Context Protocol (MCP)</strong> 协议，实现了 AI
             与底层业务逻辑的深度交融。它不只是简单的对话窗口，更是能够感知设备状态、驱动业务流转的“数字管家”。</p>
 
@@ -4290,7 +4260,8 @@
             </div>
         </div>
         <div class="section-divider"></div>
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">本平台严格遵循<strong>网络安全等级保护 2.0
+        <p style=" color: #6b7280; margin-bottom: 30px; line-height: 1.6;">
+            本平台严格遵循<strong>网络安全等级保护 2.0
                 (三级等保)</strong> 与 <strong>国家密码应用安全性评估 (国家密评)</strong> 标准。从系统底层即内嵌了符合国家商用密码管理局要求的 <strong>SM2、SM3、SM4
                 核心加密组件</strong>，在身份鉴别、访问控制及全生命周期数据保护等方面均建立了行业顶尖的深度防御体系。通过多维隔离与细粒度审计日志，确保每一层级业务逻辑都在极致安全的“围墙”内可靠运行。</p>
         <div class="security-grid">
@@ -4352,7 +4323,7 @@
                     </div>
                 </div>
             </div>
- 
+
             <div class="security-card">
                 <div class="security-icon-wrap">&#127760;</div>
                 <div class="security-content">
@@ -4374,7 +4345,7 @@
             </div>
         </div>
         <div class="section-divider"></div>
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">引入 Smart Park OS
+        <p style=" color: #6b7280; margin-bottom: 30px; line-height: 1.6;">引入 Smart Park OS
             不仅是技术的升级，更是对园区管理颗粒度与服务价值的重塑。通过数据协同与流程再造，我们助力运营商显著提升管理效率、降低能耗成本，并为入驻企业创造极致的数字化办公体验。</p>
 
         <div class="value-metrics">
@@ -4419,7 +4390,7 @@
                     <div class="value-point-desc">AI 自动生成园区运营报告，可视化呈现招商入驻率、设备运行状态、收益趋势等核心指标，让管理者随时掌握园区运营全貌。</div>
                 </div>
             </div>
-           
+
             <div class="value-point">
                 <div class="value-point-icon">&#128241;</div>
                 <div>
@@ -4473,8 +4444,10 @@
             </div>
         </div>
         <div class="section-divider"></div>
-        <p style="font-size: 14px; color: #6b7280; margin-bottom: 24px; line-height: 1.6;"><strong>全要素数字孪生：</strong> 通过
-            3D 渲染技术实时还原园区物理世界，将复杂的资产分布、能耗动态及安防态势转化为直观的视觉语言。数据毫秒级同步，支持多层级下钻分析，让每一项运营指标都清晰可见，实现“一屏感知全域”。</p>
+        <p style=" color: #6b7280; margin-bottom: 24px; line-height: 1.6;">
+            <strong>全要素数字孪生：</strong> 通过
+            3D 渲染技术实时还原园区物理世界，将复杂的资产分布、能耗动态及安防态势转化为直观的视觉语言。数据毫秒级同步，支持多层级下钻分析，让每一项运营指标都清晰可见，实现“一屏感知全域”。
+        </p>
 
         <!-- 驾驶舱内联内容 -->
         <div class="cockpit-page-wrap">
@@ -4486,7 +4459,7 @@
                         <div style="width:20px; height:20px; background:var(--primary); border-radius:4px;"></div>
                         <div class="cp-title">全景数据驾驶舱 (Data Cockpit) 基于真实业务模块构建，打破数据孤岛，实现园区运营全可视化。</div>
                     </div>
-                    <div style="display:flex; gap:1rem; font-size:0.8rem; color: var(--text-muted);">
+                    <div style="display:flex; gap:1rem; font-size:var(--fz-body); color: var(--text-muted);">
                         <span><span style="color: #4ade80;">●</span> System Normal</span>
                         <span style="font-family: monospace;" id="clock">10:42:35</span>
                     </div>
@@ -4544,7 +4517,7 @@
                             <span class="stat-label">本月营收 (Revenue)</span>
                             <div style="text-align: right;">
                                 <div class="stat-value">¥ 2.4M</div>
-                                <div style="font-size: 0.7rem; color: #4ade80;">▲ 12% YoY</div>
+                                <div style=" color: #4ade80;">▲ 12% YoY</div>
                             </div>
                         </div>
                         <div class="cp-stat-row">
@@ -4556,10 +4529,11 @@
                             <span class="badge badge-warn">5 份</span>
                         </div>
                         <div class="progress-item" style="margin-top: 0.5rem;">
-                            <div class="progress-header"><span>收缴率 (Collection)</span><span>95%</span></div>
-                            <div class="progress-track">
-                                <div class="progress-fill" style="width: 95%; background: #60a5fa;"></div>
+                            <div class="progress-header">
+                                <span>收缴率 (Collection)</span>
+                                <span>95%</span>
                             </div>
+                            <div class="progress-fill" style="width: 95%; background: #60a5fa;"></div>
                         </div>
                     </div>
 
@@ -4570,38 +4544,42 @@
                             style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; margin-top: 0.8rem;">
                             <div
                                 style="text-align: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
-                                <div style="font-size: 1.1rem; color: #4ade80; font-weight: bold;" id="env-temp">24.5°C
+                                <div style="font-size: var(--fz-h2); color: #4ade80; font-weight: bold;" id="env-temp">
+                                    24.5°C
                                 </div>
-                                <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px;">温度</div>
+                                <div style=" color: var(--text-muted); margin-top: 4px;">温度
+                                </div>
                             </div>
                             <div
                                 style="text-align: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
-                                <div style="font-size: 1.1rem; color: #3b82f6; font-weight: bold;" id="env-hum">45%
+                                <div style="font-size: var(--fz-h2); color: #3b82f6; font-weight: bold;" id="env-hum">
+                                    45%
                                 </div>
-                                <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px;">湿度</div>
+                                <div style=" color: var(--text-muted); margin-top: 4px;">湿度
+                                </div>
                             </div>
                             <div
                                 style="text-align: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
-                                <div style="font-size: 1.1rem; color: #fbbf24; font-weight: bold;" id="env-pm">18</div>
-                                <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px;">PM2.5</div>
+                                <div style="font-size: var(--fz-h2); color: #fbbf24; font-weight: bold;" id="env-pm">18
+                                </div>
+                                <div style=" color: var(--text-muted); margin-top: 4px;">PM2.5
+                                </div>
                             </div>
                             <div
                                 style="text-align: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
-                                <div style="font-size: 1.1rem; color: #f87171; font-weight: bold;" id="env-noise">45dB
+                                <div style="font-size: var(--fz-h2); color: #a78bfa; font-weight: bold;" id="env-co2">
+                                    420
                                 </div>
-                                <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px;">噪音</div>
+                                <div style=" color: var(--text-muted); margin-top: 4px;">CO2
+                                </div>
                             </div>
                             <div
                                 style="text-align: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
-                                <div style="font-size: 1.1rem; color: #a78bfa; font-weight: bold;" id="env-co2">420
+                                <div style="font-size: var(--fz-h2); color: #22d3ee; font-weight: bold;" id="env-lux">
+                                    12.5kLx
                                 </div>
-                                <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px;">CO2</div>
-                            </div>
-                            <div
-                                style="text-align: center; background: rgba(255,255,255,0.05); padding: 0.8rem; border-radius: 8px;">
-                                <div style="font-size: 1.1rem; color: #22d3ee; font-weight: bold;" id="env-lux">12.5kLx
+                                <div style=" color: var(--text-muted); margin-top: 4px;">光照
                                 </div>
-                                <div style="font-size: 0.65rem; color: var(--text-muted); margin-top: 4px;">光照</div>
                             </div>
                         </div>
                     </div>
@@ -4692,7 +4670,7 @@
                             <!-- 3D Wrappers to prevent label overlap while maintaining billboard effect -->
                             <div
                                 style="transform: translateY(60px); transform-style: preserve-3d; position: absolute; left: 50%; top: 50%;">
-                                <div class="b-label" style="font-size: 10px;">光伏发电阵列 (PV Array)</div>
+                                <div class="b-label" style="">光伏发电阵列 (PV Array)</div>
                             </div>
                             <div
                                 style="transform: translateY(-20px); transform-style: preserve-3d; position: absolute; left: 50%; top: 50%;">
@@ -4946,7 +4924,7 @@
                                 <div class="face f-top">
                                     <!-- Helipad for Apartment -->
                                     <div
-                                        style="position: absolute; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; color: white;">
+                                        style="position: absolute; width: 30px; height: 30px; border: 2px solid white; border-radius: 50%; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; justify-content: center; font-weight: bold; ">
                                         H</div>
                                 </div>
                             </div>
@@ -5197,7 +5175,7 @@
                     <!-- 3D Styles -->
 
                     <div
-                        style="position: absolute; bottom: 20px; left: 20px; font-family: monospace; color: var(--accent); font-size: 0.8rem; z-index: 10;">
+                        style="position: absolute; bottom: 20px; left: 20px; font-family: monospace; color: var(--accent);  z-index: 10;">
                         DIGITAL_TWIN: ONLINE<br>
                         SYNC_LATENCY: 12ms
                     </div>
@@ -5283,24 +5261,26 @@
                     <!-- IoT Platform -->
                     <div class="cp-card">
                         <h4>⚡ 物联网平台 (IoT)</h4>
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; text-align: center;">
-                            <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px;">
-                                <div style="font-size: 1.2rem; color: #4ade80; font-weight: bold;">524</div>
-                                <div style="font-size: 0.6rem;">在线设备</div>
+                        <div style="display: flex; gap: 0.5rem; text-align: center;">
+                            <div
+                                style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+                                <div style="font-size: var(--fz-h2); color: #4ade80; font-weight: bold;">524</div>
+                                <div style="color: #4ade80;">在线设备</div>
                             </div>
-                            <div style="background: rgba(255,255,255,0.05); padding: 0.5rem; border-radius: 4px;">
-                                <div style="font-size: 1.2rem; color: #facc15; font-weight: bold;">3</div>
-                                <div style="font-size: 0.6rem;">实时告警</div>
+                            <div
+                                style="flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative;">
+                                <div style="font-size: var(--fz-h2); color: #facc15; font-weight: bold;">3</div>
+                                <div style="color: #4ade80;">实时告警</div>
                             </div>
                         </div>
                         <div
-                            style="margin-top: 0.5rem; font-size: 0.7rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">
+                            style="margin-top: 0.5rem;  border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.5rem;">
                             <div style="display: flex; justify-content: space-between;">
-                                <span>今日能耗</span>
+                                <span style="color: #4ade80;">今日能耗</span>
                                 <span style="color: #fff;">4,230 kWh</span>
                             </div>
                             <div style="display: flex; justify-content: space-between; margin-top: 4px;">
-                                <span>光伏发电</span>
+                                <span style="color: #4ade80;">光伏发电</span>
                                 <span style="color: #4ade80;">+450 kWh</span>
                             </div>
                         </div>
@@ -5333,11 +5313,11 @@
                         style="flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 0.6rem 1rem; overflow: hidden;">
                         <div
                             style="display: flex; width: 100%; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                            <div style="font-size: 0.9rem; color: var(--text-muted);">项目管理 (Projects)</div>
-                            <div style="font-size: 1.4rem; font-weight: bold;">12 <span
-                                    style="font-size: 0.8rem; font-weight: normal;">进行中</span></div>
+                            <div style=" color: var(--text-muted);">项目管理 (Projects)</div>
+                            <div style=" font-weight: bold;">12 <span
+                                    style=" color: var(--text-muted); font-weight: normal;">进行中</span></div>
                         </div>
-                        <div style="font-size: 0.8rem; color: #ffffff; opacity: 0.9; width: 100%;">
+                        <div style=" color: #ffffff; opacity: 0.9; width: 100%;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
                                 <span>• 园区二期景观工程</span><span style="color: #3b82f6;">65%</span>
                             </div>
@@ -5353,11 +5333,11 @@
                         style="flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 0.6rem 1rem; overflow: hidden;">
                         <div
                             style="display: flex; width: 100%; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                            <div style="font-size: 0.9rem; color: var(--text-muted);">待办公文 (Docs)</div>
-                            <div style="font-size: 1.4rem; font-weight: bold;">5 <span
-                                    style="font-size: 0.8rem; font-weight: normal;">待审批</span></div>
+                            <div style=" color: var(--text-muted);">待办公文 (Docs)</div>
+                            <div style=" font-weight: bold;">5 <span
+                                    style=" color: var(--text-muted); font-weight: normal;">待审批</span></div>
                         </div>
-                        <div style="font-size: 0.8rem; color: #ffffff; opacity: 0.9; width: 100%;">
+                        <div style=" color: #ffffff; opacity: 0.9; width: 100%;">
                             <div style="display: flex; justify-content: space-between; margin-bottom: 4px;">
                                 <span>• 租户 A1-403 续租合同</span><span style="color: #60a5fa;">法务核中</span>
                             </div>
@@ -5372,20 +5352,20 @@
                     <div class="cp-card"
                         style="flex-direction: row; align-items: center; justify-content: space-between; padding: 0.5rem 1rem;">
                         <div>
-                            <div style="font-size: 0.9rem; color: var(--text-muted);">智能小科 (AI)</div>
-                            <div style="font-size: 1.4rem; font-weight: bold;">Online <span
-                                    style="font-size: 0.8rem; font-weight: normal;">助手</span></div>
+                            <div style=" color: var(--text-muted);">智能小科 (AI)</div>
+                            <div style=" color: var(--text-muted); font-weight: bold;">Online <span
+                                    style=" font-weight: normal;">助手</span></div>
                         </div>
-                        <div style="font-size: 2rem;">🤖</div>
+                        <div style="font-size: var(--fz-h1);">🤖</div>
                     </div>
                     <div class="cp-card"
                         style="flex-direction: column; align-items: flex-start; justify-content: flex-start; padding: 0.6rem 1rem; overflow: hidden;">
                         <div
                             style="display: flex; width: 100%; justify-content: space-between; align-items: center; margin-bottom: 5px;">
-                            <div style="font-size: 0.9rem; color: var(--text-muted);">服务器状态 (Server)</div>
-                            <div style="font-size: 0.8rem; color: #4ade80;">Running 🟢</div>
+                            <div style=" color: var(--text-muted);">服务器状态 (Server)</div>
+                            <div style=" color: #4ade80;">Running 🟢</div>
                         </div>
-                        <div style="font-size: 0.75rem; color: #ffffff; opacity: 0.9; width: 100%;">
+                        <div style=" color: #ffffff; opacity: 0.9; width: 100%;">
                             <div
                                 style="display: flex; justify-content: space-between; margin-bottom: 4px; align-items: center;">
                                 <span style="width: 35px;">CPU</span>
@@ -5419,15 +5399,14 @@
                     </div>
                 </div>
 
+                <script>
+                    // Clock for Dashboard
+                    setInterval(() => {
+                        const now = new Date();
+                        document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour12: false });
+                    }, 1000);
+                </script>
             </div>
-
-            <script>
-                // Clock for Dashboard
-                setInterval(() => {
-                    const now = new Date();
-                    document.getElementById('clock').innerText = now.toLocaleTimeString('en-US', { hour12: false });
-                }, 1000);
-            </script>
         </div>
     </div>
 
