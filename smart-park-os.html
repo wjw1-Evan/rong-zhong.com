@@ -6,6 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>智慧园区管理系统 - 产品介绍</title>
     <style>
+        :root {
+            --bg-color: #030712;
+            --primary: #3b82f6;
+            --primary-glow: rgba(59, 130, 246, 0.5);
+            --secondary: #8b5cf6;
+            --accent: #06b6d4;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --glass-bg: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.08);
+            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+
         @import url('https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap');
 
         * {
@@ -255,26 +268,27 @@
         }
 
         .pain-title {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
             color: #0d1b4b;
             margin-bottom: 8px;
         }
 
         .pain-desc {
-            font-size: 14px;
+            font-size: 13px;
             color: #6b7280;
             line-height: 1.7;
         }
 
         .solution-banner {
-            background: linear-gradient(135deg, #0d1b4b, #1a6fa8);
+            background: linear-gradient(135deg, rgba(26, 111, 168, 0.08), rgba(0, 200, 255, 0.04));
+            border: 1px solid rgba(26, 111, 168, 0.15);
             border-radius: 16px;
             padding: 36px 48px;
             display: flex;
             align-items: center;
             gap: 30px;
-            color: #fff;
+            color: #0d1b4b;
         }
 
         .solution-text {
@@ -375,7 +389,7 @@
         }
 
         .module-name {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
             color: #0d1b4b;
             margin-bottom: 10px;
@@ -591,14 +605,15 @@
 
         /* ===== AI页 ===== */
         .ai-hero {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.08), rgba(139, 92, 246, 0.05));
+            border: 1px solid rgba(59, 130, 246, 0.15);
             border-radius: 20px;
             padding: 48px;
             margin-bottom: 30px;
             display: flex;
             align-items: center;
             gap: 48px;
-            color: #fff;
+            color: #1a1a2e;
             position: relative;
             overflow: hidden;
         }
@@ -608,7 +623,7 @@
             position: absolute;
             right: 48px;
             font-size: 120px;
-            opacity: 0.1;
+            opacity: 0.05;
         }
 
         .ai-title {
@@ -618,17 +633,17 @@
         }
 
         .ai-subtitle {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            color: #64748b;
             line-height: 1.7;
             max-width: 500px;
         }
 
         .ai-badge {
             display: inline-block;
-            background: rgba(0, 200, 255, 0.15);
-            border: 1px solid rgba(0, 200, 255, 0.4);
-            color: #00c8ff;
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            color: #3b82f6;
             padding: 5px 14px;
             border-radius: 20px;
             font-size: 12px;
@@ -655,7 +670,7 @@
         }
 
         .ai-feature-name {
-            font-size: 15px;
+            font-size: 16px;
             font-weight: 700;
             color: #0d1b4b;
             margin-bottom: 8px;
@@ -668,27 +683,8 @@
         }
 
         /* ===== 价值页 ===== */
-        .value-hero {
-            background: linear-gradient(135deg, #0d1b4b, #1a6fa8);
-            border-radius: 20px;
-            padding: 48px;
-            text-align: center;
-            color: #fff;
-            margin-bottom: 40px;
-        }
 
-        .value-hero-title {
-            font-size: 34px;
-            font-weight: 900;
-            margin-bottom: 16px;
-        }
 
-        .value-hero-desc {
-            font-size: 16px;
-            color: rgba(255, 255, 255, 0.75);
-            max-width: 600px;
-            margin: 0 auto;
-        }
 
         .value-metrics {
             display: grid;
@@ -856,28 +852,7 @@
             margin-right: auto;
         }
 
-        .contact-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 30px;
-            margin-bottom: 50px;
-            backdrop-filter: blur(10px);
-            width: fit-content;
-            margin-left: auto;
-            margin-right: auto;
-        }
 
-        .contact-info {
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            gap: 60px;
-        }
 
         .contact-item {
             display: flex;
@@ -1239,20 +1214,8 @@
             }
 
             /* 价值页 */
-            .value-hero {
-                padding: 28px 18px;
-                margin-bottom: 20px;
-                border-radius: 16px;
-            }
 
-            .value-hero-title {
-                font-size: 22px;
-                margin-bottom: 10px;
-            }
 
-            .value-hero-desc {
-                font-size: 13px;
-            }
 
             .value-metrics {
                 grid-template-columns: 1fr 1fr;
@@ -1330,12 +1293,6 @@
                 line-height: 1.6;
             }
 
-            .contact-info {
-                flex-direction: column;
-                gap: 20px;
-                align-items: center;
-                margin-bottom: 28px;
-            }
 
             .cta-contacts-bottom {
                 flex-direction: column;
@@ -1409,6 +1366,2585 @@
                 grid-template-columns: 1fr 1fr;
             }
         }
+
+        /* Dashboard Specific Styles */
+        .cockpit-container {
+            width: 95vw;
+            height: 88vh;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 1rem;
+            display: grid;
+            grid-template-columns: 300px 1fr 300px;
+            grid-template-rows: 60px 1fr 150px;
+            gap: 1rem;
+            padding: 1rem;
+            box-shadow: 0 0 50px rgba(59, 130, 246, 0.15);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+        }
+
+        .cp-header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding-bottom: 0.5rem;
+        }
+
+        .cp-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: #fff;
+            text-transform: uppercase;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .cp-panel-side {
+            grid-row: 2 / 4;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .cp-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cp-card h4 {
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-left: 3px solid var(--accent);
+            padding-left: 0.5rem;
+        }
+
+        .cp-stat-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.8rem;
+            font-size: 0.85rem;
+        }
+
+        .stat-value {
+            font-family: 'Outfit', monospace;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+        }
+
+        /* Middle Map */
+        .cp-map-area {
+            grid-column: 2;
+            grid-row: 2;
+            position: relative;
+            border-radius: 0.5rem;
+            background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            perspective: 1200px;
+            /* Critical for 3D effect */
+        }
+
+        /* Bottom Module Metrics */
+        .cp-bottom-metrics {
+            grid-column: 2;
+            grid-row: 3;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+        }
+
+        /* Charts */
+        .mini-bar-chart {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            height: 40px;
+            gap: 2px;
+        }
+
+        .mini-bar {
+            flex: 1;
+            background: var(--primary);
+            opacity: 0.6;
+            border-radius: 2px 2px 0 0;
+        }
+
+        .progress-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            margin-bottom: 2px;
+        }
+
+        .progress-track {
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        /* Camera Feed Styles */
+        .cam-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0.5rem;
+            height: 120px;
+        }
+
+        .cam-feed {
+            background: #000;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cam-feed img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+
+        .cam-overlay {
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            font-size: 8px;
+            color: rgba(255, 255, 255, 0.7);
+            font-family: monospace;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 1px 3px;
+        }
+
+        .rec-dot {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 6px;
+            height: 6px;
+            background: red;
+            border-radius: 50%;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        .cam-crosshair {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .cam-crosshair::before,
+        .cam-crosshair::after {
+            content: '';
+            position: absolute;
+            background: rgba(255, 255, 255, 0.2);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .cam-crosshair::before {
+            width: 10px;
+            height: 1px;
+        }
+
+        .cam-crosshair::after {
+            width: 1px;
+            height: 10px;
+        }
+
+        /* Services & Activities */
+        .activity-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.6rem 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .activity-item:last-child {
+            border-bottom: none;
+        }
+
+        .badge {
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 600;
+        }
+
+        .badge-info {
+            color: #60a5fa;
+            background: rgba(96, 165, 250, 0.15);
+            border: 1px solid rgba(96, 165, 250, 0.3);
+        }
+
+        .badge-warn {
+            color: #facc15;
+            background: rgba(250, 204, 21, 0.15);
+            border: 1px solid rgba(250, 204, 21, 0.3);
+        }
+
+        .scene-3d {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(60deg) rotateZ(0deg);
+        }
+
+        /* Compass UI Styles */
+        .map-compass {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
+            border: 2px solid rgba(59, 130, 246, 0.5);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(59, 130, 246, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        .compass-ring {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotateCompass {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .compass-ring span {
+            position: absolute;
+            font-size: 12px;
+            font-weight: 900;
+            color: rgba(255, 255, 255, 0.8);
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+        }
+
+        .c-n {
+            top: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #ef4444 !important;
+        }
+
+        .c-e {
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .c-s {
+            bottom: 5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .c-w {
+            left: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .compass-needle {
+            position: absolute;
+            width: 4px;
+            height: 40px;
+            background: linear-gradient(to bottom, #ef4444 50%, #94a3b8 50%);
+            border-radius: 2px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes rotateScene {
+            0% {
+                transform: rotateX(60deg) rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateX(60deg) rotateZ(360deg);
+            }
+        }
+
+        .ground {
+            position: absolute;
+            width: 1200px;
+            height: 1200px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 40px;
+            background-color: rgba(15, 23, 42, 0.5);
+            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8), inset 0 0 50px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Data Stream Animation */
+        @keyframes dataStream {
+            0% {
+                transform: translateZ(0) translateY(0);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateZ(200px) translateY(-100px);
+                opacity: 0;
+            }
+        }
+
+        .data-beam {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: var(--accent);
+            box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
+            border-radius: 50%;
+            animation: dataStream 3s infinite linear;
+        }
+
+        /* Boundary Fence */
+
+
+        /* Road System - Aligned with Buildings */
+        .road {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            background-color: rgba(30, 41, 59, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* --- NEW ROAD SYSTEM: Grid & Block Design --- */
+
+        /* Inner Hub (Surrounding HQ) */
+        .road-h-inner-top,
+        .road-h-inner-bottom {
+            width: 250px;
+            height: 30px;
+            transform: translate(-50%, -90px);
+        }
+
+        .road-h-inner-bottom {
+            transform: translate(-50%, 60px);
+        }
+
+        .road-v-inner-left,
+        .road-v-inner-right {
+            width: 30px;
+            height: 250px;
+            transform: translate(-100px, -50%);
+        }
+
+        .road-v-inner-right {
+            transform: translate(70px, -50%);
+        }
+
+        /* Main Grid Lines (Cross-Park) */
+        .road-h-grid-n {
+            width: 1200px;
+            height: 25px;
+            transform: translate(-50%, -275px);
+            background-image: linear-gradient(0deg, transparent 45%, rgba(255, 255, 255, 0.08) 45%, rgba(255, 255, 255, 0.08) 55%, transparent 55%);
+        }
+
+        .road-h-grid-s {
+            width: 1200px;
+            height: 25px;
+            transform: translate(-50%, 275px);
+        }
+
+        .road-v-grid-w {
+            width: 25px;
+            height: 1200px;
+            transform: translate(-275px, -50%);
+            background-image: linear-gradient(90deg, transparent 45%, rgba(255, 255, 255, 0.08) 45%, rgba(255, 255, 255, 0.08) 55%, transparent 55%);
+        }
+
+        .road-v-grid-e {
+            width: 25px;
+            height: 1200px;
+            transform: translate(250px, -50%);
+        }
+
+        /* Perimeter Loop */
+        .road-ring {
+            width: 1000px;
+            height: 1000px;
+            transform: translate(-50%, -50%);
+            background: transparent;
+            border: 35px solid rgba(30, 41, 59, 0.5);
+            border-radius: 80px;
+            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 10px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Connectivity */
+        .road-parking-connect {
+            width: 180px;
+            height: 25px;
+            transform: translate(-450px, 480px);
+        }
+
+        /* Secondary Access Roads */
+
+        .road-parking {
+            width: 150px;
+            height: 30px;
+            transform: translate(-525px, 480px);
+            /* Connects to new SW parking location */
+        }
+
+        /* Central Axis Boulevard (South Gate to HQ) - Standard Style */
+        .road-south-main {
+            width: 80px;
+            height: 500px;
+            /* Exactly Connects South Gate (500) to HQ Center (0) */
+            transform: translate(-50%, 60px);
+            background-image: linear-gradient(90deg, transparent 48%, rgba(255, 255, 255, 0.1) 48%, rgba(255, 255, 255, 0.1) 52%, transparent 52%);
+        }
+
+        /* Landscape Zones */
+        /* Landscape Zones: High-Detail Turf */
+        /* Landscape Zones (Removed) */
+
+        /* Photovoltaic (PV) Array Styles */
+        .solar-array {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /* Positioned further North, next to the road corridor */
+            transform: translate(calc(350px - 50%), -250px);
+            transform-style: preserve-3d;
+            display: grid;
+            grid-template-columns: repeat(3, 50px);
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .solar-panel {
+            width: 50px;
+            height: 40px;
+            background: #1e293b;
+            border: 1px solid #3b82f6;
+            transform: rotateX(-25deg);
+            background-image:
+                linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
+                linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px);
+            background-size: 8px 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(59, 130, 246, 0.4);
+            position: relative;
+        }
+
+        .solar-panel::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+        }
+
+
+        /* Parking Lot */
+        .parking-lot {
+            position: absolute;
+            width: 280px;
+            height: 160px;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            top: 50%;
+            left: 50%;
+            transform: translate(-420px, 480px);
+            transform-style: preserve-3d;
+            /* Precision Markings: 80px spots | 120px driveway | 80px spots */
+            background-image:
+                /* Horizontal separators between cars (every 30px, offset by 15px) */
+                repeating-linear-gradient(0deg, transparent 0, transparent 14px, rgba(255, 255, 255, 0.15) 14px, rgba(255, 255, 255, 0.15) 16px, transparent 16px, transparent 30px),
+                /* Vertical lines defining the parking rows */
+                linear-gradient(90deg,
+                    transparent 80px, rgba(255, 255, 255, 0.2) 80px, rgba(255, 255, 255, 0.2) 82px,
+                    transparent 82px, transparent 198px,
+                    rgba(255, 255, 255, 0.2) 198px, rgba(255, 255, 255, 0.2) 200px, transparent 200px);
+        }
+
+        .parking-label {
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%) rotateX(-90deg);
+            background: #3b82f6;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        .car {
+            position: absolute;
+            width: 12px;
+            height: 24px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 2px;
+            box-shadow: 0 0 5px white;
+        }
+
+        .c-1 {
+            top: 18px;
+            left: 34px;
+            background: #e2e8f0;
+        }
+
+        .c-2 {
+            top: 48px;
+            left: 34px;
+            background: #cbd5e1;
+        }
+
+        .c-3 {
+            top: 78px;
+            left: 34px;
+            background: #94a3b8;
+        }
+
+        .c-4 {
+            top: 18px;
+            right: 34px;
+            background: #f8fafc;
+        }
+
+        .c-5 {
+            top: 108px;
+            right: 34px;
+            background: #e2e8f0;
+        }
+
+        /* Tesla Vehicles: Red Multi-Coat & Pearl White */
+        .car-3d.tesla {
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        .car-3d.tesla .face {
+            position: absolute;
+            background: inherit;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        /* Car Dimensions: 12 wide, 24 long, 6 high */
+        .car-3d.tesla .f-front,
+        .car-3d.tesla .f-back {
+            width: 12px;
+            height: 6px;
+            transform: translate(-50%, -50%) rotateX(90deg) translateZ(12px);
+        }
+
+        .car-3d.tesla .f-back {
+            transform: translate(-50%, -50%) rotateX(90deg) translateZ(-12px);
+        }
+
+        .car-3d.tesla .f-left,
+        .car-3d.tesla .f-right {
+            width: 24px;
+            height: 6px;
+            transform: translate(-50%, -50%) rotateY(90deg) rotateZ(90deg) translateZ(6px);
+        }
+
+        .car-3d.tesla .f-right {
+            transform: translate(-50%, -50%) rotateY(-90deg) rotateZ(-90deg) translateZ(6px);
+        }
+
+        .car-3d.tesla .f-top {
+            width: 12px;
+            height: 24px;
+            transform: translate(-50%, -50%) translateZ(6px);
+            /* Tesla Glass Roof Effect */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
+            background-size: 8px 16px;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .c-tesla-1 {
+            top: 48px;
+            right: 34px;
+            background: #cc0000;
+            box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
+        }
+
+        .c-tesla-2 {
+            top: 78px;
+            right: 34px;
+            background: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
+        }
+
+        .c-tesla-3 {
+            top: 108px;
+            left: 34px;
+            background: #cc0000;
+            box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
+        }
+
+
+        /* Security Cameras */
+        .camera-pole {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #64748b;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+        }
+
+        .camera-pole::after {
+            /* Pole vertical part */
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 60px;
+            background: #475569;
+            transform: rotateX(90deg) translateZ(30px);
+        }
+
+        .cam-head {
+            position: absolute;
+            width: 12px;
+            height: 6px;
+            background: #ef4444;
+            /* Red indicator */
+            transform: translateZ(60px) translateX(-4px);
+            box-shadow: 0 0 5px #ef4444;
+            border-radius: 2px;
+        }
+
+        .cam-cone {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 80px solid rgba(239, 68, 68, 0.1);
+            transform: translateZ(60px) rotateY(180deg) rotateX(45deg);
+            transform-origin: top center;
+            pointer-events: none;
+        }
+
+        /* Camera Positions */
+        .cp-1 {
+            transform: translate(-550px, -550px);
+        }
+
+        /* NW Corner */
+        .cp-2 {
+            transform: translate(550px, -550px);
+        }
+
+        /* NE Corner */
+        .cp-3 {
+            transform: translate(550px, 550px);
+        }
+
+        /* SE Corner */
+        .cp-4 {
+            transform: translate(-550px, 550px);
+        }
+
+        /* Main Gate */
+        .main-gate {
+            transform: translate(0, 500px);
+        }
+
+        /* Position at South Entrance */
+
+        /* Canopy: Wide roof */
+        .gate-canopy .face {
+            background: rgba(30, 41, 59, 0.9);
+            border: 1px solid rgba(148, 163, 184, 0.5);
+        }
+
+        .gate-canopy .f-front,
+        .gate-canopy .f-back {
+            width: 160px;
+            height: 10px;
+            transform: translate(-50%, -50%) translateZ(45px) rotateX(90deg) translateZ(40px);
+        }
+
+        .gate-canopy .f-back {
+            transform: translate(-50%, -50%) translateZ(45px) rotateX(90deg) translateZ(-40px);
+        }
+
+        .gate-canopy .f-left,
+        .gate-canopy .f-right {
+            width: 80px;
+            height: 10px;
+            transform: translate(-50%, -50%) translateZ(45px) rotateY(-90deg) rotateZ(-90deg) translateZ(80px);
+        }
+
+        .gate-canopy .f-right {
+            transform: translate(-50%, -50%) translateZ(45px) rotateY(90deg) rotateZ(90deg) translateZ(80px);
+        }
+
+        .gate-canopy .f-top {
+            width: 160px;
+            height: 80px;
+            transform: translate(-50%, -50%) translateZ(50px);
+            background: rgba(59, 130, 246, 0.8);
+            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Pillars */
+        .gate-pillar .face {
+            background: #475569;
+        }
+
+        .gate-pillar .f-front,
+        .gate-pillar .f-back {
+            width: 20px;
+            height: 50px;
+            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(10px);
+        }
+
+        .gate-pillar .f-back {
+            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(-10px);
+        }
+
+        .gate-pillar .f-left,
+        .gate-pillar .f-right {
+            width: 20px;
+            height: 50px;
+            transform: translate(-50%, -50%) translateZ(25px) rotateY(-90deg) rotateZ(-90deg) translateZ(10px);
+        }
+
+        .gate-pillar .f-right {
+            transform: translate(-50%, -50%) translateZ(25px) rotateY(90deg) rotateZ(90deg) translateZ(10px);
+        }
+
+        .gate-pillar .f-top {
+            width: 20px;
+            height: 20px;
+            transform: translate(-50%, -50%) translateZ(50px);
+            background: #64748b;
+        }
+
+        .gp-left {
+            transform: translate(-60px, 0);
+        }
+
+        .gp-right {
+            transform: translate(60px, 0);
+        }
+
+        /* Barriers (Boom Gates) */
+        .gate-barrier {
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        .gb-pole {
+            position: absolute;
+            width: 4px;
+            height: 20px;
+            background: #eab308;
+            transform: rotateX(-90deg) translateY(-10px);
+        }
+
+        .gb-arm {
+            position: absolute;
+            width: 40px;
+            height: 2px;
+            background: repeating-linear-gradient(90deg, white 0, white 5px, #ef4444 5px, #ef4444 10px);
+            top: 0;
+            left: 2px;
+            transform: translateZ(18px);
+        }
+
+        .gb-in {
+            transform: translate(-30px, 10px);
+        }
+
+        .gb-out {
+            transform: translate(30px, 10px);
+        }
+
+        /* Turnstiles (Pedestrian) */
+        .gate-turnstile {
+            position: absolute;
+            width: 10px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        }
+
+        .gt-left {
+            transform: translate(-90px, 0);
+        }
+
+        .gt-right {
+            transform: translate(90px, 0);
+        }
+
+        /* SW Corner */
+
+        /* Trees Removed */
+
+        .building-group {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform-style: preserve-3d;
+        }
+
+        .cube {
+            position: absolute;
+            transform-style: preserve-3d;
+        }
+
+        /* Faces Generic */
+        /* Faces Generic */
+        .face {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backface-visibility: visible;
+            background-color: #334155;
+            /* Global Surface Detail: Light Reflection + Micro Texture */
+            background-image:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 100% 100%, 4px 4px, 4px 4px;
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        /* Night Window Glow Animation */
+        @keyframes windowGlow {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+
+        /* Global Roof Details */
+        .roof-detail {
+            position: absolute;
+            background: #475569;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transform-style: preserve-3d;
+        }
+
+        .ac-unit {
+            width: 10px;
+            height: 10px;
+            background: #64748b;
+            transform: translateZ(5px);
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .antenna {
+            width: 2px;
+            height: 40px;
+            background: #94a3b8;
+            transform: rotateX(-90deg) translateZ(20px);
+        }
+
+        /* Building Specific Styles */
+
+        /* 1. HQ TOWER (Tall, Cyan, Multi-part) */
+        .b-hq {
+            transform: translate(0, 0);
+        }
+
+        /* Base Podium: 120x100, 30 tall */
+
+        .b-hq-base .f-front,
+        .b-hq-base .f-back {
+            width: 120px;
+            height: 30px;
+            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(50px);
+        }
+
+        .b-hq-base .f-back {
+            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(-50px);
+        }
+
+        .b-hq-base .f-left,
+        .b-hq-base .f-right {
+            width: 100px;
+            height: 30px;
+            transform: translate(-50%, -50%) translateZ(15px) rotateY(-90deg) rotateZ(-90deg) translateZ(60px);
+        }
+
+        .b-hq-base .f-right {
+            transform: translate(-50%, -50%) translateZ(15px) rotateY(90deg) rotateZ(90deg) translateZ(60px);
+        }
+
+        .b-hq-base .f-top {
+            width: 120px;
+            height: 100px;
+            transform: translate(-50%, -50%) translateZ(30px);
+        }
+
+        /* HQ Base - Solid Podium */
+        .b-hq-base .face {
+            background-color: #0e7490;
+            /* Cyan-700 Darker Base */
+            border: 1px solid #155e75;
+        }
+
+        .b-hq-base .f-top {
+            background-color: #06b6d4;
+        }
+
+        /* Lighter Top */
+        .b-hq-base .f-left,
+        .b-hq-base .f-right {
+            background-color: #155e75;
+        }
+
+        /* Darker Sides */
+
+        /* Main Tower: 60x60, 140 tall, starts at Z=30 */
+        .b-hq-tower {
+            transform: translateZ(30px);
+        }
+
+        /* HQ Tower with Grid Windows */
+        /* HQ Tower with Grid Windows */
+        .b-hq-tower .face {
+            background-color: #0891b2;
+            /* Premium Glass Facade: Interlocking grids + vertical ribs */
+            background-image:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 19px, rgba(255, 255, 255, 0.15) 19px),
+                linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                repeating-linear-gradient(90deg, rgba(0, 100, 255, 0.1) 0px, rgba(0, 100, 255, 0.1) 2px, transparent 2px, transparent 20px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.3) 2px, transparent 2px);
+            background-size: 20px 20px, 20px 8px, 20px 100%, 40px 100%;
+            border: 1px solid #155e75;
+            box-shadow: inset 0 0 40px rgba(0, 255, 255, 0.15);
+        }
+
+        /* Directional Lighting for Tower */
+        .b-hq-tower .f-top {
+            background-color: #22d3ee;
+            background-image: none;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+
+        .b-hq-tower .f-left,
+        .b-hq-tower .f-right {
+            background-color: #0e7490;
+        }
+
+        /* Darker Sides */
+
+        .b-hq-tower .f-front,
+        .b-hq-tower .f-back {
+            width: 80px;
+            height: 280px;
+            transform: translate(-50%, -50%) translateZ(140px) rotateX(90deg) translateZ(30px);
+        }
+
+        .b-hq-tower .f-back {
+            transform: translate(-50%, -50%) translateZ(140px) rotateX(90deg) translateZ(-30px);
+        }
+
+        .b-hq-tower .f-left,
+        .b-hq-tower .f-right {
+            width: 60px;
+            height: 280px;
+            transform: translate(-50%, -50%) translateZ(140px) rotateY(-90deg) rotateZ(-90deg) translateZ(40px);
+        }
+
+        .b-hq-tower .f-right {
+            transform: translate(-50%, -50%) translateZ(140px) rotateY(90deg) rotateZ(90deg) translateZ(40px);
+        }
+
+        .b-hq-tower .f-top {
+            width: 80px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(280.1px);
+            background-color: #334155;
+            /* Dark Concrete */
+            /* Helipad Markings: Circle + H + Safety Perimeter */
+            background-image:
+                /* The 'H' - Horizontal bar */
+                linear-gradient(90deg, transparent 40%, #fff 40%, #fff 60%, transparent 60%),
+                /* The 'H' - Vertical bars */
+                linear-gradient(0deg, transparent 25%, #fff 25%, #fff 75%, transparent 75%),
+                /* The 'H' - Side rails */
+                linear-gradient(90deg, transparent 33%, #fff 33%, #fff 38%, transparent 38%, transparent 62%, #fff 62%, #fff 67%, transparent 67%),
+                /* Landing Circle */
+                radial-gradient(circle, transparent 44%, #fff 45%, #fff 51%, transparent 52%),
+                /* Outer Yellow Safety Ring */
+                radial-gradient(circle, transparent 72%, #fbbf24 73%, #fbbf24 81%, transparent 82%),
+                /* Concrete Texture */
+                radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 30px 40px, 30px 40px, 30px 40px, 45px 45px, 55px 55px, 4px 4px;
+            background-position: center, center, center, center, center, 0 0;
+            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
+            border: 2px solid #475569;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        /* 2. R&D A (Blue, L-Shape feel via 2 blocks) */
+        .b-rd-a {
+            transform: translate(-200px, -200px);
+        }
+
+        /* R&D A with Office Windows */
+        .b-rda-main .face {
+            background-color: #1e40af;
+            /* Deep Royal Blue */
+            /* Precise Horizontal Office Bands with glass effect */
+            background-image:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 50%),
+                linear-gradient(to bottom,
+                    rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 60%,
+                    rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.4) 100%);
+            background-size: 15px 12px, 100% 12px;
+            border: 1px solid #1e3a8a;
+            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .b-rda-main .f-top {
+            background-color: #60a5fa;
+            background-image: none;
+        }
+
+        .b-rda-main .f-left,
+        .b-rda-main .f-right {
+            background-color: #1d4ed8;
+        }
+
+        .b-rda-main .f-front,
+        .b-rda-main .f-back {
+            width: 50px;
+            height: 100px;
+            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(40px);
+        }
+
+        .b-rda-main .f-back {
+            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(-40px);
+        }
+
+        .b-rda-main .f-left,
+        .b-rda-main .f-right {
+            width: 80px;
+            height: 100px;
+            transform: translate(-50%, -50%) translateZ(50px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
+        }
+
+        .b-rda-main .f-right {
+            transform: translate(-50%, -50%) translateZ(50px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
+        }
+
+        .b-rda-main .f-top {
+            width: 50px;
+            height: 80px;
+            transform: translate(-50%, -50%) translateZ(100px);
+            background: #60a5fa;
+        }
+
+        /* Side Block: 40x60, 60 tall, Offset */
+        .b-rda-side {
+            transform: translate(45px, 10px);
+        }
+
+        /* (removed duplicate - solid style below) */
+
+        .b-rda-side .f-front,
+        .b-rda-side .f-back {
+            width: 40px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(30px);
+        }
+
+        .b-rda-side .f-back {
+            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(-30px);
+        }
+
+        .b-rda-side .f-left,
+        .b-rda-side .f-right {
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(30px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
+        }
+
+        .b-rda-side .f-right {
+            transform: translate(-50%, -50%) translateZ(30px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
+        }
+
+        .b-rda-side .f-top {
+            width: 40px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(60px);
+        }
+
+        /* R&D A Side Wing */
+        .b-rda-side .face {
+            background-color: #3b82f6;
+            /* Blue-500 */
+            background-image:
+                linear-gradient(#1e293b 1px, transparent 1px),
+                linear-gradient(90deg, #1e293b 1px, transparent 1px);
+            background-size: 10px 10px;
+            border: 1px solid #1e3a8a;
+        }
+
+        .b-rda-side .f-top {
+            background-color: #93c5fd;
+            background-image: none;
+        }
+
+        .b-rda-side .f-left,
+        .b-rda-side .f-right {
+            background-color: #2563eb;
+        }
+
+        /* 3. R&D B (Blue) Simple slab */
+        /* 3. R&D B (Blue) Simple slab */
+        .b-rd-b {
+            transform: translate(200px, -200px);
+        }
+
+        .b-rdb-main .face {
+            background-color: #475569;
+            /* Slate-600 */
+            background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 10px);
+            border: 1px solid #334155;
+        }
+
+        .b-rdb-main .f-top {
+            background-color: #94a3b8;
+            background-image: none;
+        }
+
+        .b-rdb-main .f-left,
+        .b-rdb-main .f-right {
+            background-color: #334155;
+        }
+
+        .b-rdb-main .f-front,
+        .b-rdb-main .f-back {
+            width: 50px;
+            height: 80px;
+            transform: translate(-50%, -50%) translateZ(40px) rotateX(90deg) translateZ(40px);
+        }
+
+        .b-rdb-main .f-back {
+            transform: translate(-50%, -50%) translateZ(40px) rotateX(90deg) translateZ(-40px);
+        }
+
+        .b-rdb-main .f-left,
+        .b-rdb-main .f-right {
+            width: 80px;
+            height: 80px;
+            transform: translate(-50%, -50%) translateZ(40px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
+        }
+
+        .b-rdb-main .f-right {
+            transform: translate(-50%, -50%) translateZ(40px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
+        }
+
+        .b-rdb-main .f-top {
+            width: 50px;
+            height: 80px;
+            transform: translate(-50%, -50%) translateZ(80px);
+            background: #94a3b8;
+        }
+
+        /* 4. Commercial (Gold, Wide) */
+        .b-mall {
+            transform: translate(-350px, 0);
+        }
+
+        /* Mall with Commercial GlassFacade */
+        .b-mall-main .face {
+            background-color: #eab308;
+            /* Yellow-500 */
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
+            background-size: 25px 15px;
+            border: 1px solid #ca8a04;
+        }
+
+        .b-mall-main .f-top {
+            background-color: #facc15;
+            background-image: none;
+        }
+
+        .b-mall-main .f-left,
+        .b-mall-main .f-right {
+            background-color: #ca8a04;
+        }
+
+        .b-mall-main .f-front,
+        .b-mall-main .f-back {
+            width: 140px;
+            height: 50px;
+            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(50px);
+        }
+
+        .b-mall-main .f-back {
+            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(-50px);
+        }
+
+        .b-mall-main .f-left,
+        .b-mall-main .f-right {
+            width: 100px;
+            height: 50px;
+            transform: translate(-50%, -50%) translateZ(25px) rotateY(-90deg) rotateZ(-90deg) translateZ(70px);
+        }
+
+        .b-mall-main .f-right {
+            transform: translate(-50%, -50%) translateZ(25px) rotateY(90deg) rotateZ(90deg) translateZ(70px);
+        }
+
+        .b-mall-main .f-top {
+            width: 140px;
+            height: 100px;
+            transform: translate(-50%, -50%) translateZ(50px);
+            background-color: #facc15;
+        }
+
+        /* Atrium: 40x40, 70 tall glass box */
+        .b-mall-atrium {
+            transform: translate(30px, 20px);
+        }
+
+        .b-mall-atrium .face {
+            background: rgba(147, 197, 253, 0.9);
+            /* Light Blue Glass */
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        .b-mall-atrium .f-front,
+        .b-mall-atrium .f-back {
+            width: 40px;
+            height: 70px;
+            transform: translate(-50%, -50%) translateZ(35px) rotateX(90deg) translateZ(20px);
+        }
+
+        .b-mall-atrium .f-back {
+            transform: translate(-50%, -50%) translateZ(35px) rotateX(90deg) translateZ(-20px);
+        }
+
+        .b-mall-atrium .f-left,
+        .b-mall-atrium .f-right {
+            width: 40px;
+            height: 70px;
+            transform: translate(-50%, -50%) translateZ(35px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
+        }
+
+        .b-mall-atrium .f-right {
+            transform: translate(-50%, -50%) translateZ(35px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
+        }
+
+        .b-mall-atrium .f-top {
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(70px);
+            background: #60a5fa;
+        }
+
+        /* 5. Apartments (Purple, Twin Towers) */
+        .b-apt {
+            transform: translate(350px, 150px);
+        }
+
+        /* Tower 1 - Solid Concrete */
+        .b-apt-1 {
+            transform: translate(-20px, -20px);
+        }
+
+        /* Apartments with Balconies/Windows */
+        .b-apt-1 .face {
+            background-color: #9333ea;
+            /* Purple-600 */
+            /* Balcony and window detail */
+            background-image:
+                repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 8px, transparent 8px, transparent 20px),
+                repeating-linear-gradient(transparent 0, transparent 10px, rgba(0, 0, 0, 0.3) 10px, rgba(0, 0, 0, 0.3) 12px);
+            border: 1px solid #7e22ce;
+        }
+
+        .b-apt-1 .f-top {
+            background-color: #c084fc;
+            background-image: none;
+        }
+
+        .b-apt-1 .f-left,
+        .b-apt-1 .f-right {
+            background-color: #7e22ce;
+        }
+
+        .b-apt-1 .f-front,
+        .b-apt-1 .f-back {
+            width: 50px;
+            height: 110px;
+            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(20px);
+        }
+
+        .b-apt-1 .f-back {
+            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(-20px);
+        }
+
+        .b-apt-1 .f-left,
+        .b-apt-1 .f-right {
+            width: 40px;
+            height: 110px;
+            transform: translate(-50%, -50%) translateZ(55px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
+        }
+
+        .b-apt-1 .f-right {
+            transform: translate(-50%, -50%) translateZ(55px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
+        }
+
+        .b-apt-1 .f-top {
+            width: 50px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(110px);
+            background-color: #c084fc;
+        }
+
+        /* Energy Labels */
+        .energy-label {
+            position: absolute;
+            transform-style: preserve-3d;
+            pointer-events: none;
+        }
+
+        /* Removed e-line to avoid vertical clutter */
+        .e-line {
+            display: none;
+        }
+
+        /* The Label Content - Centered in container */
+        .e-val {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid #3b82f6;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 14px;
+            color: #3b82f6;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+        }
+
+        /* Building Elevation Mapping (Calculated Tops) */
+        .b-hq {
+            --h: 300px;
+        }
+
+        /* Calibrated closer to building top (actual spire is 270px) */
+
+        /* Removed old buffers */
+
+        .b-rd-a {
+            --h: 120px;
+        }
+
+        .b-rd-b {
+            --h: 100px;
+        }
+
+        .b-mall {
+            --h: 130px;
+        }
+
+        .b-apt {
+            --h: 140px;
+        }
+
+        .b-gym {
+            --h: 80px;
+        }
+
+        .b-rd-c {
+            --h: 170px;
+        }
+
+        .b-canteen {
+            --h: 80px;
+        }
+
+        .b-data {
+            --h: 100px;
+        }
+
+        .b-power {
+            --h: 80px;
+        }
+
+        .b-off-d,
+        .b-off-e,
+        .b-off-f,
+        .b-off-g {
+            --h: 130px;
+        }
+
+        /* Tower 2 */
+
+        .b-apt-2 {
+            transform: translate(20px, 20px);
+        }
+
+        .b-mall-main .face {
+            background-color: #7c3aed;
+            /* Modern Retail Facade: Large window panes */
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
+            background-size: 30px 40px;
+            border: 1px solid #6d28d9;
+        }
+
+        .b-apt-2 .face {
+            background-color: #9333ea;
+            /* Purple-600 */
+            border: 1px solid #7e22ce;
+        }
+
+        .b-apt-2 .f-top {
+            background-color: #c084fc;
+        }
+
+        .b-apt-2 .f-left,
+        .b-apt-2 .f-right {
+            background-color: #7e22ce;
+        }
+
+        .b-apt-2 .f-front,
+        .b-apt-2 .f-back {
+            width: 50px;
+            height: 110px;
+            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(20px);
+        }
+
+        .b-apt-2 .f-back {
+            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(-20px);
+        }
+
+        .b-apt-2 .f-left,
+        .b-apt-2 .f-right {
+            width: 40px;
+            height: 110px;
+            transform: translate(-50%, -50%) translateZ(55px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
+        }
+
+        .b-apt-2 .f-right {
+            transform: translate(-50%, -50%) translateZ(55px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
+        }
+
+        .b-apt-2 .f-top {
+            width: 50px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(110px);
+            background-color: #c084fc;
+        }
+
+        /* 6. Gym (Cyan) */
+        .b-gym {
+            transform: translate(-350px, 350px);
+        }
+
+        /* 7. Facilities (Gray) */
+
+
+        .b-fac-1 .face,
+        .b-fac-2 .face {
+            border: 1px solid #475569;
+            background-color: #64748b;
+            /* Slate-500 */
+        }
+
+        .b-fac-1 .f-top,
+        .b-fac-2 .f-top {
+            background-color: #94a3b8;
+        }
+
+        .b-fac-1 .f-left,
+        .b-fac-1 .f-right,
+        .b-fac-2 .f-left,
+        .b-fac-2 .f-right {
+            background-color: #475569;
+        }
+
+        .b-fac-1 .f-top,
+        .b-fac-2 .f-top {
+            background: #94a3b8;
+        }
+
+        .b-fac-1 .f-front,
+        .b-fac-1 .f-back,
+        .b-fac-2 .f-front,
+        .b-fac-2 .f-back {
+            width: 30px;
+            height: 20px;
+            transform: translate(-50%, -50%) translateZ(10px) rotateX(90deg) translateZ(15px);
+        }
+
+        .b-fac-1 .f-back,
+        .b-fac-2 .f-back {
+            transform: translate(-50%, -50%) translateZ(10px) rotateX(90deg) translateZ(-15px);
+        }
+
+        .b-fac-1 .f-left,
+        .b-fac-1 .f-right,
+        .b-fac-2 .f-left,
+        .b-fac-2 .f-right {
+            width: 30px;
+            height: 20px;
+            transform: translate(-50%, -50%) translateZ(10px) rotateY(-90deg) rotateZ(-90deg) translateZ(15px);
+        }
+
+        .b-fac-1 .f-right,
+        .b-fac-2 .f-right {
+            transform: translate(-50%, -50%) translateZ(10px) rotateY(90deg) rotateZ(90deg) translateZ(15px);
+        }
+
+        .b-fac-1 .f-top,
+        .b-fac-2 .f-top {
+            width: 30px;
+            height: 30px;
+            transform: translate(-50%, -50%) translateZ(20px);
+            background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+
+        /* R&D A Facade */
+        .b-rda-main .face {
+            background-color: #0d9488;
+            /* Teal-600 */
+            /* Modern Ribbon Window Style */
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 100% 15px, 20px 100%;
+            border: 1px solid #0f766e;
+        }
+
+        /* R&D B Facade */
+        .b-rdb-main .face {
+            background-color: #0d9488;
+            /* Teal-600 */
+            /* Modern Ribbon Window Style */
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px),
+                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: 100% 15px, 20px 100%;
+            border: 1px solid #0f766e;
+        }
+
+        /* 7. Gym Faces */
+        .b-gym .face {
+            background-color: #06b6d4;
+            /* Cyan-500 */
+            border: 1px solid #0891b2;
+        }
+
+        .b-gym .f-top {
+            background-color: #22d3ee;
+            background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+        }
+
+        .b-gym .f-front,
+        .b-gym .f-back {
+            width: 80px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(60px);
+        }
+
+        .b-gym .f-back {
+            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(-60px);
+        }
+
+        .b-gym .f-left,
+        .b-gym .f-right {
+            width: 120px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(20px) rotateY(-90deg) rotateZ(-90deg) translateZ(40px);
+        }
+
+        .b-gym .f-right {
+            transform: translate(-50%, -50%) translateZ(20px) rotateY(90deg) rotateZ(90deg) translateZ(40px);
+        }
+
+        .b-gym .f-top {
+            width: 80px;
+            height: 120px;
+            transform: translate(-50%, -50%) translateZ(40px);
+        }
+
+        /* 8. NEW BUILDINGS STYLES */
+
+        /* R&D Center C (Slate/Gold tech tower) */
+        .b-rd-c {
+            transform: translate(0, -400px);
+        }
+
+        .b-rdc-main .face {
+            background-color: #1e293b;
+            border: 1px solid #f59e0b;
+        }
+
+        .b-rdc-main .f-front,
+        .b-rdc-main .f-back {
+            width: 60px;
+            height: 140px;
+            transform: translate(-50%, -50%) translateZ(70px) rotateX(90deg) translateZ(30px);
+        }
+
+        .b-rdc-main .f-back {
+            transform: translate(-50%, -50%) translateZ(70px) rotateX(90deg) translateZ(-30px);
+        }
+
+        .b-rdc-main .f-left,
+        .b-rdc-main .f-right {
+            width: 60px;
+            height: 140px;
+            transform: translate(-50%, -50%) translateZ(70px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
+        }
+
+        .b-rdc-main .f-right {
+            transform: translate(-50%, -50%) translateZ(70px) rotateY(90deg) rotateZ(90deg) translateZ(30px);
+        }
+
+        .b-rdc-main .f-top {
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(140px);
+            background: #f59e0b;
+            box-shadow: 0 0 20px #f59e0b;
+        }
+
+        /* Staff Canteen (Orange/Red) */
+        .b-canteen {
+            /* Moved to the North side of Talent Apartments */
+            transform: translate(350px, -50px);
+        }
+
+        .b-can-main .face {
+            background-color: #f97316;
+            border: 1px solid #c2410c;
+        }
+
+        .b-can-main .f-front,
+        .b-can-main .f-back {
+            width: 100px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(30px);
+        }
+
+        .b-can-main .f-back {
+            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(-30px);
+        }
+
+        .b-can-main .f-left,
+        .b-can-main .f-right {
+            width: 60px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(20px) rotateY(-90deg) rotateZ(-90deg) translateZ(50px);
+        }
+
+        .b-can-main .f-right {
+            transform: translate(-50%, -50%) translateZ(20px) rotateY(90deg) rotateZ(90deg) translateZ(50px);
+        }
+
+        .b-can-main .f-top {
+            width: 100px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(40px);
+            background: #fdba74;
+        }
+
+        /* Data Center (Dark Slate with Cyan Glow) */
+        .b-data {
+            transform: translate(0, -200px);
+        }
+
+        .b-dat-main .face {
+            background-color: #0f172a;
+            border: 1px solid #06b6d4;
+            /* High-Tech Data Center Pattern: Hex-like grid or small digital dots */
+            background-image:
+                radial-gradient(#06b6d4 1px, transparent 1px),
+                linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            background-size: 10px 10px, 100% 5px;
+            box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.2);
+        }
+
+        .b-dat-main .f-front,
+        .b-dat-main .f-back {
+            width: 80px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(40px);
+        }
+
+        .b-dat-main .f-back {
+            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(-40px);
+        }
+
+        .b-dat-main .f-left,
+        .b-dat-main .f-right {
+            width: 80px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(30px) rotateY(-90deg) rotateZ(-90deg) translateZ(40px);
+        }
+
+        .b-dat-main .f-right {
+            transform: translate(-50%, -50%) translateZ(30px) rotateY(90deg) rotateZ(90deg) translateZ(40px);
+        }
+
+        .b-dat-main .f-top {
+            width: 80px;
+            height: 80px;
+            transform: translate(-50%, -50%) translateZ(60px);
+            background: #0f172a;
+            box-shadow: inset 0 0 20px #06b6d4;
+        }
+
+        /* Power Station (Green Industrial) */
+        .b-power {
+            transform: translate(520px, -480px);
+        }
+
+        .b-pow-main .face {
+            background-color: #166534;
+            border: 1px solid #14532d;
+        }
+
+        .b-pow-main .f-front,
+        .b-pow-main .f-back {
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(20px);
+        }
+
+        .b-pow-main .f-back {
+            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(-20px);
+        }
+
+        .b-pow-main .f-left,
+        .b-pow-main .f-right {
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(20px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
+        }
+
+        .b-pow-main .f-right {
+            transform: translate(-50%, -50%) translateZ(20px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
+        }
+
+        .b-pow-main .f-top {
+            width: 40px;
+            height: 40px;
+            transform: translate(-50%, -50%) translateZ(40px);
+            background: #4ade80;
+        }
+
+        /* Office Buildings Style */
+        .b-off-d {
+            transform: translate(-350px, -350px);
+        }
+
+        .b-off-e {
+            transform: translate(350px, -350px);
+        }
+
+        .b-off-f {
+            transform: translate(-200px, 200px);
+        }
+
+        .b-off-g {
+            transform: translate(200px, 200px);
+        }
+
+        .b-office-tower .face {
+            background-color: #1e3a8a;
+            /* Blue-900 */
+            /* Double-glazing effect with staggered windows */
+            background-image:
+                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+            background-size: 12px 100%, 100% 20px, 100% 100%;
+            border: 1px solid #1e40af;
+            box-shadow: inset 0 0 20px rgba(0, 50, 200, 0.2);
+        }
+
+        .b-office-tower .f-top {
+            background-color: #3b82f6;
+            background-image: none;
+        }
+
+        .b-off-main .f-front,
+        .b-off-main .f-back {
+            width: 60px;
+            height: 100px;
+            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(30px);
+        }
+
+        .b-off-main .f-back {
+            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(-30px);
+        }
+
+        .b-off-main .f-left,
+        .b-off-main .f-right {
+            width: 60px;
+            height: 100px;
+            transform: translate(-50%, -50%) translateZ(50px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
+        }
+
+        .b-off-main .f-right {
+            transform: translate(-50%, -50%) translateZ(50px) rotateY(90deg) rotateZ(90deg) translateZ(30px);
+        }
+
+        .b-off-main .f-top {
+            width: 60px;
+            height: 60px;
+            transform: translate(-50%, -50%) translateZ(100px);
+        }
+
+        /* Group heights already defined above */
+
+
+        /* Labels Master Styles */
+        .b-label,
+        .energy-label {
+            --h-pos: 100px;
+            /* Global Fallback */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            pointer-events: none;
+            z-index: 10;
+            transition: transform 0.05s linear;
+        }
+
+        .b-label {
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 800;
+            white-space: nowrap;
+            padding: 2px 10px;
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid #3b82f6;
+            border-radius: 4px;
+            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
+            text-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+        }
+
+        /* NEW: Occupancy Label Style */
+        .occupancy-label {
+            position: absolute;
+            transform-style: preserve-3d;
+            pointer-events: none;
+            z-index: 11;
+        }
+
+        .occ-tag {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid #f59e0b;
+            /* Amber-500 */
+            padding: 2px 8px;
+            border-radius: 20px;
+            color: #fbbf24;
+            font-size: 9px;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .occ-tag::before {
+            content: '';
+            display: inline-block;
+            width: 5px;
+            height: 5px;
+            background: #4ade80;
+            border-radius: 50%;
+            box-shadow: 0 0 5px #4ade80;
+        }
+
+        /* NEW: Environment Label Style */
+        .env-label {
+            position: absolute;
+            transform-style: preserve-3d;
+            pointer-events: none;
+            z-index: 11;
+        }
+
+        .env-tag {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid #f87171;
+            /* Red-400 */
+            padding: 2px 8px;
+            border-radius: 20px;
+            color: #f87171;
+            font-size: 9px;
+            font-weight: bold;
+            white-space: nowrap;
+            box-shadow: 0 0 10px rgba(248, 113, 113, 0.4);
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+
+        .env-tag::before {
+            content: '🔊';
+            font-size: 8px;
+        }
+
+        .energy-label {
+            margin-top: 0;
+        }
+
+        /* ============================================================
+                           INDIVIDUAL POSITIONING (Adjust these for each building)
+                           ============================================================ */
+
+        /* Headquarters 总部 */
+        .b-hq .b-label {
+            --h-pos: 420px;
+        }
+
+        .b-hq .energy-label {
+            --h-pos: 350px;
+        }
+
+        .b-hq .occupancy-label {
+            --h-pos: 385px;
+        }
+
+        /* R&D A 研发A */
+        .b-rd-a .b-label {
+            --h-pos: 200px;
+        }
+
+        .b-rd-a .energy-label {
+            --h-pos: 140px;
+        }
+
+        .b-rd-a .occupancy-label {
+            --h-pos: 170px;
+        }
+
+        .b-rd-a .env-label {
+            --h-pos: 100px;
+        }
+
+        /* R&D B 研发B */
+        .b-rd-b .b-label {
+            --h-pos: 180px;
+        }
+
+        .b-rd-b .energy-label {
+            --h-pos: 120px;
+        }
+
+        .b-rd-b .occupancy-label {
+            --h-pos: 150px;
+        }
+
+        /* R&D C 研发C */
+        .b-rd-c .b-label {
+            --h-pos: 240px;
+        }
+
+        .b-rd-c .energy-label {
+            --h-pos: 180px;
+        }
+
+        .b-rd-c .occupancy-label {
+            --h-pos: 210px;
+        }
+
+        /* Commercial Mall 商业中心 */
+        .b-mall .b-label {
+            --h-pos: 210px;
+        }
+
+        .b-mall .energy-label {
+            --h-pos: 150px;
+        }
+
+        .b-mall .occupancy-label {
+            --h-pos: 180px;
+        }
+
+        .b-mall .env-label {
+            --h-pos: 120px;
+        }
+
+        /* Apartments 人才公寓 */
+        .b-apt .b-label {
+            --h-pos: 210px;
+        }
+
+        .b-apt .energy-label {
+            --h-pos: 150px;
+        }
+
+        .b-apt .occupancy-label {
+            --h-pos: 180px;
+        }
+
+        /* Gym 体育中心 */
+        .b-gym .b-label {
+            --h-pos: 140px;
+        }
+
+        .b-gym .occupancy-label {
+            --h-pos: 110px;
+        }
+
+        .b-gym .env-label {
+            --h-pos: 50px;
+        }
+
+        /* PV Array 光伏阵列 */
+        .el-pv {
+            --h-pos: 120px;
+        }
+
+        .solar-array .b-label {
+            --h-pos: 80px;
+        }
+
+        .b-gym .energy-label {
+            --h-pos: 80px;
+        }
+
+        /* Staff Canteen 职工食堂 */
+        .b-canteen .b-label {
+            --h-pos: 140px;
+        }
+
+        .b-canteen .energy-label {
+            --h-pos: 80px;
+        }
+
+        /* Data Center 数据中心 */
+        .b-data .b-label {
+            --h-pos: 160px;
+        }
+
+        .b-data .env-label {
+            --h-pos: 130px;
+        }
+
+        .b-data .energy-label {
+            --h-pos: 100px;
+        }
+
+        /* Parking Lot 停车场 */
+        .parking-lot .b-label {
+            --h-pos: 80px;
+        }
+
+        .parking-lot .energy-label {
+            --h-pos: 40px;
+        }
+
+        /* Power Station 动力中心 */
+        .b-power .b-label {
+            --h-pos: 140px;
+        }
+
+        .b-power .energy-label {
+            --h-pos: 80px;
+        }
+
+        /* Tea House 茶楼 */
+        .b-teahouse {
+            transform: translate(350px, 360px);
+        }
+
+        .b-teahouse .b-label {
+            --h-pos: 100px;
+        }
+
+        .b-teahouse .energy-label {
+            --h-pos: 60px;
+        }
+
+        .b-teahouse .occupancy-label {
+            --h-pos: 80px;
+        }
+
+        /* Tea House Style: Huizhou Architecture (White Walls, Grey Tiles) */
+        .b-tea-base .face,
+        .b-tea-top .face {
+            background-color: #f8fafc;
+            /* Powder White Walls */
+            background-image:
+                /* Traditional Lattice Windows */
+                linear-gradient(to bottom, transparent 30%, #334155 30%, #334155 32%, transparent 32%, transparent 50%, #334155 50%, #334155 52%, transparent 52%),
+                linear-gradient(to right, transparent 40%, rgba(51, 65, 85, 0.3) 40%, rgba(51, 65, 85, 0.3) 60%, transparent 60%);
+            background-size: 15px 15px, 100% 100%;
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Horse-Head Walls (Ma-Tou-Qiang) */
+        .b-tea-base .f-left::before,
+        .b-tea-base .f-right::before,
+        .b-tea-top .f-left::before,
+        .b-tea-top .f-right::before {
+            content: '';
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            width: 100%;
+            height: 15px;
+            background: #f8fafc;
+            /* Step-like shape */
+            clip-path: polygon(0 100%, 0 0, 30% 0, 30% 30%, 70% 30%, 70% 60%, 100% 60%, 100% 100%);
+            border-top: 2px solid #1e293b;
+        }
+
+        .b-tea-base .f-front,
+        .b-tea-base .f-back {
+            width: 60px;
+            height: 30px;
+            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(30px);
+        }
+
+        .b-tea-base .f-back {
+            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(-30px);
+        }
+
+        .b-tea-base .f-left,
+        .b-tea-base .f-right {
+            width: 60px;
+            height: 30px;
+            transform: translate(-50%, -50%) translateZ(15px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
+            overflow: visible;
+        }
+
+        .b-tea-base .f-right {
+            transform: translate(-50%, -50%) translateZ(15px) rotateY(90deg) rotateZ(90deg) translateZ(30px);
+        }
+
+        .b-tea-base .f-top {
+            width: 74px;
+            /* Eaves */
+            height: 74px;
+            transform: translate(-50%, -50%) translateZ(30px);
+            background-color: #1e293b;
+            /* Dark Grey Tiles */
+            background-image: repeating-linear-gradient(0deg, #0f172a 0, #0f172a 2px, transparent 2px, transparent 6px);
+            border: 1px solid #0f172a;
+        }
+
+        /* Upper Level */
+        .b-tea-top .f-front,
+        .b-tea-top .f-back {
+            width: 40px;
+            height: 25px;
+            transform: translate(-50%, -50%) translateZ(42.5px) rotateX(90deg) translateZ(20px);
+        }
+
+        .b-tea-top .f-back {
+            transform: translate(-50%, -50%) translateZ(42.5px) rotateX(90deg) translateZ(-20px);
+        }
+
+        .b-tea-top .f-left,
+        .b-tea-top .f-right {
+            width: 40px;
+            height: 25px;
+            transform: translate(-50%, -50%) translateZ(42.5px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
+            overflow: visible;
+        }
+
+        .b-tea-top .f-right {
+            transform: translate(-50%, -50%) translateZ(42.5px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
+        }
+
+        .b-tea-top .f-top {
+            width: 54px;
+            height: 54px;
+            transform: translate(-50%, -50%) translateZ(55px);
+            background-color: #0f172a;
+            /* Darker Slate Tiles */
+            background-image:
+                repeating-linear-gradient(90deg, #1e293b 0, #1e293b 2px, transparent 2px, transparent 8px),
+                radial-gradient(circle, #334155 1px, transparent 1px);
+            background-size: 100% 100%, 8px 8px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Office Towers D-G 办公楼 */
+        .b-off-d .b-label,
+        .b-off-e .b-label,
+        .b-off-f .b-label,
+        .b-off-g .b-label {
+            --h-pos: 200px;
+        }
+
+        .b-off-d .energy-label,
+        .b-off-e .energy-label,
+        .b-off-f .energy-label,
+        .b-off-g .energy-label {
+            --h-pos: 140px;
+        }
+
+        .b-off-d .occupancy-label,
+        .b-off-e .occupancy-label,
+        .b-off-f .occupancy-label,
+        .b-off-g .occupancy-label {
+            --h-pos: 170px;
+        }
+
+        /* Data Points */
+        .data-point {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 10px white;
+            top: 50%;
+            left: 50%;
+        }
+
+        .p-1 {
+            background: #60a5fa;
+            animation: floatData1 4s infinite;
+            transform: translate(-250px, -180px) translateZ(100px);
+        }
+
+        .p-2 {
+            background: #facc15;
+            animation: floatData2 5s infinite;
+            transform: translate(-180px, 180px) translateZ(70px);
+        }
+
+        .p-3 {
+            background: #8b5cf6;
+            animation: floatData3 6s infinite;
+            transform: translate(180px, 180px) translateZ(110px);
+        }
+
+        .p-4 {
+            background: #06b6d4;
+            animation: floatDataTower 7s infinite;
+            transform: translate(0, 0) translateZ(160px);
+        }
+
+        .p-5 {
+            background: #4ade80;
+            animation: floatData5 5.5s infinite;
+            transform: translate(350px, -350px) translateZ(90px);
+        }
+
+        .p-6 {
+            background: #f87171;
+            animation: floatData6 6.5s infinite;
+            transform: translate(-350px, -350px) translateZ(120px);
+        }
+
+        /* Moving Vehicles */
+        .car-moving {
+            position: absolute;
+            width: 12px;
+            height: 24px;
+            background: #fff;
+            border-radius: 2px;
+            box-shadow: 0 0 5px white;
+            z-index: 5;
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -6px;
+        }
+
+
+
+
+
+        .cm-5 {
+            background: #ffffff;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+            animation: drive-n-e 13s linear infinite;
+            animation-delay: 5s;
+        }
+
+        @keyframes drive-n-e {
+            0% {
+                transform: translate(-600px, -270px) rotate(90deg);
+            }
+
+            100% {
+                transform: translate(600px, -270px) rotate(90deg);
+            }
+        }
+
+        @keyframes drive-s-w {
+            0% {
+                transform: translate(600px, 280px) rotate(-90deg);
+            }
+
+            100% {
+                transform: translate(-600px, 280px) rotate(-90deg);
+            }
+        }
+
+        @keyframes drive-w-s {
+            0% {
+                transform: translate(-270px, -600px);
+            }
+
+            100% {
+                transform: translate(-270px, 600px);
+            }
+        }
+
+        @keyframes drive-e-n {
+            0% {
+                transform: translate(260px, 600px) rotate(180deg);
+            }
+
+            100% {
+                transform: translate(260px, -600px) rotate(180deg);
+            }
+        }
+
+        @keyframes floatData1 {
+
+            0%,
+            100% {
+                transform: translate(-250px, -180px) translateZ(90px);
+            }
+
+            50% {
+                transform: translate(-250px, -180px) translateZ(110px);
+            }
+        }
+
+        @keyframes floatData2 {
+
+            0%,
+            100% {
+                transform: translate(-180px, 180px) translateZ(70px);
+            }
+
+            50% {
+                transform: translate(-180px, 180px) translateZ(90px);
+            }
+        }
+
+        @keyframes floatData3 {
+
+            0%,
+            100% {
+                transform: translate(180px, 180px) translateZ(110px);
+            }
+
+            50% {
+                transform: translate(180px, 180px) translateZ(130px);
+            }
+        }
+
+        @keyframes floatDataTower {
+
+            0%,
+            100% {
+                transform: translate(0, 0) translateZ(160px);
+            }
+
+            50% {
+                transform: translate(0, 0) translateZ(180px);
+            }
+        }
+
+        @keyframes floatData5 {
+
+            0%,
+            100% {
+                transform: translate(350px, -350px) translateZ(80px);
+            }
+
+            50% {
+                transform: translate(350px, -350px) translateZ(100px);
+            }
+        }
+
+        @keyframes floatData6 {
+
+            0%,
+            100% {
+                transform: translate(-350px, -350px) translateZ(110px);
+            }
+
+            50% {
+                transform: translate(-350px, -350px) translateZ(130px);
+            }
+        }
+
+        /* ===== 驾驶舱根 CSS 变量 ===== */
+
+        /* ===== dashboard-page 布局 ===== */
+        .dashboard-page {
+            background: #030712;
+            padding: 36px 24px 0;
+            height: 100vh;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .dashboard-page .page-num {
+            color: rgba(59, 130, 246, 0.15);
+        }
+
+        .dashboard-page .page-label {
+            color: #3b82f6;
+        }
+
+        .dashboard-page .page-title {
+            color: #f8fafc;
+        }
+
+        .dashboard-page .section-divider {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            margin-bottom: 12px;
+        }
+
+        /* 采用绝对定位左上角，并辅以 JS 动态逆向计算逻辑尺寸，实现等比缩放且 100% 无死角铺满全屏 */
+        .cockpit-page-wrap {
+            position: relative !important;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            display: block;
+        }
+
+        .cockpit-page-wrap .cockpit-container {
+            position: absolute !important;
+            left: 0 !important;
+            top: 0 !important;
+            margin: 0 !important;
+            transform-origin: left top !important;
+            flex-shrink: 0;
+            transition: none !important;
+        }
+
+        /* slide 容器本身不需要全屏定位 */
+        .cockpit-page-wrap>div {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-page {
+                padding: 24px 12px 0;
+                overflow: hidden;
+            }
+
+            .cockpit-page-wrap {
+                width: 100%;
+                height: 100%;
+                display: block;
+                overflow: hidden;
+            }
+
+            .cockpit-page-wrap .cockpit-container {
+                margin: 0 !important;
+            }
+        }
     </style>
 </head>
 
@@ -1465,6 +4001,8 @@
             </div>
         </div>
         <div class="section-divider"></div>
+        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">
+            传统园区管理往往面临“信息孤岛”困境，各系统间数据无法互通，导致整体运营效率偏低且维护成本居高不下。本方案通过打造统一的数字底座，针对核心痛点实现从被动管理向主动化、数据化运营的全面转型。</p>
 
         <div class="pain-grid">
             <div class="pain-card">
@@ -1517,6 +4055,8 @@
             </div>
         </div>
         <div class="section-divider"></div>
+        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">Smart Park OS
+            采用“1+N”模块化架构，在拥有强大数据驾驶舱的基础上，深度集成了多项专业化业务功能模块。各模块间深度协同，实现了从 IoT 感知到智慧物业、企业服务的全流程数字化覆盖。</p>
 
         <div class="module-grid">
             <div class="module-card color-blue">
@@ -1691,6 +4231,9 @@
             </div>
         </div>
         <div class="section-divider"></div>
+        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">“小科”AI 助手是 Smart Park OS
+            的智慧核心，通过业界领先的 <strong>Model Context Protocol (MCP)</strong> 协议，实现了 AI
+            与底层业务逻辑的深度交融。它不只是简单的对话窗口，更是能够感知设备状态、驱动业务流转的“数字管家”。</p>
 
         <div class="ai-hero">
             <div>
@@ -1750,8 +4293,6 @@
         <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">本平台严格遵循<strong>网络安全等级保护 2.0
                 (三级等保)</strong> 与 <strong>国家密码应用安全性评估 (国家密评)</strong> 标准。从系统底层即内嵌了符合国家商用密码管理局要求的 <strong>SM2、SM3、SM4
                 核心加密组件</strong>，在身份鉴别、访问控制及全生命周期数据保护等方面均建立了行业顶尖的深度防御体系。通过多维隔离与细粒度审计日志，确保每一层级业务逻辑都在极致安全的“围墙”内可靠运行。</p>
-        </p>
-
         <div class="security-grid">
             <div class="security-card">
                 <div class="security-icon-wrap">&#128272;</div>
@@ -1811,14 +4352,7 @@
                     </div>
                 </div>
             </div>
-
-            <div class="security-card">
-                <div class="security-icon-wrap">&#128065;</div>
-                <div class="security-content">
-                    <div class="security-title">物理环境安全感知</div>
-                    <div class="security-desc">深度集成园区监控与红外感知系统，AI 自动识别非法闯入与越界行为。将物理空间的安全动态实时转化为系统告警，构建数字与现实的立体防线。</div>
-                </div>
-            </div>
+ 
             <div class="security-card">
                 <div class="security-icon-wrap">&#127760;</div>
                 <div class="security-content">
@@ -1840,6 +4374,8 @@
             </div>
         </div>
         <div class="section-divider"></div>
+        <p style="font-size: 14px; color: #6b7280; margin-bottom: 30px; line-height: 1.6;">引入 Smart Park OS
+            不仅是技术的升级，更是对园区管理颗粒度与服务价值的重塑。通过数据协同与流程再造，我们助力运营商显著提升管理效率、降低能耗成本，并为入驻企业创造极致的数字化办公体验。</p>
 
         <div class="value-metrics">
             <div class="metric-card">
@@ -1883,14 +4419,7 @@
                     <div class="value-point-desc">AI 自动生成园区运营报告，可视化呈现招商入驻率、设备运行状态、收益趋势等核心指标，让管理者随时掌握园区运营全貌。</div>
                 </div>
             </div>
-            <div class="value-point">
-                <div class="value-point-icon">&#128295;</div>
-                <div>
-                    <div class="value-point-title">灵活可扩展架构</div>
-                    <div class="value-point-desc">Clean Architecture 设计，IDataFactory
-                        数据层抽象，业务逻辑与基础设施完全解耦，轻松接入新业务模块，保护长期技术投资。</div>
-                </div>
-            </div>
+           
             <div class="value-point">
                 <div class="value-point-icon">&#128241;</div>
                 <div>
@@ -1949,267 +4478,6 @@
 
         <!-- 驾驶舱内联内容 -->
         <div class="cockpit-page-wrap">
-            <style>
-                /* Dashboard Specific Styles */
-                .cockpit-container {
-                    width: 95vw;
-                    height: 88vh;
-                    background: rgba(15, 23, 42, 0.9);
-                    border: 1px solid rgba(59, 130, 246, 0.3);
-                    border-radius: 1rem;
-                    display: grid;
-                    grid-template-columns: 300px 1fr 300px;
-                    grid-template-rows: 60px 1fr 150px;
-                    gap: 1rem;
-                    padding: 1rem;
-                    box-shadow: 0 0 50px rgba(59, 130, 246, 0.15);
-                    position: relative;
-                    overflow: hidden;
-                    backdrop-filter: blur(20px);
-                }
-
-                .cp-header {
-                    grid-column: 1 / -1;
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-                    padding-bottom: 0.5rem;
-                }
-
-                .cp-title {
-                    font-family: 'Outfit', sans-serif;
-                    font-weight: 700;
-                    letter-spacing: 2px;
-                    color: #fff;
-                    text-transform: uppercase;
-                    background: linear-gradient(to right, #fff, #94a3b8);
-                    -webkit-background-clip: text;
-                    background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                }
-
-                .cp-panel-side {
-                    grid-row: 2 / 4;
-                    display: flex;
-                    flex-direction: column;
-                    gap: 1rem;
-                }
-
-                .cp-card {
-                    background: rgba(255, 255, 255, 0.03);
-                    border: 1px solid rgba(255, 255, 255, 0.05);
-                    border-radius: 0.5rem;
-                    padding: 1rem;
-                    flex: 1;
-                    display: flex;
-                    flex-direction: column;
-                }
-
-                .cp-card h4 {
-                    font-size: 0.9rem;
-                    color: var(--accent);
-                    margin-bottom: 0.8rem;
-                    text-transform: uppercase;
-                    letter-spacing: 1px;
-                    border-left: 3px solid var(--accent);
-                    padding-left: 0.5rem;
-                }
-
-                .cp-stat-row {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    margin-bottom: 0.8rem;
-                    font-size: 0.85rem;
-                }
-
-                .stat-value {
-                    font-family: 'Outfit', monospace;
-                    font-weight: 600;
-                    color: #fff;
-                }
-
-                .stat-label {
-                    color: var(--text-muted);
-                }
-
-                /* Middle Map */
-                .cp-map-area {
-                    grid-column: 2;
-                    grid-row: 2;
-                    position: relative;
-                    border-radius: 0.5rem;
-                    background: radial-gradient(circle at center, rgba(59, 130, 246, 0.05) 0%, transparent 70%);
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    overflow: hidden;
-                    perspective: 1200px;
-                    /* Critical for 3D effect */
-                }
-
-                /* Bottom Module Metrics */
-                .cp-bottom-metrics {
-                    grid-column: 2;
-                    grid-row: 3;
-                    display: grid;
-                    grid-template-columns: repeat(4, 1fr);
-                    gap: 1rem;
-                }
-
-                /* Charts */
-                .mini-bar-chart {
-                    display: flex;
-                    align-items: flex-end;
-                    justify-content: space-between;
-                    height: 40px;
-                    gap: 2px;
-                }
-
-                .mini-bar {
-                    flex: 1;
-                    background: var(--primary);
-                    opacity: 0.6;
-                    border-radius: 2px 2px 0 0;
-                }
-
-                .progress-item {
-                    margin-bottom: 0.5rem;
-                }
-
-                .progress-header {
-                    display: flex;
-                    justify-content: space-between;
-                    font-size: 0.75rem;
-                    margin-bottom: 2px;
-                }
-
-                .progress-track {
-                    height: 4px;
-                    background: rgba(255, 255, 255, 0.1);
-                    border-radius: 2px;
-                }
-
-                .progress-fill {
-                    height: 100%;
-                    border-radius: 2px;
-                }
-
-                /* Camera Feed Styles */
-                .cam-grid {
-                    display: grid;
-                    grid-template-columns: 1fr 1fr;
-                    gap: 0.5rem;
-                    height: 120px;
-                }
-
-                .cam-feed {
-                    background: #000;
-                    border: 1px solid rgba(255, 255, 255, 0.1);
-                    position: relative;
-                    overflow: hidden;
-                    border-radius: 4px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .cam-feed img {
-                    width: 100%;
-                    height: 100%;
-                    object-fit: cover;
-                    opacity: 0.6;
-                }
-
-                .cam-overlay {
-                    position: absolute;
-                    top: 5px;
-                    left: 5px;
-                    font-size: 8px;
-                    color: rgba(255, 255, 255, 0.7);
-                    font-family: monospace;
-                    background: rgba(0, 0, 0, 0.5);
-                    padding: 1px 3px;
-                }
-
-                .rec-dot {
-                    position: absolute;
-                    top: 5px;
-                    right: 5px;
-                    width: 6px;
-                    height: 6px;
-                    background: red;
-                    border-radius: 50%;
-                    animation: blink 1s infinite;
-                }
-
-                @keyframes blink {
-                    50% {
-                        opacity: 0;
-                    }
-                }
-
-                .cam-crosshair {
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    pointer-events: none;
-                }
-
-                .cam-crosshair::before,
-                .cam-crosshair::after {
-                    content: '';
-                    position: absolute;
-                    background: rgba(255, 255, 255, 0.2);
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-
-                .cam-crosshair::before {
-                    width: 10px;
-                    height: 1px;
-                }
-
-                .cam-crosshair::after {
-                    width: 1px;
-                    height: 10px;
-                }
-
-                /* Services & Activities */
-                .activity-item {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: center;
-                    padding: 0.6rem 0;
-                    font-size: 0.85rem;
-                    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-                }
-
-                .activity-item:last-child {
-                    border-bottom: none;
-                }
-
-                .badge {
-                    padding: 2px 6px;
-                    border-radius: 4px;
-                    font-size: 0.7rem;
-                    font-weight: 600;
-                }
-
-                .badge-info {
-                    color: #60a5fa;
-                    background: rgba(96, 165, 250, 0.15);
-                    border: 1px solid rgba(96, 165, 250, 0.3);
-                }
-
-                .badge-warn {
-                    color: #facc15;
-                    background: rgba(250, 204, 21, 0.15);
-                    border: 1px solid rgba(250, 204, 21, 0.3);
-                }
-            </style>
 
             <div class="cockpit-container">
                 <!-- Header -->
@@ -2927,2296 +5195,6 @@
                     </div>
 
                     <!-- 3D Styles -->
-                    <style>
-                        .scene-3d {
-                            width: 100%;
-                            height: 100%;
-                            position: relative;
-                            transform-style: preserve-3d;
-                            transform: rotateX(60deg) rotateZ(0deg);
-                        }
-
-                        /* Compass UI Styles */
-                        .map-compass {
-                            position: absolute;
-                            bottom: 30px;
-                            right: 30px;
-                            width: 80px;
-                            height: 80px;
-                            background: radial-gradient(circle, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9));
-                            border: 2px solid rgba(59, 130, 246, 0.5);
-                            border-radius: 50%;
-                            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(59, 130, 246, 0.2);
-                            display: flex;
-                            align-items: center;
-                            justify-content: center;
-                            z-index: 1000;
-                            pointer-events: none;
-                        }
-
-                        .compass-ring {
-                            position: relative;
-                            width: 100%;
-                            height: 100%;
-                        }
-
-                        @keyframes rotateCompass {
-                            0% {
-                                transform: rotate(0deg);
-                            }
-
-                            100% {
-                                transform: rotate(360deg);
-                            }
-                        }
-
-                        .compass-ring span {
-                            position: absolute;
-                            font-size: 12px;
-                            font-weight: 900;
-                            color: rgba(255, 255, 255, 0.8);
-                            text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
-                        }
-
-                        .c-n {
-                            top: 5px;
-                            left: 50%;
-                            transform: translateX(-50%);
-                            color: #ef4444 !important;
-                        }
-
-                        .c-e {
-                            right: 8px;
-                            top: 50%;
-                            transform: translateY(-50%);
-                        }
-
-                        .c-s {
-                            bottom: 5px;
-                            left: 50%;
-                            transform: translateX(-50%);
-                        }
-
-                        .c-w {
-                            left: 8px;
-                            top: 50%;
-                            transform: translateY(-50%);
-                        }
-
-                        .compass-needle {
-                            position: absolute;
-                            width: 4px;
-                            height: 40px;
-                            background: linear-gradient(to bottom, #ef4444 50%, #94a3b8 50%);
-                            border-radius: 2px;
-                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-                        }
-
-                        @keyframes rotateScene {
-                            0% {
-                                transform: rotateX(60deg) rotateZ(0deg);
-                            }
-
-                            100% {
-                                transform: rotateX(60deg) rotateZ(360deg);
-                            }
-                        }
-
-                        .ground {
-                            position: absolute;
-                            width: 1200px;
-                            height: 1200px;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            background-image:
-                                linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
-                                linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
-                            background-size: 60px 60px;
-                            border: 1px solid rgba(59, 130, 246, 0.3);
-                            border-radius: 40px;
-                            background-color: rgba(15, 23, 42, 0.5);
-                            box-shadow: 0 0 100px rgba(0, 0, 0, 0.8), inset 0 0 50px rgba(59, 130, 246, 0.1);
-                        }
-
-                        /* Data Stream Animation */
-                        @keyframes dataStream {
-                            0% {
-                                transform: translateZ(0) translateY(0);
-                                opacity: 0;
-                            }
-
-                            50% {
-                                opacity: 0.8;
-                            }
-
-                            100% {
-                                transform: translateZ(200px) translateY(-100px);
-                                opacity: 0;
-                            }
-                        }
-
-                        .data-beam {
-                            position: absolute;
-                            width: 2px;
-                            height: 2px;
-                            background: var(--accent);
-                            box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
-                            border-radius: 50%;
-                            animation: dataStream 3s infinite linear;
-                        }
-
-                        /* Boundary Fence */
-
-
-                        /* Road System - Aligned with Buildings */
-                        .road {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            background-color: rgba(30, 41, 59, 0.6);
-                            border: 1px solid rgba(255, 255, 255, 0.05);
-                            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-                        }
-
-                        /* --- NEW ROAD SYSTEM: Grid & Block Design --- */
-
-                        /* Inner Hub (Surrounding HQ) */
-                        .road-h-inner-top,
-                        .road-h-inner-bottom {
-                            width: 250px;
-                            height: 30px;
-                            transform: translate(-50%, -90px);
-                        }
-
-                        .road-h-inner-bottom {
-                            transform: translate(-50%, 60px);
-                        }
-
-                        .road-v-inner-left,
-                        .road-v-inner-right {
-                            width: 30px;
-                            height: 250px;
-                            transform: translate(-100px, -50%);
-                        }
-
-                        .road-v-inner-right {
-                            transform: translate(70px, -50%);
-                        }
-
-                        /* Main Grid Lines (Cross-Park) */
-                        .road-h-grid-n {
-                            width: 1200px;
-                            height: 25px;
-                            transform: translate(-50%, -275px);
-                            background-image: linear-gradient(0deg, transparent 45%, rgba(255, 255, 255, 0.08) 45%, rgba(255, 255, 255, 0.08) 55%, transparent 55%);
-                        }
-
-                        .road-h-grid-s {
-                            width: 1200px;
-                            height: 25px;
-                            transform: translate(-50%, 275px);
-                        }
-
-                        .road-v-grid-w {
-                            width: 25px;
-                            height: 1200px;
-                            transform: translate(-275px, -50%);
-                            background-image: linear-gradient(90deg, transparent 45%, rgba(255, 255, 255, 0.08) 45%, rgba(255, 255, 255, 0.08) 55%, transparent 55%);
-                        }
-
-                        .road-v-grid-e {
-                            width: 25px;
-                            height: 1200px;
-                            transform: translate(250px, -50%);
-                        }
-
-                        /* Perimeter Loop */
-                        .road-ring {
-                            width: 1000px;
-                            height: 1000px;
-                            transform: translate(-50%, -50%);
-                            background: transparent;
-                            border: 35px solid rgba(30, 41, 59, 0.5);
-                            border-radius: 80px;
-                            box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.8), 0 0 10px rgba(59, 130, 246, 0.1);
-                        }
-
-                        /* Connectivity */
-                        .road-parking-connect {
-                            width: 180px;
-                            height: 25px;
-                            transform: translate(-450px, 480px);
-                        }
-
-                        /* Secondary Access Roads */
-                        .road-mall-apt {
-                            width: 800px;
-                            height: 30px;
-                            transform: translate(-50%, 250px) translateX(0);
-                            /* Aligns with Mall and Apt at y=250 */
-                        }
-
-                        .road-parking {
-                            width: 150px;
-                            height: 30px;
-                            transform: translate(-525px, 480px);
-                            /* Connects to new SW parking location */
-                        }
-
-                        /* Central Axis Boulevard (South Gate to HQ) - Standard Style */
-                        .road-south-main {
-                            width: 80px;
-                            height: 500px;
-                            /* Exactly Connects South Gate (500) to HQ Center (0) */
-                            transform: translate(-50%, 60px);
-                            background-image: linear-gradient(90deg, transparent 48%, rgba(255, 255, 255, 0.1) 48%, rgba(255, 255, 255, 0.1) 52%, transparent 52%);
-                        }
-
-                        /* Landscape Zones */
-                        /* Landscape Zones: High-Detail Turf */
-                        /* Landscape Zones (Removed) */
-
-                        /* Photovoltaic (PV) Array Styles */
-                        .solar-array {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            /* Positioned further North, next to the road corridor */
-                            transform: translate(calc(350px - 50%), -250px);
-                            transform-style: preserve-3d;
-                            display: grid;
-                            grid-template-columns: repeat(3, 50px);
-                            gap: 10px;
-                            justify-content: center;
-                        }
-
-                        .solar-panel {
-                            width: 50px;
-                            height: 40px;
-                            background: #1e293b;
-                            border: 1px solid #3b82f6;
-                            transform: rotateX(-25deg);
-                            background-image:
-                                linear-gradient(90deg, rgba(59, 130, 246, 0.3) 1px, transparent 1px),
-                                linear-gradient(rgba(59, 130, 246, 0.3) 1px, transparent 1px);
-                            background-size: 8px 8px;
-                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), inset 0 0 10px rgba(59, 130, 246, 0.4);
-                            position: relative;
-                        }
-
-                        .solar-panel::after {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            right: 0;
-                            bottom: 0;
-                            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
-                        }
-
-
-                        /* Parking Lot */
-                        .parking-lot {
-                            position: absolute;
-                            width: 280px;
-                            height: 160px;
-                            background: rgba(15, 23, 42, 0.6);
-                            border: 1px solid rgba(255, 255, 255, 0.15);
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-420px, 480px);
-                            transform-style: preserve-3d;
-                            /* Precision Markings: 80px spots | 120px driveway | 80px spots */
-                            background-image:
-                                /* Horizontal separators between cars (every 30px, offset by 15px) */
-                                repeating-linear-gradient(0deg, transparent 0, transparent 14px, rgba(255, 255, 255, 0.15) 14px, rgba(255, 255, 255, 0.15) 16px, transparent 16px, transparent 30px),
-                                /* Vertical lines defining the parking rows */
-                                linear-gradient(90deg,
-                                    transparent 80px, rgba(255, 255, 255, 0.2) 80px, rgba(255, 255, 255, 0.2) 82px,
-                                    transparent 82px, transparent 198px,
-                                    rgba(255, 255, 255, 0.2) 198px, rgba(255, 255, 255, 0.2) 200px, transparent 200px);
-                        }
-
-                        .parking-label {
-                            position: absolute;
-                            top: -40px;
-                            left: 50%;
-                            transform: translateX(-50%) rotateX(-90deg);
-                            background: #3b82f6;
-                            color: white;
-                            padding: 5px 10px;
-                            border-radius: 4px;
-                            font-weight: bold;
-                            font-size: 16px;
-                            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
-                        }
-
-                        .car {
-                            position: absolute;
-                            width: 12px;
-                            height: 24px;
-                            background: rgba(255, 255, 255, 0.8);
-                            border-radius: 2px;
-                            box-shadow: 0 0 5px white;
-                        }
-
-                        .c-1 {
-                            top: 18px;
-                            left: 34px;
-                            background: #e2e8f0;
-                        }
-
-                        .c-2 {
-                            top: 48px;
-                            left: 34px;
-                            background: #cbd5e1;
-                        }
-
-                        .c-3 {
-                            top: 78px;
-                            left: 34px;
-                            background: #94a3b8;
-                        }
-
-                        .c-4 {
-                            top: 18px;
-                            right: 34px;
-                            background: #f8fafc;
-                        }
-
-                        .c-5 {
-                            top: 108px;
-                            right: 34px;
-                            background: #e2e8f0;
-                        }
-
-                        /* Tesla Vehicles: Red Multi-Coat & Pearl White */
-                        .car-3d.tesla {
-                            position: absolute;
-                            transform-style: preserve-3d;
-                        }
-
-                        .car-3d.tesla .face {
-                            position: absolute;
-                            background: inherit;
-                            border: 1px solid rgba(0, 0, 0, 0.2);
-                        }
-
-                        /* Car Dimensions: 12 wide, 24 long, 6 high */
-                        .car-3d.tesla .f-front,
-                        .car-3d.tesla .f-back {
-                            width: 12px;
-                            height: 6px;
-                            transform: translate(-50%, -50%) rotateX(90deg) translateZ(12px);
-                        }
-
-                        .car-3d.tesla .f-back {
-                            transform: translate(-50%, -50%) rotateX(90deg) translateZ(-12px);
-                        }
-
-                        .car-3d.tesla .f-left,
-                        .car-3d.tesla .f-right {
-                            width: 24px;
-                            height: 6px;
-                            transform: translate(-50%, -50%) rotateY(90deg) rotateZ(90deg) translateZ(6px);
-                        }
-
-                        .car-3d.tesla .f-right {
-                            transform: translate(-50%, -50%) rotateY(-90deg) rotateZ(-90deg) translateZ(6px);
-                        }
-
-                        .car-3d.tesla .f-top {
-                            width: 12px;
-                            height: 24px;
-                            transform: translate(-50%, -50%) translateZ(6px);
-                            /* Tesla Glass Roof Effect */
-                            background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8));
-                            background-size: 8px 16px;
-                            background-position: center;
-                            background-repeat: no-repeat;
-                        }
-
-                        .c-tesla-1 {
-                            top: 48px;
-                            right: 34px;
-                            background: #cc0000;
-                            box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
-                        }
-
-                        .c-tesla-2 {
-                            top: 78px;
-                            right: 34px;
-                            background: #ffffff;
-                            box-shadow: 0 0 8px rgba(255, 255, 255, 0.4);
-                        }
-
-                        .c-tesla-3 {
-                            top: 108px;
-                            left: 34px;
-                            background: #cc0000;
-                            box-shadow: 0 0 8px rgba(204, 0, 0, 0.4);
-                        }
-
-
-                        /* Security Cameras */
-                        .camera-pole {
-                            position: absolute;
-                            width: 4px;
-                            height: 4px;
-                            background: #64748b;
-                            top: 50%;
-                            left: 50%;
-                            transform-style: preserve-3d;
-                        }
-
-                        .camera-pole::after {
-                            /* Pole vertical part */
-                            content: '';
-                            position: absolute;
-                            width: 100%;
-                            height: 60px;
-                            background: #475569;
-                            transform: rotateX(90deg) translateZ(30px);
-                        }
-
-                        .cam-head {
-                            position: absolute;
-                            width: 12px;
-                            height: 6px;
-                            background: #ef4444;
-                            /* Red indicator */
-                            transform: translateZ(60px) translateX(-4px);
-                            box-shadow: 0 0 5px #ef4444;
-                            border-radius: 2px;
-                        }
-
-                        .cam-cone {
-                            position: absolute;
-                            width: 0;
-                            height: 0;
-                            border-left: 20px solid transparent;
-                            border-right: 20px solid transparent;
-                            border-top: 80px solid rgba(239, 68, 68, 0.1);
-                            transform: translateZ(60px) rotateY(180deg) rotateX(45deg);
-                            transform-origin: top center;
-                            pointer-events: none;
-                        }
-
-                        /* Camera Positions */
-                        .cp-1 {
-                            transform: translate(-550px, -550px);
-                        }
-
-                        /* NW Corner */
-                        .cp-2 {
-                            transform: translate(550px, -550px);
-                        }
-
-                        /* NE Corner */
-                        .cp-3 {
-                            transform: translate(550px, 550px);
-                        }
-
-                        /* SE Corner */
-                        .cp-4 {
-                            transform: translate(-550px, 550px);
-                        }
-
-                        /* Main Gate */
-                        .main-gate {
-                            transform: translate(0, 500px);
-                        }
-
-                        /* Position at South Entrance */
-
-                        /* Canopy: Wide roof */
-                        .gate-canopy .face {
-                            background: rgba(30, 41, 59, 0.9);
-                            border: 1px solid rgba(148, 163, 184, 0.5);
-                        }
-
-                        .gate-canopy .f-front,
-                        .gate-canopy .f-back {
-                            width: 160px;
-                            height: 10px;
-                            transform: translate(-50%, -50%) translateZ(45px) rotateX(90deg) translateZ(40px);
-                        }
-
-                        .gate-canopy .f-back {
-                            transform: translate(-50%, -50%) translateZ(45px) rotateX(90deg) translateZ(-40px);
-                        }
-
-                        .gate-canopy .f-left,
-                        .gate-canopy .f-right {
-                            width: 80px;
-                            height: 10px;
-                            transform: translate(-50%, -50%) translateZ(45px) rotateY(-90deg) rotateZ(-90deg) translateZ(80px);
-                        }
-
-                        .gate-canopy .f-right {
-                            transform: translate(-50%, -50%) translateZ(45px) rotateY(90deg) rotateZ(90deg) translateZ(80px);
-                        }
-
-                        .gate-canopy .f-top {
-                            width: 160px;
-                            height: 80px;
-                            transform: translate(-50%, -50%) translateZ(50px);
-                            background: rgba(59, 130, 246, 0.8);
-                            box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
-                        }
-
-                        /* Pillars */
-                        .gate-pillar .face {
-                            background: #475569;
-                        }
-
-                        .gate-pillar .f-front,
-                        .gate-pillar .f-back {
-                            width: 20px;
-                            height: 50px;
-                            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(10px);
-                        }
-
-                        .gate-pillar .f-back {
-                            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(-10px);
-                        }
-
-                        .gate-pillar .f-left,
-                        .gate-pillar .f-right {
-                            width: 20px;
-                            height: 50px;
-                            transform: translate(-50%, -50%) translateZ(25px) rotateY(-90deg) rotateZ(-90deg) translateZ(10px);
-                        }
-
-                        .gate-pillar .f-right {
-                            transform: translate(-50%, -50%) translateZ(25px) rotateY(90deg) rotateZ(90deg) translateZ(10px);
-                        }
-
-                        .gate-pillar .f-top {
-                            width: 20px;
-                            height: 20px;
-                            transform: translate(-50%, -50%) translateZ(50px);
-                            background: #64748b;
-                        }
-
-                        .gp-left {
-                            transform: translate(-60px, 0);
-                        }
-
-                        .gp-right {
-                            transform: translate(60px, 0);
-                        }
-
-                        /* Barriers (Boom Gates) */
-                        .gate-barrier {
-                            position: absolute;
-                            transform-style: preserve-3d;
-                        }
-
-                        .gb-pole {
-                            position: absolute;
-                            width: 4px;
-                            height: 20px;
-                            background: #eab308;
-                            transform: rotateX(-90deg) translateY(-10px);
-                        }
-
-                        .gb-arm {
-                            position: absolute;
-                            width: 40px;
-                            height: 2px;
-                            background: repeating-linear-gradient(90deg, white 0, white 5px, #ef4444 5px, #ef4444 10px);
-                            top: 0;
-                            left: 2px;
-                            transform: translateZ(18px);
-                        }
-
-                        .gb-in {
-                            transform: translate(-30px, 10px);
-                        }
-
-                        .gb-out {
-                            transform: translate(30px, 10px);
-                        }
-
-                        /* Turnstiles (Pedestrian) */
-                        .gate-turnstile {
-                            position: absolute;
-                            width: 10px;
-                            height: 20px;
-                            background: rgba(255, 255, 255, 0.2);
-                            border: 1px solid rgba(255, 255, 255, 0.5);
-                            box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-                        }
-
-                        .gt-left {
-                            transform: translate(-90px, 0);
-                        }
-
-                        .gt-right {
-                            transform: translate(90px, 0);
-                        }
-
-                        /* SW Corner */
-
-                        /* Trees Removed */
-
-                        .building-group {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform-style: preserve-3d;
-                        }
-
-                        .cube {
-                            position: absolute;
-                            transform-style: preserve-3d;
-                        }
-
-                        /* Faces Generic */
-                        /* Faces Generic */
-                        .face {
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            border: 1px solid rgba(255, 255, 255, 0.15);
-                            backface-visibility: visible;
-                            background-color: #334155;
-                            /* Global Surface Detail: Light Reflection + Micro Texture */
-                            background-image:
-                                linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                                linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-                            background-size: 100% 100%, 4px 4px, 4px 4px;
-                            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.3);
-                            transition: all 0.3s ease;
-                        }
-
-                        /* Night Window Glow Animation */
-                        @keyframes windowGlow {
-
-                            0%,
-                            100% {
-                                opacity: 0.3;
-                            }
-
-                            50% {
-                                opacity: 0.8;
-                            }
-                        }
-
-                        .window-light {
-                            position: absolute;
-                            background: #60a5fa;
-                            filter: blur(1px);
-                            box-shadow: 0 0 5px #60a5fa;
-                            opacity: 0.5;
-                        }
-
-                        /* Global Roof Details */
-                        .roof-detail {
-                            position: absolute;
-                            background: #475569;
-                            border: 1px solid rgba(255, 255, 255, 0.1);
-                            transform-style: preserve-3d;
-                        }
-
-                        .ac-unit {
-                            width: 10px;
-                            height: 10px;
-                            background: #64748b;
-                            transform: translateZ(5px);
-                            box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-                        }
-
-                        .antenna {
-                            width: 2px;
-                            height: 40px;
-                            background: #94a3b8;
-                            transform: rotateX(-90deg) translateZ(20px);
-                        }
-
-                        /* Building Specific Styles */
-
-                        /* 1. HQ TOWER (Tall, Cyan, Multi-part) */
-                        .b-hq {
-                            transform: translate(0, 0);
-                        }
-
-                        /* Base Podium: 120x100, 30 tall */
-
-                        .b-hq-base .f-front,
-                        .b-hq-base .f-back {
-                            width: 120px;
-                            height: 30px;
-                            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(50px);
-                        }
-
-                        .b-hq-base .f-back {
-                            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(-50px);
-                        }
-
-                        .b-hq-base .f-left,
-                        .b-hq-base .f-right {
-                            width: 100px;
-                            height: 30px;
-                            transform: translate(-50%, -50%) translateZ(15px) rotateY(-90deg) rotateZ(-90deg) translateZ(60px);
-                        }
-
-                        .b-hq-base .f-right {
-                            transform: translate(-50%, -50%) translateZ(15px) rotateY(90deg) rotateZ(90deg) translateZ(60px);
-                        }
-
-                        .b-hq-base .f-top {
-                            width: 120px;
-                            height: 100px;
-                            transform: translate(-50%, -50%) translateZ(30px);
-                        }
-
-                        /* HQ Base - Solid Podium */
-                        .b-hq-base .face {
-                            background-color: #0e7490;
-                            /* Cyan-700 Darker Base */
-                            border: 1px solid #155e75;
-                        }
-
-                        .b-hq-base .f-top {
-                            background-color: #06b6d4;
-                        }
-
-                        /* Lighter Top */
-                        .b-hq-base .f-left,
-                        .b-hq-base .f-right {
-                            background-color: #155e75;
-                        }
-
-                        /* Darker Sides */
-
-                        /* Main Tower: 60x60, 140 tall, starts at Z=30 */
-                        .b-hq-tower {
-                            transform: translateZ(30px);
-                        }
-
-                        /* HQ Tower with Grid Windows */
-                        /* HQ Tower with Grid Windows */
-                        .b-hq-tower .face {
-                            background-color: #0891b2;
-                            /* Premium Glass Facade: Interlocking grids + vertical ribs */
-                            background-image:
-                                linear-gradient(90deg, rgba(255, 255, 255, 0.15) 1px, transparent 1px, transparent 19px, rgba(255, 255, 255, 0.15) 19px),
-                                linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-                                repeating-linear-gradient(90deg, rgba(0, 100, 255, 0.1) 0px, rgba(0, 100, 255, 0.1) 2px, transparent 2px, transparent 20px),
-                                linear-gradient(90deg, rgba(0, 0, 0, 0.3) 2px, transparent 2px);
-                            background-size: 20px 20px, 20px 8px, 20px 100%, 40px 100%;
-                            border: 1px solid #155e75;
-                            box-shadow: inset 0 0 40px rgba(0, 255, 255, 0.15);
-                        }
-
-                        /* Directional Lighting for Tower */
-                        .b-hq-tower .f-top {
-                            background-color: #22d3ee;
-                            background-image: none;
-                            box-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
-                        }
-
-                        .b-hq-tower .f-left,
-                        .b-hq-tower .f-right {
-                            background-color: #0e7490;
-                        }
-
-                        /* Darker Sides */
-
-                        .b-hq-tower .f-front,
-                        .b-hq-tower .f-back {
-                            width: 80px;
-                            height: 280px;
-                            transform: translate(-50%, -50%) translateZ(140px) rotateX(90deg) translateZ(30px);
-                        }
-
-                        .b-hq-tower .f-back {
-                            transform: translate(-50%, -50%) translateZ(140px) rotateX(90deg) translateZ(-30px);
-                        }
-
-                        .b-hq-tower .f-left,
-                        .b-hq-tower .f-right {
-                            width: 60px;
-                            height: 280px;
-                            transform: translate(-50%, -50%) translateZ(140px) rotateY(-90deg) rotateZ(-90deg) translateZ(40px);
-                        }
-
-                        .b-hq-tower .f-right {
-                            transform: translate(-50%, -50%) translateZ(140px) rotateY(90deg) rotateZ(90deg) translateZ(40px);
-                        }
-
-                        .b-hq-tower .f-top {
-                            width: 80px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(280.1px);
-                            background-color: #334155;
-                            /* Dark Concrete */
-                            /* Helipad Markings: Circle + H + Safety Perimeter */
-                            background-image:
-                                /* The 'H' - Horizontal bar */
-                                linear-gradient(90deg, transparent 40%, #fff 40%, #fff 60%, transparent 60%),
-                                /* The 'H' - Vertical bars */
-                                linear-gradient(0deg, transparent 25%, #fff 25%, #fff 75%, transparent 75%),
-                                /* The 'H' - Side rails */
-                                linear-gradient(90deg, transparent 33%, #fff 33%, #fff 38%, transparent 38%, transparent 62%, #fff 62%, #fff 67%, transparent 67%),
-                                /* Landing Circle */
-                                radial-gradient(circle, transparent 44%, #fff 45%, #fff 51%, transparent 52%),
-                                /* Outer Yellow Safety Ring */
-                                radial-gradient(circle, transparent 72%, #fbbf24 73%, #fbbf24 81%, transparent 82%),
-                                /* Concrete Texture */
-                                radial-gradient(circle, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-                            background-size: 30px 40px, 30px 40px, 30px 40px, 45px 45px, 55px 55px, 4px 4px;
-                            background-position: center, center, center, center, center, 0 0;
-                            background-repeat: no-repeat, no-repeat, no-repeat, no-repeat, no-repeat, repeat;
-                            border: 2px solid #475569;
-                            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.4);
-                        }
-
-                        /* 2. R&D A (Blue, L-Shape feel via 2 blocks) */
-                        .b-rd-a {
-                            transform: translate(-200px, -200px);
-                        }
-
-                        /* R&D A with Office Windows */
-                        .b-rda-main .face {
-                            background-color: #1e40af;
-                            /* Deep Royal Blue */
-                            /* Precise Horizontal Office Bands with glass effect */
-                            background-image:
-                                linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 50%, transparent 50%),
-                                linear-gradient(to bottom,
-                                    rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.2) 60%,
-                                    rgba(0, 0, 0, 0.4) 60%, rgba(0, 0, 0, 0.4) 100%);
-                            background-size: 15px 12px, 100% 12px;
-                            border: 1px solid #1e3a8a;
-                            box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.3);
-                        }
-
-                        .b-rda-main .f-top {
-                            background-color: #60a5fa;
-                            background-image: none;
-                        }
-
-                        .b-rda-main .f-left,
-                        .b-rda-main .f-right {
-                            background-color: #1d4ed8;
-                        }
-
-                        .b-rda-main .f-front,
-                        .b-rda-main .f-back {
-                            width: 50px;
-                            height: 100px;
-                            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(40px);
-                        }
-
-                        .b-rda-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(-40px);
-                        }
-
-                        .b-rda-main .f-left,
-                        .b-rda-main .f-right {
-                            width: 80px;
-                            height: 100px;
-                            transform: translate(-50%, -50%) translateZ(50px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
-                        }
-
-                        .b-rda-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(50px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
-                        }
-
-                        .b-rda-main .f-top {
-                            width: 50px;
-                            height: 80px;
-                            transform: translate(-50%, -50%) translateZ(100px);
-                            background: #60a5fa;
-                        }
-
-                        /* Side Block: 40x60, 60 tall, Offset */
-                        .b-rda-side {
-                            transform: translate(45px, 10px);
-                        }
-
-                        /* (removed duplicate - solid style below) */
-
-                        .b-rda-side .f-front,
-                        .b-rda-side .f-back {
-                            width: 40px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(30px);
-                        }
-
-                        .b-rda-side .f-back {
-                            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(-30px);
-                        }
-
-                        .b-rda-side .f-left,
-                        .b-rda-side .f-right {
-                            width: 60px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(30px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
-                        }
-
-                        .b-rda-side .f-right {
-                            transform: translate(-50%, -50%) translateZ(30px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
-                        }
-
-                        .b-rda-side .f-top {
-                            width: 40px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(60px);
-                        }
-
-                        /* R&D A Side Wing */
-                        .b-rda-side .face {
-                            background-color: #3b82f6;
-                            /* Blue-500 */
-                            background-image:
-                                linear-gradient(#1e293b 1px, transparent 1px),
-                                linear-gradient(90deg, #1e293b 1px, transparent 1px);
-                            background-size: 10px 10px;
-                            border: 1px solid #1e3a8a;
-                        }
-
-                        .b-rda-side .f-top {
-                            background-color: #93c5fd;
-                            background-image: none;
-                        }
-
-                        .b-rda-side .f-left,
-                        .b-rda-side .f-right {
-                            background-color: #2563eb;
-                        }
-
-                        /* 3. R&D B (Blue) Simple slab */
-                        /* 3. R&D B (Blue) Simple slab */
-                        .b-rd-b {
-                            transform: translate(200px, -200px);
-                        }
-
-                        .b-rdb-main .face {
-                            background-color: #475569;
-                            /* Slate-600 */
-                            background-image: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0, rgba(255, 255, 255, 0.1) 1px, transparent 1px, transparent 10px);
-                            border: 1px solid #334155;
-                        }
-
-                        .b-rdb-main .f-top {
-                            background-color: #94a3b8;
-                            background-image: none;
-                        }
-
-                        .b-rdb-main .f-left,
-                        .b-rdb-main .f-right {
-                            background-color: #334155;
-                        }
-
-                        .b-rdb-main .f-front,
-                        .b-rdb-main .f-back {
-                            width: 50px;
-                            height: 80px;
-                            transform: translate(-50%, -50%) translateZ(40px) rotateX(90deg) translateZ(40px);
-                        }
-
-                        .b-rdb-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(40px) rotateX(90deg) translateZ(-40px);
-                        }
-
-                        .b-rdb-main .f-left,
-                        .b-rdb-main .f-right {
-                            width: 80px;
-                            height: 80px;
-                            transform: translate(-50%, -50%) translateZ(40px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
-                        }
-
-                        .b-rdb-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(40px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
-                        }
-
-                        .b-rdb-main .f-top {
-                            width: 50px;
-                            height: 80px;
-                            transform: translate(-50%, -50%) translateZ(80px);
-                            background: #94a3b8;
-                        }
-
-                        /* 4. Commercial (Gold, Wide) */
-                        .b-mall {
-                            transform: translate(-350px, 0);
-                        }
-
-                        /* Mall with Commercial GlassFacade */
-                        .b-mall-main .face {
-                            background-color: #eab308;
-                            /* Yellow-500 */
-                            background-image:
-                                linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
-                                linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
-                            background-size: 25px 15px;
-                            border: 1px solid #ca8a04;
-                        }
-
-                        .b-mall-main .f-top {
-                            background-color: #facc15;
-                            background-image: none;
-                        }
-
-                        .b-mall-main .f-left,
-                        .b-mall-main .f-right {
-                            background-color: #ca8a04;
-                        }
-
-                        .b-mall-main .f-front,
-                        .b-mall-main .f-back {
-                            width: 140px;
-                            height: 50px;
-                            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(50px);
-                        }
-
-                        .b-mall-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(25px) rotateX(90deg) translateZ(-50px);
-                        }
-
-                        .b-mall-main .f-left,
-                        .b-mall-main .f-right {
-                            width: 100px;
-                            height: 50px;
-                            transform: translate(-50%, -50%) translateZ(25px) rotateY(-90deg) rotateZ(-90deg) translateZ(70px);
-                        }
-
-                        .b-mall-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(25px) rotateY(90deg) rotateZ(90deg) translateZ(70px);
-                        }
-
-                        .b-mall-main .f-top {
-                            width: 140px;
-                            height: 100px;
-                            transform: translate(-50%, -50%) translateZ(50px);
-                            background-color: #facc15;
-                        }
-
-                        /* Atrium: 40x40, 70 tall glass box */
-                        .b-mall-atrium {
-                            transform: translate(30px, 20px);
-                        }
-
-                        .b-mall-atrium .face {
-                            background: rgba(147, 197, 253, 0.9);
-                            /* Light Blue Glass */
-                            border: 1px solid rgba(255, 255, 255, 0.6);
-                            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-                        }
-
-                        .b-mall-atrium .f-front,
-                        .b-mall-atrium .f-back {
-                            width: 40px;
-                            height: 70px;
-                            transform: translate(-50%, -50%) translateZ(35px) rotateX(90deg) translateZ(20px);
-                        }
-
-                        .b-mall-atrium .f-back {
-                            transform: translate(-50%, -50%) translateZ(35px) rotateX(90deg) translateZ(-20px);
-                        }
-
-                        .b-mall-atrium .f-left,
-                        .b-mall-atrium .f-right {
-                            width: 40px;
-                            height: 70px;
-                            transform: translate(-50%, -50%) translateZ(35px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
-                        }
-
-                        .b-mall-atrium .f-right {
-                            transform: translate(-50%, -50%) translateZ(35px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
-                        }
-
-                        .b-mall-atrium .f-top {
-                            width: 40px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(70px);
-                            background: #60a5fa;
-                        }
-
-                        /* 5. Apartments (Purple, Twin Towers) */
-                        .b-apt {
-                            transform: translate(350px, 150px);
-                        }
-
-                        /* Tower 1 - Solid Concrete */
-                        .b-apt-1 {
-                            transform: translate(-20px, -20px);
-                        }
-
-                        /* Apartments with Balconies/Windows */
-                        .b-apt-1 .face {
-                            background-color: #9333ea;
-                            /* Purple-600 */
-                            /* Balcony and window detail */
-                            background-image:
-                                repeating-linear-gradient(90deg, rgba(0, 0, 0, 0.2) 0, rgba(0, 0, 0, 0.2) 8px, transparent 8px, transparent 20px),
-                                repeating-linear-gradient(transparent 0, transparent 10px, rgba(0, 0, 0, 0.3) 10px, rgba(0, 0, 0, 0.3) 12px);
-                            border: 1px solid #7e22ce;
-                        }
-
-                        .b-apt-1 .f-top {
-                            background-color: #c084fc;
-                            background-image: none;
-                        }
-
-                        .b-apt-1 .f-left,
-                        .b-apt-1 .f-right {
-                            background-color: #7e22ce;
-                        }
-
-                        .b-apt-1 .f-front,
-                        .b-apt-1 .f-back {
-                            width: 50px;
-                            height: 110px;
-                            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(20px);
-                        }
-
-                        .b-apt-1 .f-back {
-                            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(-20px);
-                        }
-
-                        .b-apt-1 .f-left,
-                        .b-apt-1 .f-right {
-                            width: 40px;
-                            height: 110px;
-                            transform: translate(-50%, -50%) translateZ(55px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
-                        }
-
-                        .b-apt-1 .f-right {
-                            transform: translate(-50%, -50%) translateZ(55px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
-                        }
-
-                        .b-apt-1 .f-top {
-                            width: 50px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(110px);
-                            background-color: #c084fc;
-                        }
-
-                        /* Energy Labels */
-                        .energy-label {
-                            position: absolute;
-                            transform-style: preserve-3d;
-                            pointer-events: none;
-                        }
-
-                        /* Removed e-line to avoid vertical clutter */
-                        .e-line {
-                            display: none;
-                        }
-
-                        /* The Label Content - Centered in container */
-                        .e-val {
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            background: rgba(15, 23, 42, 0.8);
-                            border: 1px solid #3b82f6;
-                            padding: 4px 8px;
-                            border-radius: 4px;
-                            font-size: 14px;
-                            color: #3b82f6;
-                            font-weight: bold;
-                            white-space: nowrap;
-                            box-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
-                        }
-
-                        /* Building Elevation Mapping (Calculated Tops) */
-                        .b-hq {
-                            --h: 300px;
-                        }
-
-                        /* Calibrated closer to building top (actual spire is 270px) */
-
-                        /* Removed old buffers */
-
-                        .b-rd-a {
-                            --h: 120px;
-                        }
-
-                        .b-rd-b {
-                            --h: 100px;
-                        }
-
-                        .b-mall {
-                            --h: 130px;
-                        }
-
-                        .b-apt {
-                            --h: 140px;
-                        }
-
-                        .b-gym {
-                            --h: 80px;
-                        }
-
-                        .b-rd-c {
-                            --h: 170px;
-                        }
-
-                        .b-canteen {
-                            --h: 80px;
-                        }
-
-                        .b-data {
-                            --h: 100px;
-                        }
-
-                        .b-power {
-                            --h: 80px;
-                        }
-
-                        .b-off-d,
-                        .b-off-e,
-                        .b-off-f,
-                        .b-off-g {
-                            --h: 130px;
-                        }
-
-                        /* Tower 2 */
-
-                        .b-apt-2 {
-                            transform: translate(20px, 20px);
-                        }
-
-                        .b-mall-main .face {
-                            background-color: #7c3aed;
-                            /* Modern Retail Facade: Large window panes */
-                            background-image:
-                                linear-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-                                linear-gradient(90deg, rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-                            background-size: 30px 40px;
-                            border: 1px solid #6d28d9;
-                        }
-
-                        .b-apt-2 .face {
-                            background-color: #9333ea;
-                            /* Purple-600 */
-                            border: 1px solid #7e22ce;
-                        }
-
-                        .b-apt-2 .f-top {
-                            background-color: #c084fc;
-                        }
-
-                        .b-apt-2 .f-left,
-                        .b-apt-2 .f-right {
-                            background-color: #7e22ce;
-                        }
-
-                        .b-apt-2 .f-front,
-                        .b-apt-2 .f-back {
-                            width: 50px;
-                            height: 110px;
-                            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(20px);
-                        }
-
-                        .b-apt-2 .f-back {
-                            transform: translate(-50%, -50%) translateZ(55px) rotateX(90deg) translateZ(-20px);
-                        }
-
-                        .b-apt-2 .f-left,
-                        .b-apt-2 .f-right {
-                            width: 40px;
-                            height: 110px;
-                            transform: translate(-50%, -50%) translateZ(55px) rotateY(-90deg) rotateZ(-90deg) translateZ(25px);
-                        }
-
-                        .b-apt-2 .f-right {
-                            transform: translate(-50%, -50%) translateZ(55px) rotateY(90deg) rotateZ(90deg) translateZ(25px);
-                        }
-
-                        .b-apt-2 .f-top {
-                            width: 50px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(110px);
-                            background-color: #c084fc;
-                        }
-
-                        /* 6. Gym (Cyan) */
-                        .b-gym {
-                            transform: translate(-350px, 350px);
-                        }
-
-                        /* 7. Facilities (Gray) */
-                        .b-fac-1 {
-                            transform: translate(-520px, -480px);
-                        }
-
-                        .b-fac-2 {
-                            transform: translate(520px, -200px);
-                        }
-
-                        .b-fac-1 .face,
-                        .b-fac-2 .face {
-                            border: 1px solid #475569;
-                            background-color: #64748b;
-                            /* Slate-500 */
-                        }
-
-                        .b-fac-1 .f-top,
-                        .b-fac-2 .f-top {
-                            background-color: #94a3b8;
-                        }
-
-                        .b-fac-1 .f-left,
-                        .b-fac-1 .f-right,
-                        .b-fac-2 .f-left,
-                        .b-fac-2 .f-right {
-                            background-color: #475569;
-                        }
-
-                        .b-fac-1 .f-top,
-                        .b-fac-2 .f-top {
-                            background: #94a3b8;
-                        }
-
-                        .b-fac-1 .f-front,
-                        .b-fac-1 .f-back,
-                        .b-fac-2 .f-front,
-                        .b-fac-2 .f-back {
-                            width: 30px;
-                            height: 20px;
-                            transform: translate(-50%, -50%) translateZ(10px) rotateX(90deg) translateZ(15px);
-                        }
-
-                        .b-fac-1 .f-back,
-                        .b-fac-2 .f-back {
-                            transform: translate(-50%, -50%) translateZ(10px) rotateX(90deg) translateZ(-15px);
-                        }
-
-                        .b-fac-1 .f-left,
-                        .b-fac-1 .f-right,
-                        .b-fac-2 .f-left,
-                        .b-fac-2 .f-right {
-                            width: 30px;
-                            height: 20px;
-                            transform: translate(-50%, -50%) translateZ(10px) rotateY(-90deg) rotateZ(-90deg) translateZ(15px);
-                        }
-
-                        .b-fac-1 .f-right,
-                        .b-fac-2 .f-right {
-                            transform: translate(-50%, -50%) translateZ(10px) rotateY(90deg) rotateZ(90deg) translateZ(15px);
-                        }
-
-                        .b-fac-1 .f-top,
-                        .b-fac-2 .f-top {
-                            width: 30px;
-                            height: 30px;
-                            transform: translate(-50%, -50%) translateZ(20px);
-                            background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
-                        }
-
-                        /* R&D A Facade */
-                        .b-rda-main .face {
-                            background-color: #0d9488;
-                            /* Teal-600 */
-                            /* Modern Ribbon Window Style */
-                            background-image:
-                                linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px),
-                                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-                            background-size: 100% 15px, 20px 100%;
-                            border: 1px solid #0f766e;
-                        }
-
-                        /* R&D B Facade */
-                        .b-rdb-main .face {
-                            background-color: #0d9488;
-                            /* Teal-600 */
-                            /* Modern Ribbon Window Style */
-                            background-image:
-                                linear-gradient(rgba(255, 255, 255, 0.1) 2px, transparent 2px),
-                                linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
-                            background-size: 100% 15px, 20px 100%;
-                            border: 1px solid #0f766e;
-                        }
-
-                        /* 7. Gym Faces */
-                        .b-gym .face {
-                            background-color: #06b6d4;
-                            /* Cyan-500 */
-                            border: 1px solid #0891b2;
-                        }
-
-                        .b-gym .f-top {
-                            background-color: #22d3ee;
-                            background-image: linear-gradient(to top right, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
-                        }
-
-                        .b-gym .f-front,
-                        .b-gym .f-back {
-                            width: 80px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(60px);
-                        }
-
-                        .b-gym .f-back {
-                            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(-60px);
-                        }
-
-                        .b-gym .f-left,
-                        .b-gym .f-right {
-                            width: 120px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(20px) rotateY(-90deg) rotateZ(-90deg) translateZ(40px);
-                        }
-
-                        .b-gym .f-right {
-                            transform: translate(-50%, -50%) translateZ(20px) rotateY(90deg) rotateZ(90deg) translateZ(40px);
-                        }
-
-                        .b-gym .f-top {
-                            width: 80px;
-                            height: 120px;
-                            transform: translate(-50%, -50%) translateZ(40px);
-                        }
-
-                        /* 8. NEW BUILDINGS STYLES */
-
-                        /* R&D Center C (Slate/Gold tech tower) */
-                        .b-rd-c {
-                            transform: translate(0, -400px);
-                        }
-
-                        .b-rdc-main .face {
-                            background-color: #1e293b;
-                            border: 1px solid #f59e0b;
-                        }
-
-                        .b-rdc-main .f-front,
-                        .b-rdc-main .f-back {
-                            width: 60px;
-                            height: 140px;
-                            transform: translate(-50%, -50%) translateZ(70px) rotateX(90deg) translateZ(30px);
-                        }
-
-                        .b-rdc-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(70px) rotateX(90deg) translateZ(-30px);
-                        }
-
-                        .b-rdc-main .f-left,
-                        .b-rdc-main .f-right {
-                            width: 60px;
-                            height: 140px;
-                            transform: translate(-50%, -50%) translateZ(70px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
-                        }
-
-                        .b-rdc-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(70px) rotateY(90deg) rotateZ(90deg) translateZ(30px);
-                        }
-
-                        .b-rdc-main .f-top {
-                            width: 60px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(140px);
-                            background: #f59e0b;
-                            box-shadow: 0 0 20px #f59e0b;
-                        }
-
-                        /* Staff Canteen (Orange/Red) */
-                        .b-canteen {
-                            /* Moved to the North side of Talent Apartments */
-                            transform: translate(350px, -50px);
-                        }
-
-                        .b-can-main .face {
-                            background-color: #f97316;
-                            border: 1px solid #c2410c;
-                        }
-
-                        .b-can-main .f-front,
-                        .b-can-main .f-back {
-                            width: 100px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(30px);
-                        }
-
-                        .b-can-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(-30px);
-                        }
-
-                        .b-can-main .f-left,
-                        .b-can-main .f-right {
-                            width: 60px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(20px) rotateY(-90deg) rotateZ(-90deg) translateZ(50px);
-                        }
-
-                        .b-can-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(20px) rotateY(90deg) rotateZ(90deg) translateZ(50px);
-                        }
-
-                        .b-can-main .f-top {
-                            width: 100px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(40px);
-                            background: #fdba74;
-                        }
-
-                        /* Data Center (Dark Slate with Cyan Glow) */
-                        .b-data {
-                            transform: translate(0, -200px);
-                        }
-
-                        .b-dat-main .face {
-                            background-color: #0f172a;
-                            border: 1px solid #06b6d4;
-                            /* High-Tech Data Center Pattern: Hex-like grid or small digital dots */
-                            background-image:
-                                radial-gradient(#06b6d4 1px, transparent 1px),
-                                linear-gradient(rgba(6, 182, 212, 0.05) 1px, transparent 1px);
-                            background-size: 10px 10px, 100% 5px;
-                            box-shadow: inset 0 0 15px rgba(6, 182, 212, 0.2);
-                        }
-
-                        .b-dat-main .f-front,
-                        .b-dat-main .f-back {
-                            width: 80px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(40px);
-                        }
-
-                        .b-dat-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(30px) rotateX(90deg) translateZ(-40px);
-                        }
-
-                        .b-dat-main .f-left,
-                        .b-dat-main .f-right {
-                            width: 80px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(30px) rotateY(-90deg) rotateZ(-90deg) translateZ(40px);
-                        }
-
-                        .b-dat-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(30px) rotateY(90deg) rotateZ(90deg) translateZ(40px);
-                        }
-
-                        .b-dat-main .f-top {
-                            width: 80px;
-                            height: 80px;
-                            transform: translate(-50%, -50%) translateZ(60px);
-                            background: #0f172a;
-                            box-shadow: inset 0 0 20px #06b6d4;
-                        }
-
-                        /* Power Station (Green Industrial) */
-                        .b-power {
-                            transform: translate(520px, -480px);
-                        }
-
-                        .b-pow-main .face {
-                            background-color: #166534;
-                            border: 1px solid #14532d;
-                        }
-
-                        .b-pow-main .f-front,
-                        .b-pow-main .f-back {
-                            width: 40px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(20px);
-                        }
-
-                        .b-pow-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(20px) rotateX(90deg) translateZ(-20px);
-                        }
-
-                        .b-pow-main .f-left,
-                        .b-pow-main .f-right {
-                            width: 40px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(20px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
-                        }
-
-                        .b-pow-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(20px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
-                        }
-
-                        .b-pow-main .f-top {
-                            width: 40px;
-                            height: 40px;
-                            transform: translate(-50%, -50%) translateZ(40px);
-                            background: #4ade80;
-                        }
-
-                        /* Office Buildings Style */
-                        .b-off-d {
-                            transform: translate(-350px, -350px);
-                        }
-
-                        .b-off-e {
-                            transform: translate(350px, -350px);
-                        }
-
-                        .b-off-f {
-                            transform: translate(-200px, 200px);
-                        }
-
-                        .b-off-g {
-                            transform: translate(200px, 200px);
-                        }
-
-                        .b-office-tower .face {
-                            background-color: #1e3a8a;
-                            /* Blue-900 */
-                            /* Double-glazing effect with staggered windows */
-                            background-image:
-                                linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-                                linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-                                linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
-                            background-size: 12px 100%, 100% 20px, 100% 100%;
-                            border: 1px solid #1e40af;
-                            box-shadow: inset 0 0 20px rgba(0, 50, 200, 0.2);
-                        }
-
-                        .b-office-tower .f-top {
-                            background-color: #3b82f6;
-                            background-image: none;
-                        }
-
-                        .b-off-main .f-front,
-                        .b-off-main .f-back {
-                            width: 60px;
-                            height: 100px;
-                            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(30px);
-                        }
-
-                        .b-off-main .f-back {
-                            transform: translate(-50%, -50%) translateZ(50px) rotateX(90deg) translateZ(-30px);
-                        }
-
-                        .b-off-main .f-left,
-                        .b-off-main .f-right {
-                            width: 60px;
-                            height: 100px;
-                            transform: translate(-50%, -50%) translateZ(50px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
-                        }
-
-                        .b-off-main .f-right {
-                            transform: translate(-50%, -50%) translateZ(50px) rotateY(90deg) rotateZ(90deg) translateZ(30px);
-                        }
-
-                        .b-off-main .f-top {
-                            width: 60px;
-                            height: 60px;
-                            transform: translate(-50%, -50%) translateZ(100px);
-                        }
-
-                        /* Group heights already defined above */
-
-
-                        /* Labels Master Styles */
-                        .b-label,
-                        .energy-label {
-                            --h-pos: 100px;
-                            /* Global Fallback */
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            pointer-events: none;
-                            z-index: 10;
-                            transition: transform 0.05s linear;
-                        }
-
-                        .b-label {
-                            color: #ffffff;
-                            font-size: 11px;
-                            font-weight: 800;
-                            white-space: nowrap;
-                            padding: 2px 10px;
-                            background: rgba(15, 23, 42, 0.9);
-                            border: 1px solid #3b82f6;
-                            border-radius: 4px;
-                            box-shadow: 0 0 15px rgba(59, 130, 246, 0.3);
-                            text-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
-                        }
-
-                        /* NEW: Occupancy Label Style */
-                        .occupancy-label {
-                            position: absolute;
-                            transform-style: preserve-3d;
-                            pointer-events: none;
-                            z-index: 11;
-                        }
-
-                        .occ-tag {
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            background: rgba(15, 23, 42, 0.85);
-                            border: 1px solid #f59e0b;
-                            /* Amber-500 */
-                            padding: 2px 8px;
-                            border-radius: 20px;
-                            color: #fbbf24;
-                            font-size: 9px;
-                            font-weight: bold;
-                            white-space: nowrap;
-                            box-shadow: 0 0 10px rgba(245, 158, 11, 0.4);
-                            display: flex;
-                            align-items: center;
-                            gap: 3px;
-                        }
-
-                        .occ-tag::before {
-                            content: '';
-                            display: inline-block;
-                            width: 5px;
-                            height: 5px;
-                            background: #4ade80;
-                            border-radius: 50%;
-                            box-shadow: 0 0 5px #4ade80;
-                        }
-
-                        /* NEW: Environment Label Style */
-                        .env-label {
-                            position: absolute;
-                            transform-style: preserve-3d;
-                            pointer-events: none;
-                            z-index: 11;
-                        }
-
-                        .env-tag {
-                            position: absolute;
-                            left: 50%;
-                            top: 50%;
-                            transform: translate(-50%, -50%);
-                            background: rgba(15, 23, 42, 0.85);
-                            border: 1px solid #f87171;
-                            /* Red-400 */
-                            padding: 2px 8px;
-                            border-radius: 20px;
-                            color: #f87171;
-                            font-size: 9px;
-                            font-weight: bold;
-                            white-space: nowrap;
-                            box-shadow: 0 0 10px rgba(248, 113, 113, 0.4);
-                            display: flex;
-                            align-items: center;
-                            gap: 3px;
-                        }
-
-                        .env-tag::before {
-                            content: '🔊';
-                            font-size: 8px;
-                        }
-
-                        .energy-label {
-                            margin-top: 0;
-                        }
-
-                        /* ============================================================
-                           INDIVIDUAL POSITIONING (Adjust these for each building)
-                           ============================================================ */
-
-                        /* Headquarters 总部 */
-                        .b-hq .b-label {
-                            --h-pos: 420px;
-                        }
-
-                        .b-hq .energy-label {
-                            --h-pos: 350px;
-                        }
-
-                        .b-hq .occupancy-label {
-                            --h-pos: 385px;
-                        }
-
-                        /* R&D A 研发A */
-                        .b-rd-a .b-label {
-                            --h-pos: 200px;
-                        }
-
-                        .b-rd-a .energy-label {
-                            --h-pos: 140px;
-                        }
-
-                        .b-rd-a .occupancy-label {
-                            --h-pos: 170px;
-                        }
-
-                        .b-rd-a .env-label {
-                            --h-pos: 100px;
-                        }
-
-                        /* R&D B 研发B */
-                        .b-rd-b .b-label {
-                            --h-pos: 180px;
-                        }
-
-                        .b-rd-b .energy-label {
-                            --h-pos: 120px;
-                        }
-
-                        .b-rd-b .occupancy-label {
-                            --h-pos: 150px;
-                        }
-
-                        /* R&D C 研发C */
-                        .b-rd-c .b-label {
-                            --h-pos: 240px;
-                        }
-
-                        .b-rd-c .energy-label {
-                            --h-pos: 180px;
-                        }
-
-                        .b-rd-c .occupancy-label {
-                            --h-pos: 210px;
-                        }
-
-                        /* Commercial Mall 商业中心 */
-                        .b-mall .b-label {
-                            --h-pos: 210px;
-                        }
-
-                        .b-mall .energy-label {
-                            --h-pos: 150px;
-                        }
-
-                        .b-mall .occupancy-label {
-                            --h-pos: 180px;
-                        }
-
-                        .b-mall .env-label {
-                            --h-pos: 120px;
-                        }
-
-                        /* Apartments 人才公寓 */
-                        .b-apt .b-label {
-                            --h-pos: 210px;
-                        }
-
-                        .b-apt .energy-label {
-                            --h-pos: 150px;
-                        }
-
-                        .b-apt .occupancy-label {
-                            --h-pos: 180px;
-                        }
-
-                        /* Gym 体育中心 */
-                        .b-gym .b-label {
-                            --h-pos: 140px;
-                        }
-
-                        .b-gym .occupancy-label {
-                            --h-pos: 110px;
-                        }
-
-                        .b-gym .env-label {
-                            --h-pos: 50px;
-                        }
-
-                        /* PV Array 光伏阵列 */
-                        .el-pv {
-                            --h-pos: 120px;
-                        }
-
-                        .solar-array .b-label {
-                            --h-pos: 80px;
-                        }
-
-                        .b-gym .energy-label {
-                            --h-pos: 80px;
-                        }
-
-                        /* Staff Canteen 职工食堂 */
-                        .b-canteen .b-label {
-                            --h-pos: 140px;
-                        }
-
-                        .b-canteen .energy-label {
-                            --h-pos: 80px;
-                        }
-
-                        /* Data Center 数据中心 */
-                        .b-data .b-label {
-                            --h-pos: 160px;
-                        }
-
-                        .b-data .env-label {
-                            --h-pos: 130px;
-                        }
-
-                        .b-data .energy-label {
-                            --h-pos: 100px;
-                        }
-
-                        /* Parking Lot 停车场 */
-                        .parking-lot .b-label {
-                            --h-pos: 80px;
-                        }
-
-                        .parking-lot .energy-label {
-                            --h-pos: 40px;
-                        }
-
-                        /* Power Station 动力中心 */
-                        .b-power .b-label {
-                            --h-pos: 140px;
-                        }
-
-                        .b-power .energy-label {
-                            --h-pos: 80px;
-                        }
-
-                        /* Tea House 茶楼 */
-                        .b-teahouse {
-                            transform: translate(350px, 360px);
-                        }
-
-                        .b-teahouse .b-label {
-                            --h-pos: 100px;
-                        }
-
-                        .b-teahouse .energy-label {
-                            --h-pos: 60px;
-                        }
-
-                        .b-teahouse .occupancy-label {
-                            --h-pos: 80px;
-                        }
-
-                        /* Tea House Style: Huizhou Architecture (White Walls, Grey Tiles) */
-                        .b-tea-base .face,
-                        .b-tea-top .face {
-                            background-color: #f8fafc;
-                            /* Powder White Walls */
-                            background-image:
-                                /* Traditional Lattice Windows */
-                                linear-gradient(to bottom, transparent 30%, #334155 30%, #334155 32%, transparent 32%, transparent 50%, #334155 50%, #334155 52%, transparent 52%),
-                                linear-gradient(to right, transparent 40%, rgba(51, 65, 85, 0.3) 40%, rgba(51, 65, 85, 0.3) 60%, transparent 60%);
-                            background-size: 15px 15px, 100% 100%;
-                            border: 1px solid #e2e8f0;
-                        }
-
-                        /* Horse-Head Walls (Ma-Tou-Qiang) */
-                        .b-tea-base .f-left::before,
-                        .b-tea-base .f-right::before,
-                        .b-tea-top .f-left::before,
-                        .b-tea-top .f-right::before {
-                            content: '';
-                            position: absolute;
-                            bottom: 100%;
-                            left: 0;
-                            width: 100%;
-                            height: 15px;
-                            background: #f8fafc;
-                            /* Step-like shape */
-                            clip-path: polygon(0 100%, 0 0, 30% 0, 30% 30%, 70% 30%, 70% 60%, 100% 60%, 100% 100%);
-                            border-top: 2px solid #1e293b;
-                        }
-
-                        .b-tea-base .f-front,
-                        .b-tea-base .f-back {
-                            width: 60px;
-                            height: 30px;
-                            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(30px);
-                        }
-
-                        .b-tea-base .f-back {
-                            transform: translate(-50%, -50%) translateZ(15px) rotateX(90deg) translateZ(-30px);
-                        }
-
-                        .b-tea-base .f-left,
-                        .b-tea-base .f-right {
-                            width: 60px;
-                            height: 30px;
-                            transform: translate(-50%, -50%) translateZ(15px) rotateY(-90deg) rotateZ(-90deg) translateZ(30px);
-                            overflow: visible;
-                        }
-
-                        .b-tea-base .f-right {
-                            transform: translate(-50%, -50%) translateZ(15px) rotateY(90deg) rotateZ(90deg) translateZ(30px);
-                        }
-
-                        .b-tea-base .f-top {
-                            width: 74px;
-                            /* Eaves */
-                            height: 74px;
-                            transform: translate(-50%, -50%) translateZ(30px);
-                            background-color: #1e293b;
-                            /* Dark Grey Tiles */
-                            background-image: repeating-linear-gradient(0deg, #0f172a 0, #0f172a 2px, transparent 2px, transparent 6px);
-                            border: 1px solid #0f172a;
-                        }
-
-                        /* Upper Level */
-                        .b-tea-top .f-front,
-                        .b-tea-top .f-back {
-                            width: 40px;
-                            height: 25px;
-                            transform: translate(-50%, -50%) translateZ(42.5px) rotateX(90deg) translateZ(20px);
-                        }
-
-                        .b-tea-top .f-back {
-                            transform: translate(-50%, -50%) translateZ(42.5px) rotateX(90deg) translateZ(-20px);
-                        }
-
-                        .b-tea-top .f-left,
-                        .b-tea-top .f-right {
-                            width: 40px;
-                            height: 25px;
-                            transform: translate(-50%, -50%) translateZ(42.5px) rotateY(-90deg) rotateZ(-90deg) translateZ(20px);
-                            overflow: visible;
-                        }
-
-                        .b-tea-top .f-right {
-                            transform: translate(-50%, -50%) translateZ(42.5px) rotateY(90deg) rotateZ(90deg) translateZ(20px);
-                        }
-
-                        .b-tea-top .f-top {
-                            width: 54px;
-                            height: 54px;
-                            transform: translate(-50%, -50%) translateZ(55px);
-                            background-color: #0f172a;
-                            /* Darker Slate Tiles */
-                            background-image:
-                                repeating-linear-gradient(90deg, #1e293b 0, #1e293b 2px, transparent 2px, transparent 8px),
-                                radial-gradient(circle, #334155 1px, transparent 1px);
-                            background-size: 100% 100%, 8px 8px;
-                            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
-                        }
-
-                        /* Office Towers D-G 办公楼 */
-                        .b-off-d .b-label,
-                        .b-off-e .b-label,
-                        .b-off-f .b-label,
-                        .b-off-g .b-label {
-                            --h-pos: 200px;
-                        }
-
-                        .b-off-d .energy-label,
-                        .b-off-e .energy-label,
-                        .b-off-f .energy-label,
-                        .b-off-g .energy-label {
-                            --h-pos: 140px;
-                        }
-
-                        .b-off-d .occupancy-label,
-                        .b-off-e .occupancy-label,
-                        .b-off-f .occupancy-label,
-                        .b-off-g .occupancy-label {
-                            --h-pos: 170px;
-                        }
-
-                        /* Data Points */
-                        .data-point {
-                            position: absolute;
-                            width: 6px;
-                            height: 6px;
-                            background: white;
-                            border-radius: 50%;
-                            box-shadow: 0 0 10px white;
-                            top: 50%;
-                            left: 50%;
-                        }
-
-                        .p-1 {
-                            background: #60a5fa;
-                            animation: floatData1 4s infinite;
-                            transform: translate(-250px, -180px) translateZ(100px);
-                        }
-
-                        .p-2 {
-                            background: #facc15;
-                            animation: floatData2 5s infinite;
-                            transform: translate(-180px, 180px) translateZ(70px);
-                        }
-
-                        .p-3 {
-                            background: #8b5cf6;
-                            animation: floatData3 6s infinite;
-                            transform: translate(180px, 180px) translateZ(110px);
-                        }
-
-                        .p-4 {
-                            background: #06b6d4;
-                            animation: floatDataTower 7s infinite;
-                            transform: translate(0, 0) translateZ(160px);
-                        }
-
-                        .p-5 {
-                            background: #4ade80;
-                            animation: floatData5 5.5s infinite;
-                            transform: translate(350px, -350px) translateZ(90px);
-                        }
-
-                        .p-6 {
-                            background: #f87171;
-                            animation: floatData6 6.5s infinite;
-                            transform: translate(-350px, -350px) translateZ(120px);
-                        }
-
-                        /* Moving Vehicles */
-                        .car-moving {
-                            position: absolute;
-                            width: 12px;
-                            height: 24px;
-                            background: #fff;
-                            border-radius: 2px;
-                            box-shadow: 0 0 5px white;
-                            z-index: 5;
-                            top: 50%;
-                            left: 50%;
-                            margin-top: -12px;
-                            margin-left: -6px;
-                        }
-
-                        .cm-1 {
-                            background: #ef4444;
-                            box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
-                            animation: drive-n-e 10s linear infinite;
-                        }
-
-                        .cm-2 {
-                            background: #3b82f6;
-                            box-shadow: 0 0 8px rgba(59, 130, 246, 0.6);
-                            animation: drive-s-w 12s linear infinite;
-                            animation-delay: 2s;
-                        }
-
-                        .cm-3 {
-                            background: #facc15;
-                            box-shadow: 0 0 8px rgba(250, 204, 21, 0.6);
-                            animation: drive-w-s 15s linear infinite;
-                            animation-delay: 5s;
-                        }
-
-                        .cm-4 {
-                            background: #10b981;
-                            box-shadow: 0 0 8px rgba(16, 185, 129, 0.6);
-                            animation: drive-e-n 14s linear infinite;
-                            animation-delay: 1s;
-                        }
-
-                        .cm-5 {
-                            background: #ffffff;
-                            box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
-                            animation: drive-n-e 13s linear infinite;
-                            animation-delay: 5s;
-                        }
-
-                        @keyframes drive-n-e {
-                            0% {
-                                transform: translate(-600px, -270px) rotate(90deg);
-                            }
-
-                            100% {
-                                transform: translate(600px, -270px) rotate(90deg);
-                            }
-                        }
-
-                        @keyframes drive-s-w {
-                            0% {
-                                transform: translate(600px, 280px) rotate(-90deg);
-                            }
-
-                            100% {
-                                transform: translate(-600px, 280px) rotate(-90deg);
-                            }
-                        }
-
-                        @keyframes drive-w-s {
-                            0% {
-                                transform: translate(-270px, -600px);
-                            }
-
-                            100% {
-                                transform: translate(-270px, 600px);
-                            }
-                        }
-
-                        @keyframes drive-e-n {
-                            0% {
-                                transform: translate(260px, 600px) rotate(180deg);
-                            }
-
-                            100% {
-                                transform: translate(260px, -600px) rotate(180deg);
-                            }
-                        }
-
-                        @keyframes floatData1 {
-
-                            0%,
-                            100% {
-                                transform: translate(-250px, -180px) translateZ(90px);
-                            }
-
-                            50% {
-                                transform: translate(-250px, -180px) translateZ(110px);
-                            }
-                        }
-
-                        @keyframes floatData2 {
-
-                            0%,
-                            100% {
-                                transform: translate(-180px, 180px) translateZ(70px);
-                            }
-
-                            50% {
-                                transform: translate(-180px, 180px) translateZ(90px);
-                            }
-                        }
-
-                        @keyframes floatData3 {
-
-                            0%,
-                            100% {
-                                transform: translate(180px, 180px) translateZ(110px);
-                            }
-
-                            50% {
-                                transform: translate(180px, 180px) translateZ(130px);
-                            }
-                        }
-
-                        @keyframes floatDataTower {
-
-                            0%,
-                            100% {
-                                transform: translate(0, 0) translateZ(160px);
-                            }
-
-                            50% {
-                                transform: translate(0, 0) translateZ(180px);
-                            }
-                        }
-
-                        @keyframes floatData5 {
-
-                            0%,
-                            100% {
-                                transform: translate(350px, -350px) translateZ(80px);
-                            }
-
-                            50% {
-                                transform: translate(350px, -350px) translateZ(100px);
-                            }
-                        }
-
-                        @keyframes floatData6 {
-
-                            0%,
-                            100% {
-                                transform: translate(-350px, -350px) translateZ(110px);
-                            }
-
-                            50% {
-                                transform: translate(-350px, -350px) translateZ(130px);
-                            }
-                        }
-                    </style>
 
                     <div
                         style="position: absolute; bottom: 20px; left: 20px; font-family: monospace; color: var(--accent); font-size: 0.8rem; z-index: 10;">
@@ -5453,91 +5431,6 @@
         </div>
     </div>
 
-    <style>
-        /* ===== 驾驶舱根 CSS 变量 ===== */
-        :root {
-            --bg-color: #030712;
-            --primary: #3b82f6;
-            --primary-glow: rgba(59, 130, 246, 0.5);
-            --secondary: #8b5cf6;
-            --accent: #06b6d4;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        /* ===== dashboard-page 布局 ===== */
-        .dashboard-page {
-            background: #030712;
-            padding: 36px 24px 0;
-            height: 100vh;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .dashboard-page .page-num {
-            color: rgba(59, 130, 246, 0.15);
-        }
-
-        .dashboard-page .page-label {
-            color: #3b82f6;
-        }
-
-        .dashboard-page .page-title {
-            color: #f8fafc;
-        }
-
-        .dashboard-page .section-divider {
-            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-            margin-bottom: 12px;
-        }
-
-        /* 采用绝对定位左上角，并辅以 JS 动态逆向计算逻辑尺寸，实现等比缩放且 100% 无死角铺满全屏 */
-        .cockpit-page-wrap {
-            position: relative !important;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            display: block;
-        }
-
-        .cockpit-page-wrap .cockpit-container {
-            position: absolute !important;
-            left: 0 !important;
-            top: 0 !important;
-            margin: 0 !important;
-            transform-origin: left top !important;
-            flex-shrink: 0;
-            transition: none !important;
-        }
-
-        /* slide 容器本身不需要全屏定位 */
-        .cockpit-page-wrap>div {
-            width: 100%;
-            height: 100%;
-        }
-
-        @media (max-width: 768px) {
-            .dashboard-page {
-                padding: 24px 12px 0;
-                overflow: hidden;
-            }
-
-            .cockpit-page-wrap {
-                width: 100%;
-                height: 100%;
-                display: block;
-                overflow: hidden;
-            }
-
-            .cockpit-page-wrap .cockpit-container {
-                margin: 0 !important;
-            }
-        }
-    </style>
 
     <script>
         /* ===== 驾驶舱内联 JS ===== */
@@ -5840,16 +5733,14 @@
          * - 数据大屏（iframe）区域允许内部滚动，不拦截
          * ===================================================== */
         (function () {
-            const DURATION = 900;   // 过渡动画时长 ms（越大越缓）
-            const DEBOUNCE = 1200;  // 两次翻页最小间隔 ms（防止滑太快）
-            const THRESHOLD = 30;    // 触发翻页的最小 deltaY 绝对值
+            const DURATION = 1000;   // 过渡动画时长 ms（越大越缓）
+            const DEBOUNCE = 1000;  // 两次翻页最小间隔 ms（防止滑太快）
+            const THRESHOLD = 10;    // 触发翻页的最小 deltaY 绝对值
             const TOUCH_MIN = 40;    // 触发翻页的最小触摸滑动距离 px
 
-            // ---- Easing: easeInOutQuart（强阻尼感） ----
-            function easeInOutQuart(t) {
-                return t < 0.5
-                    ? 8 * t * t * t * t
-                    : 1 - Math.pow(-2 * t + 2, 4) / 2;
+            // ---- Easing: easeOutQuart（发动启动，平稳停止） ----
+            function easeOutQuart(t) {
+                return 1 - Math.pow(1 - t, 4);
             }
 
             // ---- 获取所有一级页面 ----
@@ -5875,7 +5766,7 @@
                 function step(currentTime) {
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / DURATION, 1);
-                    const eased = easeInOutQuart(progress);
+                    const eased = easeOutQuart(progress);
 
                     window.scrollTo(0, startY + distance * eased);
 
