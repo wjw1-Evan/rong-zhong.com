@@ -1305,6 +1305,7 @@
             /* CTA结尾页 */
             .cta-page {
                 padding: 48px 18px;
+                min-height: 100vh;
             }
 
             .cta-content {
@@ -5661,24 +5662,37 @@
                     const ro = new ResizeObserver(entries => {
                         for (let entry of entries) {
                             const { width, height } = entry.contentRect;
-
-                            // 1. Calculate standard scale for width and height
+                            const isPortrait = width < height; // 手机竖屏
                             const scaleX = width / baseWidth;
                             const scaleY = height / baseHeight;
 
-                            // 2. Uniform scale! Maintain precise aspect ratio (NO distortion). User requested 0.8 multiplier.
-                            const scale = Math.min(scaleX, scaleY) * 1;
-
-                            // 3. Inverse calculation: dynamically set logical bounds to perfectly fill the actual screen
-                            // at this specific scale. This avoids all letterboxing while preserving aspect ratios.
-                            const logicalWidth = width / scale;
-                            const logicalHeight = height / scale;
-
-                            dashContainer.style.width = logicalWidth + 'px';
-                            dashContainer.style.height = logicalHeight + 'px';
-
-                            // Transform from the top-left origin (set in CSS)
-                            dashContainer.style.transform = `scale(${scale})`;
+                            if (isPortrait) {
+                                // 手机竖屏：等比缩放适配宽度，保持原始画布比例，垂直居中
+                                const scale = scaleX; // 以宽度为基准
+                                dashContainer.style.width = baseWidth + 'px';
+                                dashContainer.style.height = baseHeight + 'px';
+                                // 居中偏移：缩放后实际高度 = baseHeight * scale
+                                const scaledHeight = baseHeight * scale;
+                                const offsetY = Math.max(0, (height - scaledHeight) / 2);
+                                dashContainer.style.transform = `scale(${scale})`;
+                                dashContainer.style.position = 'absolute';
+                                dashContainer.style.left = '0';
+                                dashContainer.style.top = offsetY + 'px';
+                                dashContainer.style.transformOrigin = 'left top';
+                            } else {
+                                // 桌面横屏：等比缩放 + 逆向计算铺满全屏
+                                const multiplier = 0.8; // 桌面端缩小效果
+                                const scale = Math.min(scaleX, scaleY) * multiplier;
+                                const logicalWidth = width / scale;
+                                const logicalHeight = height / scale;
+                                dashContainer.style.width = logicalWidth + 'px';
+                                dashContainer.style.height = logicalHeight + 'px';
+                                dashContainer.style.transform = `scale(${scale})`;
+                                dashContainer.style.position = 'absolute';
+                                dashContainer.style.left = '0';
+                                dashContainer.style.top = '0';
+                                dashContainer.style.transformOrigin = 'left top';
+                            }
                         }
                     });
                     ro.observe(dashWrap);
