@@ -100,22 +100,35 @@ class ScrollManager {
     handleWheel(e) {
         if (this.isScrolling || e.ctrlKey || e.metaKey) return;
 
-        // 只要有滚动动作，就拦截并触发断面跳转
-        e.preventDefault();
+        // 仅在以下情况拦截并触发断面跳转：
+        // 1. 在首页第一屏 (Index 0) 向下滚 -> 跳到第二屏
+        // 2. 在第二屏 (Index 1) 且处于顶部区域，向上滚 -> 跳回首页
+        
+        const isIndex0 = this.currentIndex === 0;
+        const isIndex1 = this.currentIndex === 1;
+        const isAtTop = window.scrollY <= this.sections[1]?.offsetTop + 5; // 允许一丁点误差
 
-        if (e.deltaY > 0) {
+        if (isIndex0 && e.deltaY > 0) {
+            e.preventDefault();
             this.scrollNext();
-        } else if (e.deltaY < 0) {
+        } else if (isIndex1 && isAtTop && e.deltaY < 0) {
+            e.preventDefault();
             this.scrollPrev();
         }
+        // 其他情况（如在第二屏向下滚，或在第三屏向上滚）保持原生滚动
     }
 
     handleKeydown(e) {
         if (this.isScrolling) return;
-        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+
+        const isIndex0 = this.currentIndex === 0;
+        const isIndex1 = this.currentIndex === 1;
+        const isAtTop = window.scrollY <= this.sections[1]?.offsetTop + 5;
+
+        if (isIndex0 && (e.key === 'ArrowDown' || e.key === 'PageDown')) {
             e.preventDefault();
             this.scrollNext();
-        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        } else if (isIndex1 && isAtTop && (e.key === 'ArrowUp' || e.key === 'PageUp')) {
             e.preventDefault();
             this.scrollPrev();
         }
