@@ -161,6 +161,10 @@
     content: "\f275";
 }
 
+.fa-leaf:before {
+    content: "\f06c";
+}
+
 .fa-chart-line:before {
     content: "\f201";
 }

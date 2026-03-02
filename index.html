@@ -122,7 +122,7 @@
                 </div>
                 <ul class="nav-links">
                     <li><a href="index.html" class="active" aria-current="page"><i class="fas fa-home"></i> 首页</a></li>
-                    <li><a href="services.html"><i class="fas fa-cogs"></i> 服务内容</a></li>
+                    <li><a href="services.html"><i class="fas fa-cogs"></i> AI服务</a></li>
                     <li><a href="solutions.html"><i class="fas fa-lightbulb"></i> 解决方案</a></li>
                     <li><a href="download.html"><i class="fas fa-download"></i> APP下载</a></li>
                     <li><a href="about.html"><i class="fas fa-users"></i> 关于我们</a></li>
@@ -133,7 +133,7 @@
     </header>
 
     <main>
-        <section class="hero" aria-label="网站主要信息">
+        <section class="hero" id="hero-section" aria-label="网站主要信息">
             <div class="hero-content">
                 <h1>数领天下 智创未来</h1>
                 <p>融众信息以领先的AI技术为企业赋能，打造智能化升级新引擎，助力企业驶入数字化转型快车道</p>
@@ -153,6 +153,17 @@
                 <i class="fas fa-chevron-down"></i>
             </a>
         </section>
+
+        <!-- 侧边导航 (随屏滚动小目录) -->
+        <nav class="side-nav" id="side-nav">
+            <ul>
+                <li><a href="#hero-section" class="nav-link active" data-target="hero-section"><span>首页综述</span></a>
+                </li>
+                <li><a href="#features" class="nav-link" data-target="features"><span>核心优势</span></a></li>
+                <li><a href="#smart-park-os" class="nav-link" data-target="smart-park-os"><span>智慧园区</span></a></li>
+                <li><a href="#xiaoke-english" class="nav-link" data-target="xiaoke-english"><span>小科英语</span></a></li>
+            </ul>
+        </nav>
 
         <section class="features" id="features" aria-labelledby="features-heading">
             <div class="container">
@@ -209,7 +220,7 @@
                 </header>
                 <div class="products-grid">
                     <!-- 智慧园区管理系统 -->
-                    <article class="product-card">
+                    <article class="product-card" id="smart-park-os">
                         <div class="product-content">
                             <h3>智慧园区管理系统 | Smart Park OS</h3>
                             <p class="product-description">
@@ -260,7 +271,7 @@
                         </div>
                     </article>
 
-                    <article class="product-card">
+                    <article class="product-card" id="xiaoke-english">
                         <div class="product-content">
                             <h3>小科英语 | Xiaoke English</h3>
                             <p class="product-description">
@@ -334,7 +345,7 @@
                 <h4>快速链接</h4>
                 <ul>
                     <li><a href="index.html">首页</a></li>
-                    <li><a href="services.html">服务内容</a></li>
+                    <li><a href="services.html">AI服务</a></li>
                     <li><a href="solutions.html">解决方案</a></li>
                     <li><a href="download.html">APP下载</a></li>
                     <li><a href="about.html">关于我们</a></li>

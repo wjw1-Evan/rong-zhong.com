@@ -19,7 +19,7 @@
         <priority>0.8</priority>
     </url>
 
-    <!-- 服务内容 -->
+    <!-- AI服务 -->
     <url>
         <loc>https://www.rong-zhong.com/services.html</loc>
         <lastmod>2026-02-21</lastmod>
@@ -27,7 +27,7 @@
         <priority>0.9</priority>
         <image:image>
             <image:loc>https://www.rong-zhong.com/images/services.jpg</image:loc>
-            <image:title>融众信息服务内容</image:title>
+            <image:title>融众信息AI服务</image:title>
             <image:caption>专业的AI解决方案服务</image:caption>
         </image:image>
     </url>

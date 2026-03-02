@@ -1,3 +1,161 @@
+/**
+ * 统一滚动管理器 (ScrollManager)
+ * 处理全站的鼠标滚轮、导航点击和 ScrollSpy 逻辑
+ */
+class ScrollManager {
+    constructor() {
+        this.isScrolling = false;
+        this.sections = [];
+        this.currentIndex = 0;
+        this.navLinks = [];
+        this.scrollLockTime = 800; // 锁定时间 (ms)
+        this.init();
+    }
+
+    init() {
+        if (this.isMobile()) return;
+
+        // 获取断面和导航链接
+        this.updateElements();
+
+        // 覆盖原生滚动
+        document.documentElement.style.scrollBehavior = 'auto';
+
+        // 核心事件监听
+        window.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
+        window.addEventListener('keydown', (e) => this.handleKeydown(e));
+        window.addEventListener('resize', () => this.updateElements());
+        window.addEventListener('scroll', () => this.updateActiveLink());
+
+        // 处理所有点击事件 (由 .side-nav 或 .nav-links 触发)
+        this.bindClickEvents();
+    }
+
+    isMobile() {
+        return /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ||
+            (window.innerWidth <= 768);
+    }
+
+    updateElements() {
+        // 查找所有目标断面 (从 side-nav 或 main-nav 中提取)
+        const allNavLinks = document.querySelectorAll('.side-nav .nav-link, .nav-links a[href^="#"]');
+        const ids = Array.from(allNavLinks).map(link => link.getAttribute('href').replace('#', ''));
+        const uniqueIds = [...new Set(ids)];
+
+        this.sections = uniqueIds
+            .map(id => document.getElementById(id))
+            .filter(el => el !== null)
+            .sort((a, b) => a.offsetTop - b.offsetTop);
+
+        this.navLinks = Array.from(allNavLinks);
+        this.updateCurrentIndex();
+    }
+
+    bindClickEvents() {
+        this.navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const targetId = link.getAttribute('href');
+                if (targetId.startsWith('#')) {
+                    e.preventDefault();
+                    const targetElement = document.getElementById(targetId.substring(1));
+                    if (targetElement) {
+                        const index = this.sections.indexOf(targetElement);
+                        if (index !== -1) this.scrollTo(index);
+                    }
+                }
+            });
+        });
+    }
+
+    updateActiveLink() {
+        if (this.isScrolling) return;
+
+        const scrollPos = window.scrollY + 150;
+        let activeId = '';
+
+        this.sections.forEach(section => {
+            if (scrollPos >= section.offsetTop) {
+                activeId = section.getAttribute('id');
+            }
+        });
+
+        if (activeId) {
+            this.navLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+            });
+        }
+    }
+
+    updateCurrentIndex() {
+        const scrollPos = window.scrollY + 100;
+        let index = 0;
+        for (let i = 0; i < this.sections.length; i++) {
+            if (scrollPos >= this.sections[i].offsetTop) {
+                index = i;
+            }
+        }
+        this.currentIndex = index;
+    }
+
+    handleWheel(e) {
+        if (this.isScrolling || e.ctrlKey || e.metaKey) return;
+
+        // 只要有滚动动作，就拦截并触发断面跳转
+        e.preventDefault();
+
+        if (e.deltaY > 0) {
+            this.scrollNext();
+        } else if (e.deltaY < 0) {
+            this.scrollPrev();
+        }
+    }
+
+    handleKeydown(e) {
+        if (this.isScrolling) return;
+        if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+            e.preventDefault();
+            this.scrollNext();
+        } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+            e.preventDefault();
+            this.scrollPrev();
+        }
+    }
+
+    scrollNext() {
+        if (this.currentIndex < this.sections.length - 1) {
+            this.scrollTo(this.currentIndex + 1);
+        }
+    }
+
+    scrollPrev() {
+        if (this.currentIndex > 0) {
+            this.scrollTo(this.currentIndex - 1);
+        }
+    }
+
+    scrollTo(index) {
+        this.isScrolling = true;
+        this.currentIndex = index;
+        const targetSection = this.sections[index];
+
+        // 统一动画：使用与点击相同的 smooth behavior
+        targetSection.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+
+        // 手动更新高亮 (防止平滑滚动中途还没到位置)
+        const activeId = targetSection.getAttribute('id');
+        this.navLinks.forEach(link => {
+            link.classList.toggle('active', link.getAttribute('href') === `#${activeId}`);
+        });
+
+        setTimeout(() => {
+            this.isScrolling = false;
+        }, this.scrollLockTime);
+    }
+}
+
 // 防抖函数
 function debounce(func, wait) {
     let timeout;
@@ -180,6 +338,9 @@ function handleImageLoad() {
 // 并优化图片DOM获取
 
 document.addEventListener('DOMContentLoaded', () => {
+    // 启动统一滚动管理器
+    window.scrollManager = new ScrollManager();
+
     try {
         // 初始化性能监控
         Analytics.init();
@@ -204,25 +365,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 处理平滑滚动
+// 已由 ScrollManager 统一处理
+/*
 try {
     document.querySelectorAll('.service-link').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            if (targetElement && DOM.nav) {
-                const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - DOM.nav.offsetHeight;
-                window.scrollTo({
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
-            }
-        });
+        ...
     });
 } catch (error) {
     handleError(error, 'Smooth scroll handling');
 }
+*/
 
 // 回到顶端按钮处理 - 使用防抖
 if (DOM.backToTop) {

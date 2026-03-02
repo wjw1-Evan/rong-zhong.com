@@ -7,7 +7,7 @@
 ```
 ├── index.html          # 首页
 ├── about.html         # 关于我们
-├── services.html      # 服务内容
+├── services.html      # AI服务
 ├── solutions.html     # 解决方案
 ├── contact.html       # 联系我们
 ├── styles.css         # 样式文件
