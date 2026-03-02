@@ -1,0 +1,28 @@
+# 天津融众信息技术有限公司 (Rongzhong Information)
+
+## 简介
+天津融众信息技术有限公司（融众信息）是一家专注于企业AI应用开发的高新技术企业。我们致力于为客户提供领先的人工智能解决方案，推动各行各业的数字化和智能化转型。
+
+## 核心产品与服务
+- **智慧园区管理系统 (Smart Park OS)**: 融合3D数字孪生、物联网与AI大模型技术的一站式园区操作系统。实现资产运营、安防能耗的全面智能化管理。
+- **小科英语 (Xiaoke English)**: 基于AI人工智能的新一代英语学习伙伴。提供情景对话、剧情互动与实时反馈。
+- **行业AI解决方案**: 
+    - 智能制造：生产流程优化、质量检测。
+    - 智慧金融：风险控制、智能客服。
+    - 智慧医疗：影像辅助诊断、医疗数据分析。
+    - 数字化转型咨询：帮助企业规划AI发展路径。
+
+## 联系信息
+- **官网**: https://www.rong-zhong.com
+- **地址**: 天津滨海-中关村科技园
+- **电话**: +86-15332108886
+- **邮箱**: fsy_008@163.com
+
+## 站点地图
+- [首页](https://www.rong-zhong.com/index.html)
+- [服务内容](https://www.rong-zhong.com/services.html)
+- [解决方案](https://www.rong-zhong.com/solutions.html)
+- [智慧园区 OS](https://www.rong-zhong.com/smart-park-os.html)
+- [APP下载](https://www.rong-zhong.com/download.html)
+- [关于我们](https://www.rong-zhong.com/about.html)
+- [联系我们](https://www.rong-zhong.com/contact.html)

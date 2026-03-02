@@ -10,4 +10,27 @@ Disallow: /*.xml$
 Disallow: /*.sql$
 Disallow: /*.log$
 
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Bot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
 Sitemap: https://www.rong-zhong.com/sitemap.xml
+# LLM-friendly summary: https://www.rong-zhong.com/llms.txt
