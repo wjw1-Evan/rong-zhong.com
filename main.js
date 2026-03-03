@@ -98,12 +98,12 @@ class ScrollManager {
     }
 
     handleWheel(e) {
-        if (this.isScrolling || e.ctrlKey || e.metaKey) return;
+        if (this.sections.length < 2 || this.isScrolling || e.ctrlKey || e.metaKey) return;
 
         // 仅在以下情况拦截并触发断面跳转：
         // 1. 在首页第一屏 (Index 0) 向下滚 -> 跳到第二屏
         // 2. 在第二屏 (Index 1) 且处于顶部区域，向上滚 -> 跳回首页
-        
+
         const isIndex0 = this.currentIndex === 0;
         const isIndex1 = this.currentIndex === 1;
         const isAtTop = window.scrollY <= this.sections[1]?.offsetTop + 5; // 允许一丁点误差
@@ -119,7 +119,7 @@ class ScrollManager {
     }
 
     handleKeydown(e) {
-        if (this.isScrolling) return;
+        if (this.sections.length < 2 || this.isScrolling) return;
 
         const isIndex0 = this.currentIndex === 0;
         const isIndex1 = this.currentIndex === 1;
