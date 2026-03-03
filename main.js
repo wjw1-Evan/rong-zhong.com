@@ -151,10 +151,12 @@ class ScrollManager {
         this.currentIndex = index;
         const targetSection = this.sections[index];
 
-        // 统一动画：使用与点击相同的 smooth behavior
-        targetSection.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        const headerHeight = 70; // 对应 nav { height: 70px }
+        const targetTop = targetSection.offsetTop - headerHeight;
+
+        window.scrollTo({
+            top: targetTop,
+            behavior: 'smooth'
         });
 
         // 手动更新高亮 (防止平滑滚动中途还没到位置)
