@@ -123,6 +123,36 @@ nav {
     transition: all 0.3s ease;
 }
 
+/* 透明导航状态 (用于首页第一屏) */
+nav.nav-transparent {
+    background-color: transparent;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+nav.nav-transparent .logo-text {
+    -webkit-text-fill-color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav.nav-transparent .logo-dot {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+nav.nav-transparent .nav-links a {
+    color: white;
+}
+
+nav.nav-transparent .nav-links a i {
+    color: white;
+}
+
+nav.nav-transparent .menu-toggle span {
+    background-color: white;
+}
+
 nav .container {
     display: flex;
     justify-content: space-between;
@@ -2116,23 +2146,34 @@ html {
     transition: all 0.3s ease;
 }
 
-.side-nav .nav-link:hover span,
-.side-nav .nav-link.active span {
-    background: var(--primary-color);
+.side-nav.nav-transparent {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: none;
+}
+
+.side-nav.nav-transparent .nav-link span {
+    background: rgba(255, 255, 255, 0.15);
     color: white;
-    box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
-    border-color: var(--primary-color);
+    border-color: rgba(255, 255, 255, 0.2);
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-.side-nav .nav-link:hover span {
-    transform: scale(1.05);
-    /* 鼠标移上去时微放大 */
+.side-nav.nav-transparent .nav-link::after {
+    background: rgba(255, 255, 255, 0.4);
 }
 
-.side-nav .nav-link:hover::after,
-.side-nav .nav-link.active::after {
-    background: var(--primary-color);
-    transform: scale(1.6);
+.side-nav.nav-transparent .nav-link:hover span,
+.side-nav.nav-transparent .nav-link.active span {
+    background: white;
+    color: var(--primary-color);
+    border-color: white;
+}
+
+.side-nav.nav-transparent .nav-link:hover::after,
+.side-nav.nav-transparent .nav-link.active::after {
+    background: white;
 }
 
 @media (max-width: 1200px) {

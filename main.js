@@ -25,7 +25,13 @@ class ScrollManager {
         window.addEventListener('wheel', (e) => this.handleWheel(e), { passive: false });
         window.addEventListener('keydown', (e) => this.handleKeydown(e));
         window.addEventListener('resize', () => this.updateElements());
-        window.addEventListener('scroll', () => this.updateActiveLink());
+        window.addEventListener('scroll', () => {
+            this.updateActiveLink();
+            this.updateNavTransparency();
+        });
+
+        // 初始化透明度
+        this.updateNavTransparency();
 
         // 处理所有点击事件 (由 .side-nav 或 .nav-links 触发)
         this.bindClickEvents();
@@ -168,6 +174,26 @@ class ScrollManager {
         setTimeout(() => {
             this.isScrolling = false;
         }, this.scrollLockTime);
+    }
+
+    updateNavTransparency() {
+        const nav = document.querySelector('nav');
+        const sideNav = document.querySelector('.side-nav');
+        const hero = document.querySelector('.hero');
+        if (!hero) return;
+
+        // 仅在首页 (有 .hero) 且在最顶部时透明
+        const isAtTop = window.scrollY < 50;
+
+        if (nav) {
+            if (isAtTop) nav.classList.add('nav-transparent');
+            else nav.classList.remove('nav-transparent');
+        }
+
+        if (sideNav) {
+            if (isAtTop) sideNav.classList.add('nav-transparent');
+            else sideNav.classList.remove('nav-transparent');
+        }
     }
 }
 
