@@ -1,1 +1,4 @@
 .DS_Store
+
+# 发布用 APK（走 GitHub Releases，不进站点文件树，避免超 Cloudflare 单文件限制）
+downloads/*.apk

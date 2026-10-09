@@ -1,7 +1,7 @@
 {
   "version": "1.11.0",
   "versionCode": 6,
-  "apkUrl": "https://www.rong-zhong.com/downloads/XiaokeAI-English.apk",
+  "apkUrl": "https://github.com/wjw1-Evan/rong-zhong.com/releases/latest/download/XiaokeAI-English.apk",
   "sha256": "8fbc5fdf5a3c7edb1dad54953ef68802c0bb31600964a8d0b5f47b598999f5ba",
   "notes": "新增应用内自动更新，优化学习体验",
   "publishedAt": "2026-10-09T13:54:10Z"

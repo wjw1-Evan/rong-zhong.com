@@ -64,7 +64,7 @@
         "url": "https://www.rong-zhong.com"
       },
       "installUrl": "https://apps.apple.com/app/%E5%B0%8F%E7%A7%91%E8%8B%B1%E8%AF%AD/id6748720737",
-      "downloadUrl": "https://www.rong-zhong.com/downloads/XiaokeAI-English.apk",
+      "downloadUrl": "https://github.com/wjw1-Evan/rong-zhong.com/releases/latest/download/XiaokeAI-English.apk",
       "softwareVersion": "1.11.0"
     }
     </script>
@@ -190,7 +190,8 @@
                                 <i class="fab fa-apple"></i> 通过苹果商店下载
                             </button>
                         </a>
-                        <a href="downloads/XiaokeAI-English.apk" download
+                        <a id="android-apk-link"
+                            href="https://github.com/wjw1-Evan/rong-zhong.com/releases/latest/download/XiaokeAI-English.apk"
                             rel="noopener" class="download-link">
                             <button class="download-btn english-btn">
                                 <i class="fab fa-android"></i> 通过安卓商店下载
@@ -261,7 +262,7 @@
         (function () {
             var versionEl = document.getElementById('qr-version');
             var notesEl = document.getElementById('qr-notes');
-            var apkLink = document.querySelector('a[href="downloads/XiaokeAI-English.apk"]');
+            var apkLink = document.getElementById('android-apk-link');
             if (!versionEl) return;
             fetch('downloads/latest.json?t=' + Date.now())
                 .then(function (r) {
