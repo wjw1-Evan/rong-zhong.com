@@ -63,9 +63,48 @@
         "name": "天津融众信息技术有限公司",
         "url": "https://www.rong-zhong.com"
       },
-      "installUrl": "https://apps.apple.com/app/%E5%B0%8F%E7%A7%91%E8%8B%B1%E8%AF%AD/id6748720737"
+      "installUrl": "https://apps.apple.com/app/%E5%B0%8F%E7%A7%91%E8%8B%B1%E8%AF%AD/id6748720737",
+      "downloadUrl": "https://www.rong-zhong.com/downloads/XiaokeAI-English.apk",
+      "softwareVersion": "1.11.0"
     }
     </script>
+    <style>
+        /* APP 下载：二维码与版本信息（本页专用） */
+        .qr-download {
+            margin-top: 28px;
+            padding-top: 24px;
+            border-top: 1px dashed #e5e7eb;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .qr-download img {
+            width: 168px;
+            height: 168px;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            background: #fff;
+        }
+        .qr-download .qr-tip {
+            margin: 0;
+            font-size: 0.95rem;
+            color: #6b7280;
+        }
+        .qr-download .qr-version {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #10b981;
+            font-weight: 600;
+        }
+        .qr-download .qr-notes {
+            margin: 0;
+            font-size: 0.85rem;
+            color: #9ca3af;
+            max-width: 320px;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 
 <body>
@@ -151,12 +190,19 @@
                                 <i class="fab fa-apple"></i> 通过苹果商店下载
                             </button>
                         </a>
-                        <a href="http://dify.chinanorth2.cloudapp.chinacloudapi.cn:8080/XiaokeAI-English.apk"
+                        <a href="downloads/XiaokeAI-English.apk" download
                             rel="noopener" class="download-link">
                             <button class="download-btn english-btn">
                                 <i class="fab fa-android"></i> 通过安卓商店下载
                             </button>
                         </a>
+                    </div>
+
+                    <div class="qr-download">
+                        <img src="downloads/qr.png" alt="扫码下载小科英语 Android 版" width="168" height="168" loading="lazy">
+                        <p class="qr-tip">用手机相机扫码下载 Android 版</p>
+                        <p class="qr-version" id="qr-version">正在获取版本信息…</p>
+                        <p class="qr-notes" id="qr-notes"></p>
                     </div>
 
                     <p class="help-text">如遇无法下载，请联系官方客服获取帮助。</p>
@@ -210,6 +256,28 @@
     </footer>
 
     <script src="main.js"></script>
+    <script>
+        // 读取 downloads/latest.json，展示最新版本与更新说明（由小科英语发布脚本维护）
+        (function () {
+            var versionEl = document.getElementById('qr-version');
+            var notesEl = document.getElementById('qr-notes');
+            var apkLink = document.querySelector('a[href="downloads/XiaokeAI-English.apk"]');
+            if (!versionEl) return;
+            fetch('downloads/latest.json?t=' + Date.now())
+                .then(function (r) {
+                    if (!r.ok) throw new Error('HTTP ' + r.status);
+                    return r.json();
+                })
+                .then(function (data) {
+                    if (data.version) versionEl.textContent = '最新版本 v' + data.version;
+                    if (data.notes) notesEl.textContent = data.notes;
+                    if (data.apkUrl && apkLink) apkLink.setAttribute('href', data.apkUrl);
+                })
+                .catch(function () {
+                    versionEl.textContent = '暂无法获取版本信息，请稍后再试';
+                });
+        })();
+    </script>
     <!-- <script src="js/cookie-consent.js"></script> -->
 </body>
 
