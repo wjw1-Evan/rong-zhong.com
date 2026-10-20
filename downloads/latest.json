@@ -1,9 +1,9 @@
 {
-  "version": "1.15.0",
-  "versionCode": 8,
+  "version": "1.20.0",
+  "versionCode": 9,
   "apkUrl": "https://github.com/wjw1-Evan/rong-zhong.com/releases/latest/download/XiaokeAI-English.apk",
-  "md5": "bb9a6cd01ea3427c563af5583c1c7d28",
-  "sha256": "e845ce72232a5e9da73c471d92509950259686a6ea44bbcc7847e0a802473ab9",
-  "notes": "升级庆祝彩带动画与听写星级评价；小科吉祥物可戳一戳互动；打卡里程碑鼓励；生词统计与更新包校验等多项体验优化",
-  "publishedAt": "2026-10-19T06:57:18Z"
+  "md5": "d24a93161f9ef8b6144390c2d16448d3",
+  "sha256": "a4a746cf2bd099c6f95f13ab4163e519854434f99d012a58875207cff173d509",
+  "notes": "剧情点词查义：点一下英文单词即时听发音、看 AI 释义，一键收进生词本（含测验与历史回看）；朗读时正在读的段落高亮跟随；听写练习卡住可看首字母提示；剧情收藏星标；生词本 Tab 实时待复习角标；释义例句可朗读；多项测试与稳定性优化",
+  "publishedAt": "2026-10-20T13:30:28Z"
 }
