@@ -1,9 +1,9 @@
 {
-  "version": "1.25.0",
-  "versionCode": 10,
+  "version": "1.25.1",
+  "versionCode": 12,
   "apkUrl": "https://github.com/wjw1-Evan/rong-zhong.com/releases/latest/download/XiaokeAI-English.apk",
-  "md5": "7ce18c75a493dcf5c05c067fb831d315",
-  "sha256": "c8f50c6dd26e1dd7c95c1214985bbec44bee32ccd7a0b18f94f1b69846a1b01e",
-  "notes": "剧情生成可随时停止；网络抖动自动重试；聊天上下文精简更省流；每日任务/备份恢复更可靠；打卡连续天数与进度跨天刷新修复",
-  "publishedAt": "2026-10-22T17:30:35Z"
+  "md5": "f01b343d64301b9c5d66f5b10c8e7b11",
+  "sha256": "3dca0ece9c843eacd6684c38cde0d854336ae885e37dfa964037c93c3631901b",
+  "notes": "深色模式全面适配：底部标签栏跟随系统外观，按钮/选项对比度提升，Markdown 格式与提示条更易读",
+  "publishedAt": "2026-10-23T05:54:58Z"
 }
