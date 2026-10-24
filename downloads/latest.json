@@ -1,9 +1,9 @@
 {
-  "version": "1.25.1",
-  "versionCode": 12,
+  "version": "1.27.1",
+  "versionCode": 13,
   "apkUrl": "https://github.com/wjw1-Evan/rong-zhong.com/releases/latest/download/XiaokeAI-English.apk",
-  "md5": "f01b343d64301b9c5d66f5b10c8e7b11",
-  "sha256": "3dca0ece9c843eacd6684c38cde0d854336ae885e37dfa964037c93c3631901b",
-  "notes": "深色模式全面适配：底部标签栏跟随系统外观，按钮/选项对比度提升，Markdown 格式与提示条更易读",
-  "publishedAt": "2026-10-23T05:54:58Z"
+  "md5": "3c117051094c14428c02156f1586c722",
+  "sha256": "c6bb22f25aeea6a8fd07e639d58a961e39e21b4820dceb22002c97809da89496",
+  "notes": "新增「自动朗读新剧情」开关，生词/听写/例句朗读统一音色；剧情历史支持正文预览；修复删除当前剧情、复习词匹配与查词提示等细节。",
+  "publishedAt": "2026-10-24T16:29:33Z"
 }
